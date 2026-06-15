@@ -33,6 +33,10 @@ Fonksiyon isimlerinde uzlaşma sağlanmalı.
 
 4.	Eğer malloc ile sıfırdan açılıp doldurulan ve fonksiyonda return olarak dönülen bir data varsa onun için "init_" ön eki eklenmeli.
 
+#### 4. Norma Uygun Geliştir
+
+Diyelim bir özellik için bir sayfa .c dosyası yazdık. Eğer norma uygun değilse sıradaki özelliği geliştirmeye geçmiyoruz. Önce mevcut dosyayı norma uygun hale getiriyoruz.
+
 ## Genel Sorular
 
 - Nasıl bir oyun yapılacağına dair karar verilmeli.
