@@ -1,4 +1,7 @@
+# VARIABLES
 NAME = cub3d
+
+LIBFT = libft/libft.a
 
 SRC_DIR = src
 SRC_FILES = \
@@ -17,18 +20,24 @@ OBJ_FILES = $(SRC_FILES:.c=.o)
 
 OBJ = $(addprefix $(OBJ_DIR)/, $(OBJ_FILES))
 
-CFLAGS = -Wall -Wextra -Werror
-
 CC = cc
+CFLAGS = -Wall -Wextra -Werror
+INCLUDE = $(LIBFT) -Iinclude
+##############################################
+
+# RULES
 
 all: $(NAME)
 
-$(NAME): $(OBJ)
-	$(CC) $(CFLAGS) $(OBJ) -o $(NAME)
+$(NAME): $(LIBFT) $(OBJ)
+	$(CC) $(CFLAGS) $(OBJ) $(INCLUDE) -o $(NAME)
 
 $(OBJ_DIR)/%.o: $(SRC_DIR)/%.c
 	mkdir -p $(OBJ_DIR)
-	$(CC) $(CFLAGS) -c $< -o $@
+	$(CC) $(CFLAGS) $(INCLUDE) -c $< -o $@
+
+$(LIBFT):
+	make -C libft
 
 clean:
 	rm -rf $(OBJ_DIR)
