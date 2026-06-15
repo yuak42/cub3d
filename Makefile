@@ -4,10 +4,10 @@ SRC_DIR = src
 SRC_FILES = \
 	main.c
 
-SRC = $(addprefix $(SRC_DIR)/, $(SRC_FILES))
-
 OBJ_DIR = obj
-OBJ = $(SRC:.c=.o)
+OBJ_FILES = $(SRC_FILES:.c=.o)
+
+OBJ = $(addprefix $(OBJ_DIR)/, $(OBJ_FILES))
 
 CFLAGS = -Wall -Wextra -Werror
 
