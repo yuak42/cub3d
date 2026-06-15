@@ -4,6 +4,14 @@ SRC_DIR = src
 SRC_FILES = \
 	main.c
 
+# to be deleted
+include byaprak.mk
+SRC_FILES += $(BYAPRAK_SRC)
+
+include yuak.mk
+SRC_FILES += $(YUAK_SRC)
+#########
+
 OBJ_DIR = obj
 OBJ_FILES = $(SRC_FILES:.c=.o)
 
