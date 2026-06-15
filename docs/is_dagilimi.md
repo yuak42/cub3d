@@ -6,6 +6,7 @@
 
 **Kısa Görev Tanımları:**
 - Argüman ve dosya kontrolü yapmak
+- Flood Fill algoritması + oynanabilir bir map mi kontrol etmek
 - Map parse etmek
 - Argüman hatalarını uygun şekilde işlemek
 
