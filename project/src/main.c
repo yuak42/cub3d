@@ -6,7 +6,7 @@
 /*   By: yuak <yuak@student.42istanbul.com.tr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/15 20:37:38 by yuak              #+#    #+#             */
-/*   Updated: 2026/06/15 20:38:37 by yuak             ###   ########.fr       */
+/*   Updated: 2026/06/26 16:07:55 by yuak             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 int	main(void)
 {
-	if (ft_isdigit('5'))
+	if (!ft_isdigit('5'))
 		return (1);
 	printf("Hello world!\n");
 	return (0);
