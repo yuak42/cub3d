@@ -52,4 +52,9 @@ fclean: clean
 
 re: fclean all
 
+debug:
+	make fclean
+	make all $(CFLAGS)="$(CFLAGS) + -g"
+	echo "make debug"
+
 .PHONY: all clean fclean re
