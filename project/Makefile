@@ -18,34 +18,44 @@ OBJ = $(SRC:.c=.o)
 OBJS = $(addprefix $(OBJ_DIR)/, $(OBJ))
 
 LIBFT = libft/libft.a
+MLX_DIR = minilibx-linux
+MLX = $(MLX_DIR)/libmlx.a
 
 CFLAGS = -Wall -Wextra -Werror -Iinclude
 
-LIBS = $(LIBFT)
+LIBS = $(LIBFT) -L$(MLX_DIR) -lmlx -lXext -lX11
 
 CC = cc
 
+FCLEAN_FILES_FOR_MLX = $(MLX_DIR)/libmlx.a $(MLX_DIR)/libmlx_Linux.a
+
 # RULES
 all: $(NAME)
-	echo "cub3d"
 
-$(NAME): $(LIBFT) $(OBJS)
+
+$(NAME): $(LIBFT) $(MLX) $(OBJS)
 	$(CC) $(CFLAGS) $(OBJS) $(LIBFT) -o $(NAME)
 
 $(LIBFT):
 	make -C libft
 	echo "make -C libft"
 
+$(MLX):
+	make -C $(MLX_DIR)
+	echo "make -C mlx"
+
 $(OBJ_DIR)/%.o: $(SRC_DIR)/%.c
 	mkdir -p $(OBJ_DIR)
 	$(CC) $(CFLAGS) -c  $< -o $@
 
 clean:
+	rm -rf $(MLX_DIR)/obj
 	make -C libft clean
 	rm -rf $(OBJ_DIR)
 	echo "make clean"
 
 fclean: clean
+	rm -f $(FCLEAN_FILES_FOR_MLX)
 	rm -f $(LIBFT)
 	rm -f $(NAME)
 	echo "make fclean"
