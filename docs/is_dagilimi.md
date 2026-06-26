@@ -13,6 +13,5 @@
 ### Renderer
 
 **Kısa Görev Tanımları:**
-- minilibX kütüphanesini kullanarak raycasting yapmak (DDA algoritmasını uygulamak vs.)
 - Debug için basit bir 2d kuş bakışı görüntü yapmak
-- Grafikleri uygun şekilde renderlamak
+- minilibX kütüphanesini kullanarak raycasting yapmak (DDA algoritmasını uygulamak vs.)
