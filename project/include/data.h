@@ -1,25 +1,37 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   cub3d.h                                            :+:      :+:    :+:   */
+/*   data.h                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: yuak <yuak@student.42istanbul.com.tr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/06/26 20:00:21 by yuak              #+#    #+#             */
-/*   Updated: 2026/06/27 22:29:51 by yuak             ###   ########.fr       */
+/*   Created: 2026/06/27 22:17:12 by yuak              #+#    #+#             */
+/*   Updated: 2026/06/27 22:18:18 by yuak             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef CUB3D_H
-# define CUB3D_H
+#ifndef DATA_H
+# define DATA_H
 
-#include <stdio.h>
-#include "../libft/libft.h"
-#include "../minilibx-linux/mlx.h"
-#include "data.h"
-#include "byaprak.h"
+typedef struct s_player
+{
+	double	x;
+	double	y;
+	double	dir_x;
+	double	dir_y;
+} t_player;
 
-t_game	*parse(int ac, char **ar);
-int		render(t_game *game);
+typedef struct s_map
+{
+	char	**grid;
+	int		width;
+	int		height;
+} t_map;
+
+typedef struct s_game
+{
+	t_map		map;
+	t_player	player;
+} t_game;
 
 #endif

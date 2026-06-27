@@ -3,7 +3,7 @@ MAKEFLAGS += --silent
 NAME = cub3d
 
 SRC_DIR = src
-SRC = main.c
+SRC = main.c renderer/render.c parser/parse.c
 
 # to be deleted
 include byaprak.mk
@@ -45,7 +45,7 @@ $(MLX):
 	echo "make -C mlx"
 
 $(OBJ_DIR)/%.o: $(SRC_DIR)/%.c
-	mkdir -p $(OBJ_DIR)
+	mkdir -p $(dir $@)
 	$(CC) $(CFLAGS) -c  $< -o $@
 
 clean:
