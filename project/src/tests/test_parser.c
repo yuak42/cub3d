@@ -14,7 +14,7 @@
 
 int	test_parser(t_game *game)
 {
-
+	
 
 
 
