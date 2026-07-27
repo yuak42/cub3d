@@ -22,4 +22,8 @@
 t_game	*parse(int ac, char **ar);
 int		render(t_game *game);
 
+// Tests - Delete later
+int	test_parser(t_game *game);
+
+
 #endif
