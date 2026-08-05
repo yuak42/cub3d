@@ -45,6 +45,15 @@ int is_map_line(char *line)
 {
 	if (ft_strnstr(line, "NO ", 3))
 		return (0);
-
+	if (ft_strnstr(line, "SO ", 3))
+		return (0);
+	if (ft_strnstr(line, "WE ", 3))
+		return (0);
+	if (ft_strnstr(line, "EA ", 3))
+		return (0);
+	if (ft_strnstr(line, "F ", 2))
+		return (0);
+	if (ft_strnstr(line, "C ", 2))
+		return (0);
 	return (1);
 }
