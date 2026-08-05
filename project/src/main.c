@@ -21,7 +21,9 @@ int	main(int ac, char **ar)
 	// check_input(ac, ar); 
 
 	game = parse(ac, ar);
-	test_parser(game);
+	if (!game)
+		return (1);
+	// test_parser(game);
 	// if (!game)
 	// 	return (1);
 	// render(game);
