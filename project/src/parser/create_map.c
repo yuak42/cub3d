@@ -55,5 +55,7 @@ int is_map_line(char *line)
 		return (0);
 	if (ft_strnstr(line, "C ", 2))
 		return (0);
+	if (line[0] == '\n')
+		return (0);
 	return (1);
 }

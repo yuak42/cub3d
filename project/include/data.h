@@ -28,10 +28,19 @@ typedef struct s_map
 	int		height;
 } t_map;
 
+typedef struct s_texture
+{
+	char	*no;
+	char	*so;
+	char	*we;
+	char	*ea;
+} t_texture;
+
 typedef struct s_game
 {
 	t_map		map;
 	t_player	player;
+	t_text		texture;
 } t_game;
 
 #endif
