@@ -9,18 +9,42 @@
 /*   Updated: 2026/06/27 22:29:25 by yuak             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+// Update header
 
 #include "cub3d.h"
 
-t_game	*parse(int ac, char **ar)
+int is_map_line(char *line);
+
+char **create_map(char **ar)
 {
-	char **map;
+	int		fd;
+	char	**map;
+	char	*line;
 
-	if (ac != 2)
-		return (NULL);
-	map = create_map(ar);
-	if (!map)
-		return (NULL);
+	fd = open(ar[1], O_RDONLY);
+	if (fd < 0)
+		return (perror("Error\n"), NULL);
 
-	return (NULL);
+	map = (char **) malloc(sizeof(char *));
+	map[0] = NULL;
+	
+	line = get_next_line(fd);
+	while (line)
+	{
+		if (is_map_line(line))
+			ft_printf("Map line\n");
+		else
+			ft_printf("Not map line\n");
+		line = get_next_line(fd);
+	}
+
+	return (map);
+}
+
+int is_map_line(char *line)
+{
+	if (ft_strnstr(line, "NO ", 3))
+		return (0);
+
+	return (1);
 }

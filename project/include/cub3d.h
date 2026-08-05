@@ -21,6 +21,10 @@
 #include "byaprak.h"
 
 t_game	*parse(int ac, char **ar);
+char 	**create_map(char **ar);
+
+
+// Render
 int		render(t_game *game);
 
 // Tests - Delete later
