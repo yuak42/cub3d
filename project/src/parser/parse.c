@@ -14,8 +14,19 @@
 
 t_game	*parse(int ac, char **ar)
 {
-	(void) ac;
-	(void) ar;
+	int fd;
+	char *line;
 
+	if (ac != 2)
+		return (NULL);
+	fd = open(ar[1], O_RDONLY);
+	if (fd < 0)
+		return (perror("Error\n"), NULL);
+	line = get_next_line(fd);
+	while (line)
+	{
+		ft_printf("%s", line);
+		line = get_next_line(fd);
+	}
 	return (NULL);
 }

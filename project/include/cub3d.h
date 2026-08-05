@@ -14,6 +14,7 @@
 # define CUB3D_H
 
 #include <stdio.h>
+#include <fcntl.h>
 #include "../libft/libft.h"
 #include "../minilibx-linux/mlx.h"
 #include "data.h"
