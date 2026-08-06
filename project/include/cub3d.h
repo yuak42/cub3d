@@ -21,9 +21,10 @@
 #include "byaprak.h"
 
 t_game	*parse(int ac, char **ar);
-char 	**create_map(char *cub);
+t_map	*create_map(char *cub);
 int 	is_map_line(char *line);
 size_t	get_map_size(char *cub);
+void 	print_grid(char **grid);
 
 // Render
 int		render(t_game *game);
