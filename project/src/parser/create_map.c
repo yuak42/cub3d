@@ -12,9 +12,24 @@
 
 #include "cub3d.h"
 
-int	assign_map(char **map, char *cub);
+int		assign_grid(char **map, char *cub);
+t_map	*init_map(char *cub);
 
 t_map *create_map(char *cub)
+{
+	t_map	*map;
+
+	map = init_map(cub);
+	if (!map)
+		return (NULL);
+	if (assign_grid(map->grid, cub) < 0)
+		return (NULL);
+	ft_printf("Map was extracted successfully\n");
+	print_grid(map->grid);
+	return (map);
+}
+
+t_map	*init_map(char *cub)
 {
 	t_map	*map;
 	size_t	size;
@@ -26,16 +41,12 @@ t_map *create_map(char *cub)
 	if (size == 0)
 		return (ft_printf("Error\n"), NULL);
 	map->grid = (char **) ft_calloc(size, sizeof(char *));
-	if (!map)
+	if (!map->grid)
 		return (perror("Error"), NULL);
-	if (assign_map(map->grid, cub) < 0)
-		return (NULL);
-	ft_printf("Map was extracted successfully\n");
-	print_grid(map->grid);
 	return (map);
 }
 
-int	assign_map(char **map, char *cub)
+int	assign_grid(char **map, char *cub)
 {
 	int		fd;
 	char	*line;
