@@ -6,7 +6,7 @@
 /*   By: yuak <yuak@student.42istanbul.com.tr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/26 20:00:21 by yuak              #+#    #+#             */
-/*   Updated: 2026/08/06 12:16:42 by yuak             ###   ########.fr       */
+/*   Updated: 2026/08/06 12:45:03 by yuak             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,15 +26,18 @@ t_game	*create_game(char *cub);
 t_map	*create_map(char *cub);
 int 	is_map_line(char *line);
 size_t	get_map_size(char *cub);
-void 	print_grid(char **grid);
 int		assign_grid(t_map *map, char *cub);
 t_map	*init_map(char *cub);
+int is_texture_line(char *line);
+int assign_texture(t_game *game, char *line);
+int 	get_texture_paths(char *cub, t_game *game);
+
 
 // Render
 int		render(t_game *game);
 
-// Tests - Delete later
-int	test_parser(t_game *game);
-
+// Delete later
+void 	print_grid(char **grid);
+void	print_texture_paths(t_game *game);
 
 #endif
