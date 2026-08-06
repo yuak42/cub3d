@@ -6,7 +6,7 @@
 /*   By: yuak <yuak@student.42istanbul.com.tr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/26 20:00:21 by yuak              #+#    #+#             */
-/*   Updated: 2026/08/06 14:07:12 by yuak             ###   ########.fr       */
+/*   Updated: 2026/08/06 14:16:35 by yuak             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,13 +23,13 @@
 #include "byaprak.h"
 
 t_game	*init_game(char *cub);
-t_map	*create_map(char *cub);
 int 	is_map_line(char *line);
 size_t	get_map_size(char *cub);
 int		assign_grid(t_map *map, char *cub);
+t_map 	*extract_map(char *cub);
 t_map	*init_map(char *cub);
-int is_texture_line(char *line);
-int assign_texture(t_game *game, char *line);
+int 	is_texture_line(char *line);
+int 	assign_texture(t_game *game, char *line);
 int 	get_texture_paths(char *cub, t_game *game);
 
 
