@@ -1,12 +1,12 @@
 #include "cub3d.h"
 
-size_t	get_map_size(char **av)
+size_t	get_map_size(char *cub)
 {
 	int		fd;
 	size_t	size;
 	char	*line;
 
-	fd = open(av[1], O_RDONLY);
+	fd = open(cub, O_RDONLY);
 	if (fd < 0)
 		return (perror("Error\n"), 0);
 	size = 0;

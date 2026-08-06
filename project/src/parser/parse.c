@@ -16,9 +16,10 @@ t_game	*parse(int ac, char **av)
 {
 	char **map;
 
+	// Error check here
 	if (ac != 2)
 		return (NULL);
-	map = create_map(av);
+	map = create_map(av[1]);
 	if (!map)
 		return (NULL);
 
