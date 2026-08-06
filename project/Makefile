@@ -3,7 +3,7 @@ MAKEFLAGS += --silent
 NAME = cub3d
 
 SRC_DIR = src
-SRC = main.c renderer/render.c parser/create_game.c
+SRC = main.c renderer/render.c parser/init_game.c
 
 # to be deleted
 include byaprak.mk
