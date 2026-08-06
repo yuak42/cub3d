@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   utils.c                                            :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: yuak <yuak@student.42istanbul.com.tr>      +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2026/08/06 11:56:45 by yuak              #+#    #+#             */
+/*   Updated: 2026/08/06 11:56:46 by yuak             ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "cub3d.h"
 
 size_t	get_map_size(char *cub)
@@ -83,7 +95,7 @@ int	assign_grid(t_map *map, char *cub)
 		if (is_map_line(line))
 		{
 			temp = line;
-			line = ft_strtrim(line, "\n");
+			line = ft_strtrim(line, "\n"); // error check
 			free(temp);
 			if (map->width < ft_strlen(line))
 				map->width = ft_strlen(line);
