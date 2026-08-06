@@ -43,7 +43,7 @@ void print_grid(char **grid)
 {
 	while (*grid)
 	{
-		ft_printf("%s", *grid);
+		ft_printf("%s\n", *grid);
 		grid++;
 	}
 }
@@ -70,6 +70,7 @@ int	assign_grid(t_map *map, char *cub)
 {
 	int		fd;
 	char	*line;
+	char	*temp;
 	char	**grid;
 
 	grid = map->grid;
@@ -81,6 +82,9 @@ int	assign_grid(t_map *map, char *cub)
 	{
 		if (is_map_line(line))
 		{
+			temp = line;
+			line = ft_strtrim(line, "\n");
+			free(temp);
 			if (map->width < ft_strlen(line))
 				map->width = ft_strlen(line);
 			*grid = line;
