@@ -25,6 +25,8 @@ t_map	*create_map(char *cub);
 int 	is_map_line(char *line);
 size_t	get_map_size(char *cub);
 void 	print_grid(char **grid);
+int		assign_grid(t_map *map, char *cub);
+t_map	*init_map(char *cub);
 
 // Render
 int		render(t_game *game);

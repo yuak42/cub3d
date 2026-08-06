@@ -24,8 +24,8 @@ typedef struct s_player
 typedef struct s_map
 {
 	char	**grid;
-	int		width;
-	int		height;
+	size_t	width;
+	size_t	height;
 } t_map;
 
 typedef struct s_texture
