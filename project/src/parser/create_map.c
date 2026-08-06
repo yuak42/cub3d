@@ -14,31 +14,42 @@
 #include "cub3d.h"
 
 int is_map_line(char *line);
+size_t	get_map_size(char **av);
 
-char **create_map(char **ar)
+char **create_map(char **av)
+{
+	char	**map;
+	size_t	size;
+
+	size = get_map_size(av);
+	if (size == 0)
+		return (ft_printf("Error\n"), NULL);
+	map = (char **) ft_calloc(size, sizeof(char *));
+	if (!map)
+		return (perror("Error"), NULL);
+	
+
+	return (NULL);
+}
+
+size_t	get_map_size(char **av)
 {
 	int		fd;
-	char	**map;
+	size_t	size;
 	char	*line;
 
-	fd = open(ar[1], O_RDONLY);
+	fd = open(av[1], O_RDONLY);
 	if (fd < 0)
-		return (perror("Error\n"), NULL);
-
-	map = (char **) malloc(sizeof(char *));
-	map[0] = NULL;
-	
+		return (perror("Error\n"), 0);
+	size = 0;
 	line = get_next_line(fd);
 	while (line)
 	{
 		if (is_map_line(line))
-			ft_printf("Map line\n");
-		else
-			ft_printf("Not map line\n");
+			size++;
 		line = get_next_line(fd);
 	}
-
-	return (map);
+	return (size);
 }
 
 int is_map_line(char *line)
