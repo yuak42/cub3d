@@ -6,7 +6,7 @@
 /*   By: yuak <yuak@student.42istanbul.com.tr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/08/06 12:43:58 by yuak              #+#    #+#             */
-/*   Updated: 2026/08/06 12:45:30 by yuak             ###   ########.fr       */
+/*   Updated: 2026/08/06 12:50:31 by yuak             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 void	print_texture_paths(t_game *game)
 {
-	ft_printf("Texture paths:\n");
+	ft_printf("\n\nTexture paths:\n");
 	ft_printf("NO -> %s\n", game->texture.no);
 	ft_printf("SO -> %s\n", game->texture.so);
 	ft_printf("WE -> %s\n", game->texture.we);
@@ -25,8 +25,9 @@ void	print_texture_paths(t_game *game)
 
 int assign_texture(t_game *game, char *line)
 {
-	char **splitted;
+	char	**splitted;
 
+	line = ft_strtrim(line, "\n"); // error check later
 	splitted = ft_split(line, ' ');
 	if (!splitted)
 		return (perror("Error"), 1);
