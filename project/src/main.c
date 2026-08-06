@@ -6,26 +6,25 @@
 /*   By: yuak <yuak@student.42istanbul.com.tr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/15 20:37:38 by yuak              #+#    #+#             */
-/*   Updated: 2026/08/06 12:00:15 by yuak             ###   ########.fr       */
+/*   Updated: 2026/08/06 12:14:51 by yuak             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "cub3d.h"
 
-int	main(int ac, char **ar)
+int	main(int ac, char **av)
 {
 	(void) ac;
-	(void) ar;
 	t_game	*game;
 
 	// check_input(ac, ar); 
 
-	game = parse(ac, ar);
+	game = parse(av[1]);
 	if (!game)
 		return (1);
-	// if (!game)
-	// 	return (1);
-	// render(game);
+	else
+		ft_printf("Game was parsed successfully\n");
+	render(game);
 	// free everyting
 	return (0);
 }

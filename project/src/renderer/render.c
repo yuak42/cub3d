@@ -6,7 +6,7 @@
 /*   By: yuak <yuak@student.42istanbul.com.tr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/27 22:26:12 by yuak              #+#    #+#             */
-/*   Updated: 2026/08/06 11:56:53 by yuak             ###   ########.fr       */
+/*   Updated: 2026/08/06 12:13:18 by yuak             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,7 @@
 int	render(t_game *game)
 {
 	(void) game;
+	ft_printf("Game is being rendered\n");
 
 	return (0);
 }
