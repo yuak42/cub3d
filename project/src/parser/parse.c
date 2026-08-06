@@ -12,13 +12,13 @@
 
 #include "cub3d.h"
 
-t_game	*parse(int ac, char **ar)
+t_game	*parse(int ac, char **av)
 {
 	char **map;
 
 	if (ac != 2)
 		return (NULL);
-	map = create_map(ar);
+	map = create_map(av);
 	if (!map)
 		return (NULL);
 

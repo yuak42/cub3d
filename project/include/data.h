@@ -40,7 +40,7 @@ typedef struct s_game
 {
 	t_map		map;
 	t_player	player;
-	t_text		texture;
+	t_texture	texture;
 } t_game;
 
 #endif
