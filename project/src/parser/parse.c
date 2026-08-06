@@ -14,14 +14,16 @@
 
 t_game	*parse(int ac, char **av)
 {
-	char **map;
+	t_map *map;
 
 	// Error check here
 	if (ac != 2)
 		return (NULL);
+
 	map = create_map(av[1]);
-	if (!map)
+	if (!map->grid)
 		return (NULL);
+	
 
 	return (NULL);
 }

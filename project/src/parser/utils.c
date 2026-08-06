@@ -38,3 +38,12 @@ int is_map_line(char *line)
 		return (0);
 	return (1);
 }
+
+void print_grid(char **grid)
+{
+	while (*grid)
+	{
+		ft_printf("%s", *grid);
+		grid++;
+	}
+}
