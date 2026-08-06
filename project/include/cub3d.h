@@ -6,7 +6,7 @@
 /*   By: yuak <yuak@student.42istanbul.com.tr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/26 20:00:21 by yuak              #+#    #+#             */
-/*   Updated: 2026/08/06 11:57:48 by yuak             ###   ########.fr       */
+/*   Updated: 2026/08/06 12:14:04 by yuak             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@
 #include "data.h"
 #include "byaprak.h"
 
-t_game	*parse(int ac, char **ar);
+t_game	*parse(char *cub);
 t_map	*create_map(char *cub);
 int 	is_map_line(char *line);
 size_t	get_map_size(char *cub);
