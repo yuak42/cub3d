@@ -1,1 +1,1 @@
-YUAK_SRC = parser/create_map.c
+YUAK_SRC = parser/create_map.c parser/utils.c
