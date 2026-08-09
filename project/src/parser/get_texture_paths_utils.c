@@ -6,7 +6,7 @@
 /*   By: yuak <yuak@student.42istanbul.com.tr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/08/06 12:43:58 by yuak              #+#    #+#             */
-/*   Updated: 2026/08/06 13:00:34 by yuak             ###   ########.fr       */
+/*   Updated: 2026/08/09 09:40:54 by yuak             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,8 +24,6 @@ void	print_texture_paths(t_game *game)
 	
 	ft_printf("C -> r: %d, g: %d, b: %d\n", game->texture.c.r, game->texture.c.g, game->texture.c.b);
 }
-
-void	assign_color(t_game *game, char c, char *str);
 
 int assign_texture(t_game *game, char *line)
 {
@@ -71,7 +69,6 @@ void	assign_color(t_game *game, char c, char *str)
 		game->texture.c.b = ft_atoi(splitted[2]);
 	}
 }
-
 
 int is_texture_line(char *line)
 {
