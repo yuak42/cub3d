@@ -22,6 +22,8 @@ MLX_DIR = minilibx-linux
 MLX = $(MLX_DIR)/libmlx.a
 
 CFLAGS = -Wall -Wextra -Werror -Iinclude
+DEBUG_FLAGS = -fsanitize=address -g3
+
 
 LIBS = $(LIBFT) -L$(MLX_DIR) -lmlx -lXext -lX11
 
@@ -65,9 +67,9 @@ re:
 	make
 
 debug:
-	CFLAGS += -fsanitize=address -g3
 	make fclean
-	make all $(CFLAGS)="$(CFLAGS) + -g"
+	make $(MLX)
+	make all CFLAGS="$(CFLAGS) $(DEBUG_FLAGS)"
 	echo "make debug"
 
 .PHONY: all clean fclean re
