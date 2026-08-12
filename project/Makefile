@@ -22,8 +22,6 @@ MLX_DIR = minilibx-linux
 MLX = $(MLX_DIR)/libmlx.a
 
 CFLAGS = -Wall -Wextra -Werror -Iinclude
-CFLAGS += -fsanitize=address -g3 #To be deleted later
-
 
 LIBS = $(LIBFT) -L$(MLX_DIR) -lmlx -lXext -lX11
 
@@ -62,9 +60,12 @@ fclean: clean
 	rm -f $(NAME)
 	echo "make fclean"
 
-re: fclean all
+re:
+	make fclean
+	make
 
 debug:
+	CFLAGS += -fsanitize=address -g3
 	make fclean
 	make all $(CFLAGS)="$(CFLAGS) + -g"
 	echo "make debug"
