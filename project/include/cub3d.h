@@ -6,7 +6,7 @@
 /*   By: yuak <yuak@student.42istanbul.com.tr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/26 20:00:21 by yuak              #+#    #+#             */
-/*   Updated: 2026/08/09 09:40:45 by yuak             ###   ########.fr       */
+/*   Updated: 2026/08/12 16:36:44 by yuak             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,6 +34,9 @@ int 	assign_texture(t_game *game, char *line);
 int 	get_texture_paths(char *cub, t_game *game);
 void	assign_color(t_game *game, char c, char *str);
 
+// Check Utils
+int		print_error(char *str);
+int		check_texture_paths(char *cub);
 
 
 // Render
