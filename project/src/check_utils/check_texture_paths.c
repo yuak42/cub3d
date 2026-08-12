@@ -6,7 +6,7 @@
 /*   By: yuak <yuak@student.42istanbul.com.tr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/08/12 14:31:20 by yuak              #+#    #+#             */
-/*   Updated: 2026/08/12 16:37:43 by yuak             ###   ########.fr       */
+/*   Updated: 2026/08/12 16:43:38 by yuak             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,6 @@
 static int	check_existence_and_uniqueness(char *id, char *cub);
 static int	check_line(char *id, char *line, int *exits);
 static void	free_split(char **splitted);
-
 
 int	check_texture_paths(char *cub)
 {
@@ -41,7 +40,7 @@ static int check_existence_and_uniqueness(char *id, char *cub)
 		return (perror("Error"), -1);
 	line = get_next_line(fd);
 	exist = 0;
-	while (!line)
+	while (line)
 	{
 		if (check_line(id, line, &exist))
 			return (free(line), close(fd), 1);
@@ -49,6 +48,8 @@ static int check_existence_and_uniqueness(char *id, char *cub)
 		line = get_next_line(fd);
 	}
 	close(fd);
+	if (exist == 0)
+		return (1);
 	return (0);
 }
 
@@ -59,7 +60,7 @@ static int check_line(char *id, char *line, int *exist)
 	splitted = ft_split(line, ' ');
 	if (!splitted)
 		return (perror("Error"), 1);
-	if (ft_strncmp(id, splitted[0], ft_strlen(id) + 1))
+	if (!ft_strncmp(id, splitted[0], ft_strlen(id) + 1))
 		(*exist)++;
 	if (*exist > 1)
 		return (free_split(splitted), 1);	
