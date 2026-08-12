@@ -22,6 +22,8 @@ MLX_DIR = minilibx-linux
 MLX = $(MLX_DIR)/libmlx.a
 
 CFLAGS = -Wall -Wextra -Werror -Iinclude
+CFLAGS += -fsanitize=address -g3 #To be deleted later
+
 
 LIBS = $(LIBFT) -L$(MLX_DIR) -lmlx -lXext -lX11
 
