@@ -6,7 +6,7 @@
 /*   By: yuak <yuak@student.42istanbul.com.tr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/08/13 08:24:00 by yuak              #+#    #+#             */
-/*   Updated: 2026/08/13 08:32:24 by yuak             ###   ########.fr       */
+/*   Updated: 2026/08/13 09:06:12 by yuak             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ void	free_game(t_game *game)
 {
 	free_map_grid(game->map->grid);
 	free_texture(game->texture);
-
+	free(game->map);
 	free(game);
 }
 
