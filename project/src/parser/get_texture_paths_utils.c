@@ -6,7 +6,7 @@
 /*   By: yuak <yuak@student.42istanbul.com.tr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/08/06 12:43:58 by yuak              #+#    #+#             */
-/*   Updated: 2026/08/13 08:51:04 by yuak             ###   ########.fr       */
+/*   Updated: 2026/08/13 08:53:39 by yuak             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,17 +33,17 @@ int assign_texture(t_game *game, char *line)
 	splitted = ft_split(line, ' ');
 	if (!splitted)
 		return (perror("Error"), 1);
-	if (ft_strnstr(line, "NO ", 3))
+	if (!ft_strncmp(line, "NO ", 3))
 		game->texture.no = splitted[1];
-	else if (ft_strnstr(line, "SO ", 3))
+	else if (!ft_strncmp(line, "SO ", 3))
 		game->texture.so = splitted[1];
-	else if (ft_strnstr(line, "WE ", 3))
+	else if (!ft_strncmp(line, "WE ", 3))
 		game->texture.we = splitted[1];
-	else if (ft_strnstr(line, "EA ", 3))
+	else if (!ft_strncmp(line, "EA ", 3))
 		game->texture.ea = splitted[1];
-	else if (ft_strnstr(line, "F ", 2))
+	else if (!ft_strncmp(line, "F ", 2))
 		assign_color(game, 'f', splitted[1]);
-	else if (ft_strnstr(line, "C ", 2))
+	else if (!ft_strncmp(line, "C ", 2))
 		assign_color(game, 'c', splitted[1]);
 	free(splitted[0]);
 	free(splitted);
