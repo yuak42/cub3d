@@ -6,7 +6,7 @@
 /*   By: yuak <yuak@student.42istanbul.com.tr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/08/06 12:43:58 by yuak              #+#    #+#             */
-/*   Updated: 2026/08/09 09:40:54 by yuak             ###   ########.fr       */
+/*   Updated: 2026/08/13 08:51:04 by yuak             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,7 +33,6 @@ int assign_texture(t_game *game, char *line)
 	splitted = ft_split(line, ' ');
 	if (!splitted)
 		return (perror("Error"), 1);
-
 	if (ft_strnstr(line, "NO ", 3))
 		game->texture.no = splitted[1];
 	else if (ft_strnstr(line, "SO ", 3))
@@ -48,6 +47,7 @@ int assign_texture(t_game *game, char *line)
 		assign_color(game, 'c', splitted[1]);
 	free(splitted[0]);
 	free(splitted);
+	free(line); // free created line with ft_strtrim
 	return (0);
 }
 
