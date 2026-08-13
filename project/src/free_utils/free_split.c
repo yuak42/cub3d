@@ -1,29 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   free_split.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: yuak <yuak@student.42istanbul.com.tr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/06/15 20:37:38 by yuak              #+#    #+#             */
-/*   Updated: 2026/08/13 08:23:19 by yuak             ###   ########.fr       */
+/*   Created: 2026/08/13 08:24:03 by yuak              #+#    #+#             */
+/*   Updated: 2026/08/13 08:24:56 by yuak             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "cub3d.h"
 
-int	main(int ac, char **av)
+void free_split(char **splitted)
 {
-	t_game	*game;
-	(void) ac;
-	if (check_input(ac, av))
-		return (1); 
-	game = init_game(av[1]);
-	if (!game)
-		return (1);
-	else
-		ft_printf("Game was parsed successfully\n");
-	render(game);
-	free_game(game);
-	return (0);
+	char	**temp;
+	
+	temp = splitted;
+	while (*temp)
+	{
+		free(*temp);
+		temp++;
+	}
+	free(splitted);
 }

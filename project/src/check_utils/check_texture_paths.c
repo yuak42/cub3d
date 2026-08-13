@@ -6,7 +6,7 @@
 /*   By: yuak <yuak@student.42istanbul.com.tr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/08/12 14:31:20 by yuak              #+#    #+#             */
-/*   Updated: 2026/08/12 16:43:38 by yuak             ###   ########.fr       */
+/*   Updated: 2026/08/13 08:25:02 by yuak             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,6 @@
 
 static int	check_existence_and_uniqueness(char *id, char *cub);
 static int	check_line(char *id, char *line, int *exits);
-static void	free_split(char **splitted);
 
 int	check_texture_paths(char *cub)
 {
@@ -67,17 +66,4 @@ static int check_line(char *id, char *line, int *exist)
 	free_split(splitted);
 
 	return (0);
-}
-
-static void free_split(char **splitted)
-{
-	char	**temp;
-	
-	temp = splitted;
-	while (*temp)
-	{
-		free(*temp);
-		temp++;
-	}
-	free(splitted);
 }

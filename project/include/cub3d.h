@@ -6,7 +6,7 @@
 /*   By: yuak <yuak@student.42istanbul.com.tr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/26 20:00:21 by yuak              #+#    #+#             */
-/*   Updated: 2026/08/12 16:36:44 by yuak             ###   ########.fr       */
+/*   Updated: 2026/08/13 08:32:37 by yuak             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,6 +38,9 @@ void	assign_color(t_game *game, char c, char *str);
 int		print_error(char *str);
 int		check_texture_paths(char *cub);
 
+// free utils
+void	free_split(char **splitted);
+void	free_game(t_game *game);
 
 // Render
 int		render(t_game *game);
