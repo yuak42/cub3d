@@ -6,7 +6,7 @@
 /*   By: yuak <yuak@student.42istanbul.com.tr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/08/12 14:31:20 by yuak              #+#    #+#             */
-/*   Updated: 2026/08/13 08:25:02 by yuak             ###   ########.fr       */
+/*   Updated: 2026/08/13 09:30:40 by yuak             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,14 +17,20 @@ static int	check_line(char *id, char *line, int *exits);
 
 int	check_texture_paths(char *cub)
 {
-	if (check_existence_and_uniqueness("NO", cub))
-		return (print_error("Error\nNO identifier is wrong!\n"));
-	if (check_existence_and_uniqueness("SO", cub))
-		return (print_error("Error\nSO identifier is wrong!\n"));
-	if (check_existence_and_uniqueness("WE", cub))
-		return (print_error("Error\nWE identifier is wrong!\n"));
-	if (check_existence_and_uniqueness("EA", cub))
-		return (print_error("Error\nEA identifier is wrong!\n"));
+	int	exit_flag;
+
+	exit_flag = check_existence_and_uniqueness("NO", cub);
+	if (exit_flag)
+		return (exit_flag);
+	exit_flag = check_existence_and_uniqueness("SO", cub);
+	if (exit_flag)
+		return (exit_flag);
+	exit_flag = check_existence_and_uniqueness("WE", cub);
+	if (exit_flag)
+		return (exit_flag);
+	exit_flag = check_existence_and_uniqueness("EA", cub);
+	if (exit_flag)
+		return (exit_flag);
 	return (0);
 }
 
@@ -42,13 +48,16 @@ static int check_existence_and_uniqueness(char *id, char *cub)
 	while (line)
 	{
 		if (check_line(id, line, &exist))
-			return (free(line), close(fd), 1);
+			return (free(line), close(fd), 702);
 		free(line);
 		line = get_next_line(fd);
 	}
 	close(fd);
 	if (exist == 0)
-		return (1);
+	{
+		print_error("Error\nThere is no identifir\n");
+		return (701);
+	}
 	return (0);
 }
 
@@ -62,7 +71,10 @@ static int check_line(char *id, char *line, int *exist)
 	if (!ft_strncmp(id, splitted[0], ft_strlen(id) + 1))
 		(*exist)++;
 	if (*exist > 1)
+	{
+		print_error("Error\nThere are more than 1 path identifier\n");
 		return (free_split(splitted), 1);	
+	}
 	free_split(splitted);
 
 	return (0);
