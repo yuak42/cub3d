@@ -17,8 +17,8 @@ Malloc hatalarında üzerinde ortak anlaştığımız hata kodları ve hata mesa
 
 1. malloc() -> 1001 ya da NULL
 2. ft_calloc() -> 1002 ya da NULL
-3. byaprak özel fonksiyonlar -> 400'den başlıyor. {401, 402, ...}
-4. yuak özel fonksiyonlar -> 500'den başlıyor. {501, 502, ...}
+3. byaprak özel fonksiyonlar -> 400'den başlıyor. {400, 401, 402, ...}
+4. yuak özel fonksiyonlar -> 700'den başlıyor. {700, 701, 702, ...}
 
 #### 3. Fonksiyon İsimleri
 
