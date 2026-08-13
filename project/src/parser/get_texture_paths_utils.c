@@ -6,7 +6,7 @@
 /*   By: yuak <yuak@student.42istanbul.com.tr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/08/06 12:43:58 by yuak              #+#    #+#             */
-/*   Updated: 2026/08/13 08:53:39 by yuak             ###   ########.fr       */
+/*   Updated: 2026/08/13 08:54:54 by yuak             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -68,6 +68,7 @@ void	assign_color(t_game *game, char c, char *str)
 		game->texture.c.g = ft_atoi(splitted[1]);
 		game->texture.c.b = ft_atoi(splitted[2]);
 	}
+	free_split(splitted);
 }
 
 int is_texture_line(char *line)
