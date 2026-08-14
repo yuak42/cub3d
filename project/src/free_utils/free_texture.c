@@ -1,28 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   init_game.c                                        :+:      :+:    :+:   */
+/*   free_texture.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: yuak <yuak@student.42istanbul.com.tr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/06/27 22:26:15 by yuak              #+#    #+#             */
-/*   Updated: 2026/08/14 15:50:50 by yuak             ###   ########.fr       */
+/*   Created: 2026/08/14 15:53:47 by yuak              #+#    #+#             */
+/*   Updated: 2026/08/14 16:08:08 by yuak             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "cub3d.h"
 
-t_game	*init_game(char *cub)
+void	free_texture(t_texture texture)
 {
-	t_game	*game;
-
-	game = (t_game *) ft_calloc(1, sizeof(t_game));
-	if (!game)
-		return (perror("Error"), NULL);
-	game->map = extract_map(cub);
-	if (!game->map)
-		return (free(game), NULL);
-	if (get_texture_paths(cub, game))
-		return (free_map(game->map), free(game), NULL);
-	return (game);
+	if (texture.no)
+		free(texture.no);
+	if (texture.so)
+		free(texture.so);
+	if (texture.we)
+		free(texture.we);
+	if (texture.ea)
+		free(texture.ea);
 }
