@@ -6,7 +6,7 @@
 /*   By: yuak <yuak@student.42istanbul.com.tr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/08/06 12:43:58 by yuak              #+#    #+#             */
-/*   Updated: 2026/08/14 13:25:43 by yuak             ###   ########.fr       */
+/*   Updated: 2026/08/14 13:28:10 by yuak             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -83,4 +83,3 @@ static int	assign_color(t_game *game, char c, char *str)
 	free_split(splitted);
 	return (0);
 }
-
