@@ -1,5 +1,9 @@
 # Özel Hata kodları
 
+# Genel Hata Kodları
+
+1000 -> open açamadağında dönülmesi gereken kod
+
 ## Parser hata kodları
 
 700 -> main fonksiyonuna verilen argüman sayısı yanlış.
