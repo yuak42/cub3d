@@ -6,7 +6,7 @@
 /*   By: yuak <yuak@student.42istanbul.com.tr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/08/06 11:56:45 by yuak              #+#    #+#             */
-/*   Updated: 2026/08/14 09:25:08 by yuak             ###   ########.fr       */
+/*   Updated: 2026/08/14 12:44:58 by yuak             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -71,33 +71,46 @@ t_map	*init_map(char *cub)
 	return (map);
 }
 
+static int	deal_line(char *line, t_map *map, char ***grid);
+
+
 int	assign_grid(t_map *map, char *cub)
 {
 	int		fd;
 	char	*line;
-	char	*temp;
 	char	**grid;
 
 	grid = map->grid;
 	fd = open(cub, O_RDONLY);
 	if (fd < 0)
-		return (-1);
+		return (1000);
 	line = get_next_line(fd);
 	while (line)
 	{
-		if (is_map_line(line))
-		{
-			temp = line;
-			line = ft_strtrim(line, "\n"); // error check
-			free(temp);
-			if (map->width < ft_strlen(line))
-				map->width = ft_strlen(line);
-			*grid = line;
-			grid++;
-		}
-		else
-			free(line);
+		if (deal_line(line, map, &grid))
+			return (close(fd), 1);
 		line = get_next_line(fd);
 	}
+	close(fd);
+	return (0);
+}
+
+static int	deal_line(char *line, t_map *map, char ***grid)
+{
+	char	*row;
+
+	if (is_map_line(line))
+	{
+		row = ft_strtrim(line, "\n");
+		free(line);
+		if (!row)
+			return (1);
+		if (map->width < ft_strlen(row))
+			map->width = ft_strlen(row);
+		**grid = row;
+		(*grid)++;
+	}
+	else
+		free(line);
 	return (0);
 }
