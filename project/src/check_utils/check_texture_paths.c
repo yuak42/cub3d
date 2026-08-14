@@ -6,7 +6,7 @@
 /*   By: yuak <yuak@student.42istanbul.com.tr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/08/12 14:31:20 by yuak              #+#    #+#             */
-/*   Updated: 2026/08/14 16:16:13 by yuak             ###   ########.fr       */
+/*   Updated: 2026/08/14 21:26:12 by yuak             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,6 +24,10 @@ int	check_texture_paths(char *cub)
 	if (check_existence_and_uniqueness("WE", cub))
 		return (1);
 	if (check_existence_and_uniqueness("EA", cub))
+		return (1);
+	if (check_existence_and_uniqueness("F", cub))
+		return (1);
+	if (check_existence_and_uniqueness("C", cub))
 		return (1);
 	return (0);
 }
