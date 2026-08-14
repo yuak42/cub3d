@@ -6,7 +6,7 @@
 /*   By: yuak <yuak@student.42istanbul.com.tr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/08/06 11:56:45 by yuak              #+#    #+#             */
-/*   Updated: 2026/08/13 08:45:24 by yuak             ###   ########.fr       */
+/*   Updated: 2026/08/14 09:07:08 by yuak             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,14 +53,7 @@ int is_map_line(char *line)
 	return (1);
 }
 
-void print_grid(char **grid)
-{
-	while (*grid)
-	{
-		ft_printf("%s\n", *grid);
-		grid++;
-	}
-}
+
 
 t_map	*init_map(char *cub)
 {

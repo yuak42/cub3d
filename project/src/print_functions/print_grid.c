@@ -1,29 +1,22 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   extract_map.c                                      :+:      :+:    :+:   */
+/*   print_grid.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: yuak <yuak@student.42istanbul.com.tr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/06/27 22:26:15 by yuak              #+#    #+#             */
-/*   Updated: 2026/08/14 09:05:25 by yuak             ###   ########.fr       */
+/*   Created: 2026/08/14 09:07:09 by yuak              #+#    #+#             */
+/*   Updated: 2026/08/14 09:07:26 by yuak             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "cub3d.h"
 
-t_map *extract_map(char *cub)
+void print_grid(char **grid)
 {
-	t_map	*map;
-
-	map = init_map(cub);
-	if (!map)
-		return (NULL);
-	if (assign_grid(map, cub) < 0)
-		return (NULL);
-	ft_printf("Map was extracted successfully\n");
-	ft_printf("Map width: %d, map height: %d\n", map->width, map->height);
-	print_grid(map->grid);
-
-	return (map);
+	while (*grid)
+	{
+		ft_printf("%s\n", *grid);
+		grid++;
+	}
 }
