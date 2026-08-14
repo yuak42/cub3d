@@ -6,7 +6,7 @@
 /*   By: yuak <yuak@student.42istanbul.com.tr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/08/06 11:56:45 by yuak              #+#    #+#             */
-/*   Updated: 2026/08/14 12:44:58 by yuak             ###   ########.fr       */
+/*   Updated: 2026/08/14 12:45:37 by yuak             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -72,7 +72,6 @@ t_map	*init_map(char *cub)
 }
 
 static int	deal_line(char *line, t_map *map, char ***grid);
-
 
 int	assign_grid(t_map *map, char *cub)
 {
