@@ -6,7 +6,7 @@
 /*   By: yuak <yuak@student.42istanbul.com.tr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/27 22:26:15 by yuak              #+#    #+#             */
-/*   Updated: 2026/08/14 15:39:51 by yuak             ###   ########.fr       */
+/*   Updated: 2026/08/14 15:50:50 by yuak             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,6 +23,6 @@ t_game	*init_game(char *cub)
 	if (!game->map)
 		return (free(game), NULL);
 	if (get_texture_paths(cub, game))
-		return (NULL);
+		return (free_map(game->map), free(game), NULL);
 	return (game);
 }
