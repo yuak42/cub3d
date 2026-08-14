@@ -6,7 +6,7 @@
 /*   By: yuak <yuak@student.42istanbul.com.tr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/27 22:26:15 by yuak              #+#    #+#             */
-/*   Updated: 2026/08/14 09:12:54 by yuak             ###   ########.fr       */
+/*   Updated: 2026/08/14 09:21:07 by yuak             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@ t_game	*init_game(char *cub)
 
 	game = (t_game *) ft_calloc(1, sizeof(t_game));
 	if (!game)
-		return (NULL);
+		return (perror("Error"), NULL);
 	game->map = extract_map(cub);
 	if (!game->map)
 		return (NULL);
