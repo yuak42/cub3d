@@ -6,7 +6,7 @@
 /*   By: yuak <yuak@student.42istanbul.com.tr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/08/14 16:36:03 by yuak              #+#    #+#             */
-/*   Updated: 2026/08/14 21:15:43 by yuak             ###   ########.fr       */
+/*   Updated: 2026/08/14 21:23:20 by yuak             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -84,10 +84,12 @@ static int	check_color_num(char **splitted)
 	char	*color;
 	int		temp;
 
-	i = 0;
 	while (*splitted)
 	{
+		i = 0;
 		color = *splitted;
+		if (color[i] == '0')
+			return (print_error("Error\nWhy do you put zero in start?\n"), 1);
 		while (color[i])
 		{
 			if (!ft_isdigit(color[i]) || i > 3)
