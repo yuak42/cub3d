@@ -6,7 +6,7 @@
 /*   By: yuak <yuak@student.42istanbul.com.tr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/08/06 11:56:45 by yuak              #+#    #+#             */
-/*   Updated: 2026/08/14 09:14:57 by yuak             ###   ########.fr       */
+/*   Updated: 2026/08/14 09:25:08 by yuak             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,7 +28,7 @@ size_t	get_map_size(char *cub)
 		if (is_map_line(line))
 			size++;
 		free(line);
-		line = get_next_line(fd);
+		line = get_next_line(fd); // should we check get_next_line malloc errors with strerror?
 	}
 	close(fd);
 	return (size);
