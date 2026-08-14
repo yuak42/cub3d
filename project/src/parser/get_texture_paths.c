@@ -6,7 +6,7 @@
 /*   By: yuak <yuak@student.42istanbul.com.tr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/08/06 12:40:35 by yuak              #+#    #+#             */
-/*   Updated: 2026/08/14 12:57:08 by yuak             ###   ########.fr       */
+/*   Updated: 2026/08/14 13:26:52 by yuak             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,10 @@ int get_texture_paths(char *cub, t_game *game)
 	while (line)
 	{
 		if (is_texture_line(line))
-			assign_texture(game, line);
+		{
+			if (assign_texture(game, line))
+				return (free(line), close(fd), 1);
+		}
 		free(line);
 		line = get_next_line(fd);
 	}

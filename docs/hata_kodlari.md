@@ -3,6 +3,7 @@
 # Genel Hata Kodları
 
 1000 -> open açamadağında dönülmesi gereken kod
+1001 -> ft_split çalışmadığında döndürülmesi gerekilen kod
 
 ## Parser hata kodları
 
