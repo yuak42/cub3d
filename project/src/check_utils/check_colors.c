@@ -6,7 +6,7 @@
 /*   By: yuak <yuak@student.42istanbul.com.tr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/08/14 16:36:03 by yuak              #+#    #+#             */
-/*   Updated: 2026/08/14 20:46:06 by yuak             ###   ########.fr       */
+/*   Updated: 2026/08/14 20:52:58 by yuak             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,12 +49,16 @@ static int	check_line(char *line)
 	splitted = ft_split(trimmed, ' ');
 	if (!splitted)
 		return (perror("Error"), 1001);
-	if (!ft_strncmp("F", splitted[0], 2) || !ft_strncmp("C", splitted[0], 2))
+	if (get_splitted_size(splitted) != 2)
 	{
-		if (check_color(splitted[1]))
-			return (1);
+		free_split(splitted);
+		free(trimmed);
+		return (print_error("Error\nColor wrong!\n"), 1);
 	}
+	if (check_color(splitted[1]))
+		return (free_split(splitted), free(trimmed), 1);
 	free_split(splitted);
+	free(trimmed);
 	return (0);
 }
 
@@ -66,6 +70,7 @@ static int	check_color(char *color)
 	if (!splitted)
 		return (1001);
 	if (get_splitted_size(splitted) != 3)
-		return (print_error("Error\nColor wrong\n"), 1);
+		return (free_split(splitted), print_error("Error\nColor wrong\n"), 1);
+	free_split(splitted);
 	return (0);
 }
