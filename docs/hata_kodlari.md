@@ -4,6 +4,7 @@
 
 1000 -> open açamadağında dönülmesi gereken kod
 1001 -> ft_split çalışmadığında döndürülmesi gerekilen kod
+1002 -> ft_strtrim çalışmadığında döndürülmesi gerekilen kod
 
 ## Parser hata kodları
 
