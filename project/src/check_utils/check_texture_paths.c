@@ -6,7 +6,7 @@
 /*   By: yuak <yuak@student.42istanbul.com.tr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/08/12 14:31:20 by yuak              #+#    #+#             */
-/*   Updated: 2026/08/14 16:13:51 by yuak             ###   ########.fr       */
+/*   Updated: 2026/08/14 16:16:13 by yuak             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,7 +42,7 @@ static int check_existence_and_uniqueness(char *id, char *cub)
 	while (line)
 	{
 		if (check_line(id, line, &exist))
-			return (free(line), close(fd), 702);
+			return (free(line), close(fd), 1);
 		free(line);
 		line = get_next_line(fd);
 	}
@@ -67,7 +67,7 @@ static int check_line(char *id, char *line, int *exist)
 	if (*exist > 1)
 	{
 		print_error("Error\nThere are more than 1 path identifier\n");
-		return (free_split(splitted), 1);	
+		return (free_split(splitted), 702);	
 	}
 	free_split(splitted);
 
