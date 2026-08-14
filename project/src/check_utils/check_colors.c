@@ -6,7 +6,7 @@
 /*   By: yuak <yuak@student.42istanbul.com.tr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/08/14 16:36:03 by yuak              #+#    #+#             */
-/*   Updated: 2026/08/14 21:23:20 by yuak             ###   ########.fr       */
+/*   Updated: 2026/08/14 21:28:21 by yuak             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -88,7 +88,7 @@ static int	check_color_num(char **splitted)
 	{
 		i = 0;
 		color = *splitted;
-		if (color[i] == '0')
+		if (color[i] == '0' && color[i + 1] != '\0')
 			return (print_error("Error\nWhy do you put zero in start?\n"), 1);
 		while (color[i])
 		{
