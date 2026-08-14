@@ -6,7 +6,7 @@
 /*   By: yuak <yuak@student.42istanbul.com.tr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/08/14 16:36:03 by yuak              #+#    #+#             */
-/*   Updated: 2026/08/14 20:52:58 by yuak             ###   ########.fr       */
+/*   Updated: 2026/08/14 21:15:43 by yuak             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,7 @@
 
 static int	check_line(char *line);
 static int	check_color(char *color);
+static int	check_color_num(char **splitted);
 
 int	check_colors(char *cub)
 {
@@ -53,7 +54,7 @@ static int	check_line(char *line)
 	{
 		free_split(splitted);
 		free(trimmed);
-		return (print_error("Error\nColor wrong!\n"), 1);
+		return (print_error("Error\nColor pattern wrong!\n"), 1);
 	}
 	if (check_color(splitted[1]))
 		return (free_split(splitted), free(trimmed), 1);
@@ -71,6 +72,32 @@ static int	check_color(char *color)
 		return (1001);
 	if (get_splitted_size(splitted) != 3)
 		return (free_split(splitted), print_error("Error\nColor wrong\n"), 1);
+	if (check_color_num(splitted))
+		return (free_split(splitted), 1);
 	free_split(splitted);
+	return (0);
+}
+
+static int	check_color_num(char **splitted)
+{
+	int		i;
+	char	*color;
+	int		temp;
+
+	i = 0;
+	while (*splitted)
+	{
+		color = *splitted;
+		while (color[i])
+		{
+			if (!ft_isdigit(color[i]) || i > 3)
+				return (print_error("Error\nColor is not an integer\n"), 1);
+			i++;
+		}
+		temp = ft_atoi(color);
+		if (temp > 255)
+			return (print_error("Error\nColor number wrong\n"), 1);
+		splitted++;
+	}
 	return (0);
 }
