@@ -6,7 +6,7 @@
 /*   By: yuak <yuak@student.42istanbul.com.tr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/08/06 11:56:45 by yuak              #+#    #+#             */
-/*   Updated: 2026/08/14 09:07:08 by yuak             ###   ########.fr       */
+/*   Updated: 2026/08/14 09:14:57 by yuak             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,8 +53,6 @@ int is_map_line(char *line)
 	return (1);
 }
 
-
-
 t_map	*init_map(char *cub)
 {
 	t_map	*map;
@@ -65,7 +63,7 @@ t_map	*init_map(char *cub)
 		return (perror("Error"), NULL);
 	size = get_map_size(cub);
 	if (size == 0)
-		return (ft_printf("Error\n"), NULL);
+		return (NULL);
 	map->height = size;
 	map->grid = (char **) ft_calloc(size + 1, sizeof(char *));
 	if (!map->grid)
