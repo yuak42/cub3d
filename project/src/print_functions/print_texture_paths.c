@@ -11,5 +11,5 @@ void	print_texture_paths(t_game *game)
 	ft_printf("F -> r: %d, g: %d, b: %d\n", game->texture.f.r, game->texture.f.g, game->texture.f.b);
 	ft_printf("C -> r: %d, g: %d, b: %d\n", game->texture.c.r, game->texture.c.g, game->texture.c.b);
 
-	ft_printf("-----------------------------\n\n");
+	ft_printf("-----------------------------------------------------\n\n");
 }
