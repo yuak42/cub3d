@@ -6,7 +6,7 @@
 /*   By: yuak <yuak@student.42istanbul.com.tr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/26 20:00:21 by yuak              #+#    #+#             */
-/*   Updated: 2026/08/13 08:32:37 by yuak             ###   ########.fr       */
+/*   Updated: 2026/08/14 12:49:50 by yuak             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,7 +46,7 @@ void	free_game(t_game *game);
 int		render(t_game *game);
 
 // Delete later
-void 	print_grid(char **grid);
+void 	print_map(t_map *map);
 void	print_texture_paths(t_game *game);
 
 #endif
