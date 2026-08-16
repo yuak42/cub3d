@@ -16,6 +16,9 @@ int	render(t_game *game)
 {
 	(void) game;
 	ft_printf("Game is being rendered\n");
-
+	set_dir(game);
+	set_position(game);
+	printf("dir_x:%f\ndir_y:%f\n", game->player.dir_x, game->player.dir_y);
+	printf("x:%f\ny:%f\n", game->player.x, game->player.y);
 	return (0);
 }
