@@ -6,11 +6,15 @@
 /*   By: yuak <yuak@student.42istanbul.com.tr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/08/06 20:23:55 by yuak              #+#    #+#             */
-/*   Updated: 2026/08/17 08:15:37 by yuak             ###   ########.fr       */
+/*   Updated: 2026/08/17 12:14:28 by yuak             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "cub3d.h"
+
+int	is_map_in_end(char *cub);
+void	go_end_of_map(int fd);
+int	is_end_of_file(int fd);
 
 int check_input(int ac, char **av)
 {
@@ -22,5 +26,61 @@ int check_input(int ac, char **av)
 		return (1);
 	if (check_invalid_line(av[1]))
 		return (1);
+	if (!is_map_in_end(av[1]))
+		return (1);
 	return (0);
+}
+
+int	is_map_in_end(char *cub)
+{
+	int		fd;
+	char	*line;
+
+	fd = open(cub, O_RDONLY);
+	if (fd < 0)
+		return (perror("Error"), 1000);
+	line = get_next_line(fd);
+	while (line)
+	{
+		if (is_map_line(line))
+		{
+			go_end_of_map(fd);
+			if (!is_end_of_file(fd))
+				return (close(fd), free(line), 0);
+		}
+		free(line);
+		line = get_next_line(fd);
+	}
+	close(fd);
+	return (1);
+}
+
+void	go_end_of_map(int fd)
+{
+	char	*line;
+
+	line = get_next_line(fd);
+	while (line)
+	{
+		if (!ft_strncmp("\n", line, 2))
+			break ;	
+		free(line);
+		line = get_next_line(fd);
+	}
+	free(line);
+}
+
+int	is_end_of_file(int fd)
+{
+	char	*line;
+
+	line = get_next_line(fd);
+	while (line)
+	{
+		if (!ft_strncmp("\n", line, 2))
+			return (0);
+		free(line);
+		line = get_next_line(fd);
+	}
+	return (1);
 }
