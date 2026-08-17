@@ -6,7 +6,7 @@
 /*   By: yuak <yuak@student.42istanbul.com.tr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/08/17 08:14:50 by yuak              #+#    #+#             */
-/*   Updated: 2026/08/17 08:25:56 by yuak             ###   ########.fr       */
+/*   Updated: 2026/08/17 08:50:59 by yuak             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,21 +38,45 @@ int	check_invalid_line(char *cub)
 
 static int	is_invalid(char *line)
 {
-	if (ft_strncmp("\n", line, 2))
+	static int	l;
+
+	l++;
+	if (!ft_strncmp("\n", line, 2))
 		return (0);
-	else if (ft_strncmp("NO ", line, 3) || ft_strncmp("SO ", line, 3))
+	else if (!ft_strncmp("NO ", line, 3) || !ft_strncmp("SO ", line, 3))
 		return (0);
-	else if (ft_strncmp("WE ", line, 3) || ft_strncmp("EA ", line, 3))
+	else if (!ft_strncmp("WE ", line, 3) || !ft_strncmp("EA ", line, 3))
 		return (0);
-	else if (ft_strncmp("F ", line, 2) || ft_strncmp("C ", line, 2))
+	else if (!ft_strncmp("F ", line, 2) || !ft_strncmp("C ", line, 2))
 		return (0);
 	else if (check_map_line(line))
-		return (0);
-	return (1);
+		return (ft_printf("Error\nUnidentified line %d: %s", l - 1, line), 1);
+	return (ft_printf("undetected error\n"), 1);
 }
 
 static int	check_map_line(char *line)
 {
-	(void) line;
-	return (1);
+	int	i;
+
+	i = 0;
+	while (line[i])
+	{
+		if (line[i] == ' ')
+		{
+			i++;
+			continue;
+		}
+		if (line[i] == '1' || line[i] == '0' || line[i] == 'N')
+		{
+			i++;
+			continue;
+		}
+		if (line[i] == 'S' || line[i] == 'W' || line[i] == 'E')
+		{
+			i++;
+			continue;
+		}
+		return (1);
+	}
+	return (0);
 }
