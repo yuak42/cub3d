@@ -6,7 +6,7 @@
 /*   By: yuak <yuak@student.42istanbul.com.tr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/26 20:00:21 by yuak              #+#    #+#             */
-/*   Updated: 2026/08/14 16:38:23 by yuak             ###   ########.fr       */
+/*   Updated: 2026/08/17 08:25:44 by yuak             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,9 +35,10 @@ int 	get_texture_paths(char *cub, t_game *game);
 
 // Check Utils
 int		print_error(char *str);
+size_t	get_splitted_size(char **splitted);
 int		check_texture_paths(char *cub);
 int		check_colors(char *cub);
-size_t	get_splitted_size(char **splitted);
+int		check_invalid_line(char *cub);
 
 // free utils
 void	free_split(char **splitted);

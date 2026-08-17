@@ -6,7 +6,7 @@
 /*   By: yuak <yuak@student.42istanbul.com.tr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/08/06 20:23:55 by yuak              #+#    #+#             */
-/*   Updated: 2026/08/14 20:42:29 by yuak             ###   ########.fr       */
+/*   Updated: 2026/08/17 08:15:37 by yuak             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,6 +19,8 @@ int check_input(int ac, char **av)
 	if (check_texture_paths(av[1]))
 		return (1);
 	if (check_colors(av[1]))
+		return (1);
+	if (check_invalid_line(av[1]))
 		return (1);
 	return (0);
 }
