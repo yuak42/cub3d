@@ -1,39 +1,19 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   check_map.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: yuak <yuak@student.42istanbul.com.tr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/06/15 20:37:38 by yuak              #+#    #+#             */
-/*   Updated: 2026/08/18 10:31:32 by yuak             ###   ########.fr       */
+/*   Created: 2026/08/18 10:31:52 by yuak              #+#    #+#             */
+/*   Updated: 2026/08/18 10:33:20 by yuak             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "cub3d.h"
 
-static void print_result(t_game *game);
-
-int	main(int ac, char **av)
+int	check_map(t_game *game)
 {
-	t_game	*game;
-	(void) ac;
-	if (check_input(ac, av))
-		return (1); 
-	game = init_game(av[1]);
-	if (!game)
-		return (1);
-	if (check_map(game))
-		return (free_game(game), 1);
-	print_result(game);
-	render(game);
-	free_game(game);
+	(void) game;
 	return (0);
-}
-
-static void print_result(t_game *game)
-{
-	ft_printf("Game was parsed successfully\n");
-	print_map(game->map);
-	print_texture_paths(game);
 }

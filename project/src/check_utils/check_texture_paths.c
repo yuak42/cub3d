@@ -6,7 +6,7 @@
 /*   By: yuak <yuak@student.42istanbul.com.tr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/08/12 14:31:20 by yuak              #+#    #+#             */
-/*   Updated: 2026/08/18 10:29:58 by yuak             ###   ########.fr       */
+/*   Updated: 2026/08/18 10:38:21 by yuak             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -67,9 +67,11 @@ static int check_line(char *id, char *line, int *exist)
 	if (!splitted)
 		return (perror("Error"), 1);
 	if (!ft_strncmp(id, splitted[0], ft_strlen(id) + 1))
+	{
 		(*exist)++;
-	if (get_splitted_size(splitted) != 2)
-		return (ft_printf("line wrong %s", line), free_split(splitted), 1);
+		if (get_splitted_size(splitted) != 2)
+			return (ft_printf("line wrong %s", line), free_split(splitted), 1);
+	}
 	if (*exist > 1)
 	{
 		print_error("Error\nThere are more than 1 path identifier\n");
