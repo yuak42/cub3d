@@ -12,13 +12,11 @@
 
 #include "cub3d.h"
 
-static char get_spawn(t_game *game);
-
 void	set_dir(t_game *game)
 {
 	char dir;
 
-	dir = get_spawn(game);
+	dir = get_spawn_dir(game);
 	if (dir == '0')
 		return ;
 	if (dir == 'N')
@@ -43,24 +41,5 @@ void	set_dir(t_game *game)
 	}
 }
 
-static char get_spawn(t_game *game)
-{
-	char	**grid;
-	char	*row;
-
-	grid = game->map->grid;
-	while(*grid)
-	{
-		row = *grid;
-		while(*row)
-		{
-			if (*row== 'N' || *row == 'S' || *row == 'E' || *row == 'W')
-				return (*row);
-			row++;
-		}
-		grid++;
-	}
-	return '0';
-}
 
 

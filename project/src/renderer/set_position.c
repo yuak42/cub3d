@@ -28,8 +28,8 @@ void	set_position(t_game *game)
 		{
 			if (grid[i][j]== 'N' || grid[i][j] == 'S' || grid[i][j]== 'E' || grid[i][j] == 'W')
 			{
-				game->player.x = j;
-				game->player.y = i;
+				game->player.x = j+ 0.5;
+				game->player.y = i + 0.5;
 				return ;
 			}
 			j++;

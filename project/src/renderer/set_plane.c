@@ -1,25 +1,24 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   byaprak.h                                          :+:      :+:    :+:   */
+/*   set_plane.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: yuak <yuak@student.42istanbul.com.tr>      +#+  +:+       +#+        */
+/*   By: byaprak <byaprak@student.42istanbul.com.tr>  #+#  +:+       +#+      */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/06/26 20:00:24 by yuak              #+#    #+#             */
-/*   Updated: 2026/08/06 11:57:46 by yuak             ###   ########.fr       */
+/*   Created: 2026-08-17 21:36:03 by byaprak           #+#    #+#             */
+/*   Updated: 2026-08-17 21:36:03 by byaprak          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include "cub3d.h"
 
-typedef struct s_renderArgs
+void set_plane(t_game *game, t_Rargs *args)
 {
-	double	plane_x;
-	double	plane_y;
-	double	ray_dirx;
-	double	ray_diry;
-} t_Rargs;
+	char dir;
 
-void	set_dir(t_game *game);
-void	set_position(t_game *game);
-char	get_spawn_dir(t_game *game);
-void	set_plane(t_game *game, t_Rargs *args);
+	dir = get_spawn_dir(game);
+	if (dir == '0')
+		return ;
+	args->plane_x = -1 * (game->player.dir_y) * 0.66;
+	args->plane_y = game->player.dir_x * 0.66;
+}
