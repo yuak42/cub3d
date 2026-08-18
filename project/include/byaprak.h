@@ -10,5 +10,16 @@
 /*                                                                            */
 /* ************************************************************************** */
 
+
+typedef struct s_renderArgs
+{
+	double	plane_x;
+	double	plane_y;
+	double	ray_dirx;
+	double	ray_diry;
+} t_Rargs;
+
 void	set_dir(t_game *game);
 void	set_position(t_game *game);
+char	get_spawn_dir(t_game *game);
+void	set_plane(t_game *game, t_Rargs *args);
