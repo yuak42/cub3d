@@ -6,7 +6,7 @@
 /*   By: yuak <yuak@student.42istanbul.com.tr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/08/17 08:14:50 by yuak              #+#    #+#             */
-/*   Updated: 2026/08/17 11:55:55 by yuak             ###   ########.fr       */
+/*   Updated: 2026/08/18 10:08:00 by yuak             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,8 +50,8 @@ static int	is_invalid(char *line)
 	else if (!ft_strncmp("F ", line, 2) || !ft_strncmp("C ", line, 2))
 		return (0);
 	else if (check_map_line(line))
-		return (ft_printf("Error\nUnidentified line %d: %s", l - 1, line), 1);
-	return (ft_printf("undetected error\n"), 1);
+		return (0);
+	return (ft_printf("Error\nUnidentified line %d: %send", l - 1, line), 1);
 }
 
 static int	check_map_line(char *line)
@@ -61,7 +61,7 @@ static int	check_map_line(char *line)
 	i = 0;
 	while (line[i])
 	{
-		if (line[i] == ' ')
+		if (line[i] == ' ' || line[i] == '\n')
 		{
 			i++;
 			continue;
@@ -76,7 +76,7 @@ static int	check_map_line(char *line)
 			i++;
 			continue;
 		}
-		return (1);
+		return (0);
 	}
-	return (0);
+	return (1);
 }
