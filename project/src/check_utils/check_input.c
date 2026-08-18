@@ -6,15 +6,15 @@
 /*   By: yuak <yuak@student.42istanbul.com.tr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/08/06 20:23:55 by yuak              #+#    #+#             */
-/*   Updated: 2026/08/17 12:14:28 by yuak             ###   ########.fr       */
+/*   Updated: 2026/08/18 10:21:34 by yuak             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "cub3d.h"
 
-int	is_map_in_end(char *cub);
+int		is_map_position_true(char *cub);
 void	go_end_of_map(int fd);
-int	is_end_of_file(int fd);
+int		is_end_of_file(int fd);
 
 int check_input(int ac, char **av)
 {
@@ -26,12 +26,12 @@ int check_input(int ac, char **av)
 		return (1);
 	if (check_invalid_line(av[1]))
 		return (1);
-	if (!is_map_in_end(av[1]))
-		return (1);
+	if (!is_map_position_true(av[1]))
+		return (print_error("Error\nMap position is wrong!"), 1);
 	return (0);
 }
 
-int	is_map_in_end(char *cub)
+int	is_map_position_true(char *cub)
 {
 	int		fd;
 	char	*line;
@@ -75,12 +75,12 @@ int	is_end_of_file(int fd)
 	char	*line;
 
 	line = get_next_line(fd);
-	while (line)
+	while (line && !ft_strncmp("\n", line, 2))
 	{
-		if (!ft_strncmp("\n", line, 2))
-			return (0);
 		free(line);
 		line = get_next_line(fd);
 	}
-	return (1);
+	if (!line)
+		return (1);
+	return (0);
 }
