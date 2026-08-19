@@ -1,30 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   init_game.c                                        :+:      :+:    :+:   */
+/*   get_splitted_size.c                                :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: yuak <yuak@student.42istanbul.com.tr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/06/27 22:26:15 by yuak              #+#    #+#             */
-/*   Updated: 2026/08/19 10:17:38 by yuak             ###   ########.fr       */
+/*   Created: 2026/08/14 16:32:15 by yuak              #+#    #+#             */
+/*   Updated: 2026/08/14 16:33:34 by yuak             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "cub3d.h"
 
-t_game	*init_game(char *cub)
+size_t	get_splitted_size(char **splitted)
 {
-	t_game	*game;
+	size_t	i;
 
-	game = (t_game *) ft_calloc(1, sizeof(t_game));
-	if (!game)
-		return (perror("Error"), NULL);
-	game->map = extract_map(cub);
-	if (!game->map)
-		return (free(game), NULL);
-	if (get_texture_paths(cub, game))
-		return (free_map(game->map), free(game), NULL);
-	if (get_player_position(game))
-		return (free_game(game), NULL);
-	return (game);
+	i = 0;
+	while (*splitted)
+	{
+		i++;
+		splitted++;	
+	}
+	return (i);
 }

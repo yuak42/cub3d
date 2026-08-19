@@ -6,7 +6,7 @@
 /*   By: yuak <yuak@student.42istanbul.com.tr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/15 20:37:38 by yuak              #+#    #+#             */
-/*   Updated: 2026/08/14 13:01:20 by yuak             ###   ########.fr       */
+/*   Updated: 2026/08/19 10:12:07 by yuak             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,6 +23,8 @@ int	main(int ac, char **av)
 	game = init_game(av[1]);
 	if (!game)
 		return (1);
+	if (check_map(game))
+		return (free_game(game), 1);
 	print_result(game);
 	render(game);
 	free_game(game);
@@ -34,4 +36,7 @@ static void print_result(t_game *game)
 	ft_printf("Game was parsed successfully\n");
 	print_map(game->map);
 	print_texture_paths(game);
+	print_player_info(game);
 }
+
+
