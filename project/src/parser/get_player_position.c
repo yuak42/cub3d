@@ -6,7 +6,7 @@
 /*   By: yuak <yuak@student.42istanbul.com.tr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/08/19 10:15:05 by yuak              #+#    #+#             */
-/*   Updated: 2026/08/19 10:40:13 by yuak             ###   ########.fr       */
+/*   Updated: 2026/08/19 10:41:12 by yuak             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,10 +24,8 @@ int	get_player_position(t_game *game)
 	y = 0;
 	while (y < (int) game->map->height)
 	{
-		ft_printf("line %d is checked, char: %cend\n", y, game->map->grid[y][x]);
 		while (x < (int) ft_strlen(game->map->grid[y]))
 		{
-			ft_printf("checking position (%d, %d)\n", x, y);
 			if (is_starting_position(game->map->grid[y][x]))
 				return (assign_player_info(game, x, y), 0);
 			x++;
