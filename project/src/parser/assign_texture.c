@@ -6,7 +6,7 @@
 /*   By: yuak <yuak@student.42istanbul.com.tr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/08/06 12:43:58 by yuak              #+#    #+#             */
-/*   Updated: 2026/08/14 13:28:10 by yuak             ###   ########.fr       */
+/*   Updated: 2026/08/14 16:03:48 by yuak             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ int assign_texture(t_game *game, char *line)
 	char	*trimmed;
 
 	trimmed = ft_strtrim(line, "\n");
-	if (!line)
+	if (!trimmed)
 		return (perror("Error"), 1);
 	splitted = ft_split(trimmed, ' ');
 	if (!splitted)
