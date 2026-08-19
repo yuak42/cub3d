@@ -6,7 +6,7 @@
 /*   By: yuak <yuak@student.42istanbul.com.tr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/08/19 10:15:05 by yuak              #+#    #+#             */
-/*   Updated: 2026/08/19 10:41:12 by yuak             ###   ########.fr       */
+/*   Updated: 2026/08/19 19:24:09 by yuak             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,12 +50,12 @@ static void	assign_player_info(t_game *game, int x, int y)
 	if (game->map->grid[y][x] == 'N')
 	{
 		game->player.dir_x = 0;
-		game->player.dir_y = 1;
+		game->player.dir_y = -1;
 	}
 	else if (game->map->grid[y][x] == 'S')
 	{
 		game->player.dir_x = 0;
-		game->player.dir_y = -1;
+		game->player.dir_y = 1;
 	}
 	else if (game->map->grid[y][x] == 'W')
 	{
