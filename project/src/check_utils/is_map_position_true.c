@@ -6,7 +6,7 @@
 /*   By: yuak <yuak@student.42istanbul.com.tr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/08/18 10:23:03 by yuak              #+#    #+#             */
-/*   Updated: 2026/08/18 10:23:36 by yuak             ###   ########.fr       */
+/*   Updated: 2026/08/19 09:25:08 by yuak             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -66,5 +66,5 @@ static int	is_end_of_file(int fd)
 	}
 	if (!line)
 		return (1);
-	return (0);
+	return (free(line), 0);
 }
