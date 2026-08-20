@@ -6,7 +6,7 @@
 /*   By: yuak <yuak@student.42istanbul.com.tr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/08/20 10:10:57 by yuak              #+#    #+#             */
-/*   Updated: 2026/08/20 10:43:09 by yuak             ###   ########.fr       */
+/*   Updated: 2026/08/20 13:49:42 by yuak             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@ static int	fill(char **grid, int x, int y);
 int	flood_fill(char **grid, t_player player)
 {
 	if (fill(grid, player.x, player.y))
-		return (1);
+		return (print_error("Error\nMap is not closed\n"), 1);
 	return (0);
 }
 
