@@ -6,7 +6,7 @@
 /*   By: yuak <yuak@student.42istanbul.com.tr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/26 20:00:21 by yuak              #+#    #+#             */
-/*   Updated: 2026/08/20 10:11:56 by yuak             ###   ########.fr       */
+/*   Updated: 2026/08/20 10:38:37 by yuak             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,12 +43,13 @@ int		is_map_position_true(char *cub);
 int		get_player_position(t_game *game);
 int		check_map(t_game *game);
 char	**get_grid_copy(char **grid);
-int		flood_fill(char **grid);
+int		flood_fill(char **grid, t_player player);
 
 
 // free utils
 void	free_split(char **splitted);
 void	free_map(t_map *map);
+void	free_grid(char **grid);
 void	free_texture(t_texture texture);
 void	free_game(t_game *game);
 

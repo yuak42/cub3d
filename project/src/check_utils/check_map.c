@@ -6,7 +6,7 @@
 /*   By: yuak <yuak@student.42istanbul.com.tr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/08/18 10:31:52 by yuak              #+#    #+#             */
-/*   Updated: 2026/08/20 10:11:33 by yuak             ###   ########.fr       */
+/*   Updated: 2026/08/20 10:41:21 by yuak             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,8 @@ int	check_map(t_game *game)
 		return (1);
 	// ft_printf("--------------------------\n-----------------------------\nChecking\n");
 	// print_grid(grid);
-	if (flood_fill(grid))
-		return (1);
+	if (flood_fill(grid, game->player))
+		return (free_grid(grid), 1);
+	free_grid(grid);
 	return (0);
 }
