@@ -6,7 +6,7 @@
 /*   By: yuak <yuak@student.42istanbul.com.tr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/08/06 20:23:55 by yuak              #+#    #+#             */
-/*   Updated: 2026/08/18 10:24:01 by yuak             ###   ########.fr       */
+/*   Updated: 2026/08/20 09:51:41 by yuak             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,5 +24,6 @@ int check_input(int ac, char **av)
 		return (1);
 	if (!is_map_position_true(av[1]))
 		return (print_error("Error\nMap position is wrong!"), 1);
+	// check only one N S or E W ...
 	return (0);
 }

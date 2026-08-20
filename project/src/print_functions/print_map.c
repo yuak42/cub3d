@@ -1,6 +1,5 @@
 #include "cub3d.h"
 
-static void print_grid(char **grid);
 
 void print_map(t_map *map)
 {
@@ -11,7 +10,7 @@ void print_map(t_map *map)
 	ft_printf("-----------------------------------------------------\n\n");
 }
 
-static void print_grid(char **grid)
+void print_grid(char **grid)
 {
 	while (*grid)
 	{

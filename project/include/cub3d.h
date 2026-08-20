@@ -6,7 +6,7 @@
 /*   By: yuak <yuak@student.42istanbul.com.tr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/26 20:00:21 by yuak              #+#    #+#             */
-/*   Updated: 2026/08/19 10:17:22 by yuak             ###   ########.fr       */
+/*   Updated: 2026/08/20 10:09:03 by yuak             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,6 +42,7 @@ int		check_invalid_line(char *cub);
 int		is_map_position_true(char *cub);
 int		get_player_position(t_game *game);
 int		check_map(t_game *game);
+char	**get_grid_copy(char **grid);
 
 
 // free utils
@@ -57,5 +58,6 @@ int		render(t_game *game);
 void 	print_map(t_map *map);
 void	print_texture_paths(t_game *game);
 void	print_player_info(t_game *game);
+void 	print_grid(char **grid);
 
 #endif
