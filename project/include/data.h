@@ -6,7 +6,7 @@
 /*   By: yuak <yuak@student.42istanbul.com.tr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/27 22:17:12 by yuak              #+#    #+#             */
-/*   Updated: 2026/08/14 16:07:39 by yuak             ###   ########.fr       */
+/*   Updated: 2026/08/20 13:59:29 by yuak             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,8 +44,6 @@ typedef struct s_texture
 	t_color	f;
 	t_color	c;
 } t_texture;
-
-
 
 typedef struct s_game
 {
