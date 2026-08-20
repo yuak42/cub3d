@@ -6,7 +6,7 @@
 /*   By: yuak <yuak@student.42istanbul.com.tr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/08/20 10:10:57 by yuak              #+#    #+#             */
-/*   Updated: 2026/08/20 13:49:42 by yuak             ###   ########.fr       */
+/*   Updated: 2026/08/20 13:51:30 by yuak             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,8 +32,8 @@ static int	fill(char **grid, int x, int y)
 	if (grid[y][x] == '1')
 		return (0);
 	grid[y][x] = '1';
-	ft_printf("-----------------------------------\nGrid:\n");
-	print_grid(grid);
+	// ft_printf("-----------------------------------\nGrid:\n");
+	// print_grid(grid);
 	if (fill(grid, x + 1, y))
 		return (1);
 	if (fill(grid, x, y + 1))
