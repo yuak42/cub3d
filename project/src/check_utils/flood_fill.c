@@ -1,27 +1,19 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   check_map.c                                        :+:      :+:    :+:   */
+/*   flood_fill.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: yuak <yuak@student.42istanbul.com.tr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/08/18 10:31:52 by yuak              #+#    #+#             */
-/*   Updated: 2026/08/20 10:11:33 by yuak             ###   ########.fr       */
+/*   Created: 2026/08/20 10:10:57 by yuak              #+#    #+#             */
+/*   Updated: 2026/08/20 10:11:14 by yuak             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "cub3d.h"
 
-int	check_map(t_game *game)
+int	flood_fill(char **grid)
 {
-	char	**grid;
-
-	grid = get_grid_copy(game->map->grid);
-	if (!grid)
-		return (1);
-	// ft_printf("--------------------------\n-----------------------------\nChecking\n");
-	// print_grid(grid);
-	if (flood_fill(grid))
-		return (1);
+	(void) grid;
 	return (0);
 }
