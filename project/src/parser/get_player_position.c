@@ -6,7 +6,7 @@
 /*   By: yuak <yuak@student.42istanbul.com.tr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/08/19 10:15:05 by yuak              #+#    #+#             */
-/*   Updated: 2026/08/19 19:24:09 by yuak             ###   ########.fr       */
+/*   Updated: 2026/08/21 15:15:35 by yuak             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,12 @@ int	get_player_position(t_game *game)
 		while (x < (int) ft_strlen(game->map->grid[y]))
 		{
 			if (is_starting_position(game->map->grid[y][x]))
-				return (assign_player_info(game, x, y), 0);
+			{
+				assign_player_info(game, x, y);
+				printf("Final player position: (%f,%f)\n", game->player.x, game->player.y);
+				printf("Final player position: (%f,%f)\n", game->player.dir_x, game->player.dir_y);
+				return (0);
+			}
 			x++;
 		}
 		x = 0;
