@@ -12,7 +12,7 @@
 
 #include "cub3d.h"
 
-void	set_raydir(t_game *game, t_Rargs *args, int x)
+void	set_raydir(t_game *game, t_render *args, int width);
 {
 	int	camerax;
 
