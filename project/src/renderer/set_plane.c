@@ -12,7 +12,7 @@
 
 #include "cub3d.h"
 
-void set_plane(t_game *game, t_Rargs *args)
+void	set_plane(t_game *game, t_render *args)
 {
 	char dir;
 
