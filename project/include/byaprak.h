@@ -17,9 +17,17 @@ typedef struct s_renderArgs
 	double	plane_y;
 	double	ray_dirx;
 	double	ray_diry;
-} t_Rargs;
+} t_render;
+
+typedef struct s_window
+{
+	void	*mlx_ptr;
+} t_win;
+
 
 void	set_dir(t_game *game);
 void	set_position(t_game *game);
 char	get_spawn_dir(t_game *game);
-void	set_plane(t_game *game, t_Rargs *args);
+void	set_plane(t_game *game, t_render *args);
+void	set_raydir(t_game *game, t_render *args, int width);
+int		init_window(t_win *s_window);
