@@ -12,15 +12,15 @@
 
 #include "cub3d.h"
 
-int	init_window(t_win *s_window)
+int	init_window(t_win *window)
 {
 	void	*window;
 
-	window = mlx_init();
-	if (!window)
+	window->mlx_ptr = mlx_init();
+	if (!(window->mlx_ptr))
 	{
 		printf("mlx_init error\n");
-		return (NULL);
-	}
-	return (0);
+		return (0);
+	} 
+	return (1);
 }

@@ -22,6 +22,8 @@ typedef struct s_renderArgs
 typedef struct s_window
 {
 	void	*mlx_ptr;
+	int		w;
+	int		h;
 } t_win;
 
 
