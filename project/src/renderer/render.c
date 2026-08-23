@@ -26,7 +26,7 @@ int	render(t_game *game)
 		return (0);
 	set_position(game);
 	set_plane(game, args);
-	set_raydir();
+	set_raydir(game, args, window->w);
 	printf("dir_x:%f\ndir_y:%f\n", game->player.dir_x, game->player.dir_y);
 	printf("x:%f\ny:%f\n", game->player.x, game->player.y);
 	printf("plane_x:%f\nplane_y:%f\n", args->plane_x, args->plane_y);
