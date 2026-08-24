@@ -14,8 +14,6 @@
 
 int	init_window(t_win *window)
 {
-	void	*window;
-
 	window->mlx_ptr = mlx_init();
 	window->h = 720;
 	window->w = 1280;
