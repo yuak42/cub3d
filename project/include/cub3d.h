@@ -6,7 +6,7 @@
 /*   By: yuak <yuak@student.42istanbul.com.tr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/26 20:00:21 by yuak              #+#    #+#             */
-/*   Updated: 2026/08/24 09:58:57 by yuak             ###   ########.fr       */
+/*   Updated: 2026/08/24 10:05:27 by yuak             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,6 +39,7 @@ int		check_input(int ac, char **av);
 int		check_texture_paths(char *cub);
 int		check_colors(char *cub);
 int		check_invalid_line(char *cub);
+int		is_there_map(char *cub);
 int		is_map_position_true(char *cub);
 int		get_player_position(t_game *game);
 int		check_map(t_game *game);
