@@ -6,7 +6,7 @@
 /*   By: yuak <yuak@student.42istanbul.com.tr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/08/20 14:22:29 by yuak              #+#    #+#             */
-/*   Updated: 2026/08/24 09:45:19 by yuak             ###   ########.fr       */
+/*   Updated: 2026/08/24 09:58:45 by yuak             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 static int	get_start_position_number(char *line, int fd);
 
-int	is_there_unique_start_position(char *cub)
+int	is_start_position_correct(char *cub)
 {
 	int		fd;
 	char	*line;
@@ -28,9 +28,9 @@ int	is_there_unique_start_position(char *cub)
 		if (is_map_line(line))
 		{
 			if (get_start_position_number(line, fd) != 1)
-				return (close(fd), 1);
-			else
 				return (close(fd), 0);
+			else
+				return (close(fd), 1);
 		}
 		free(line);
 		line = get_next_line(fd);
