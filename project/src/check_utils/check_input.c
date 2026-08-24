@@ -6,7 +6,7 @@
 /*   By: yuak <yuak@student.42istanbul.com.tr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/08/06 20:23:55 by yuak              #+#    #+#             */
-/*   Updated: 2026/08/24 10:04:23 by yuak             ###   ########.fr       */
+/*   Updated: 2026/08/24 10:05:07 by yuak             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,23 +33,3 @@ int check_input(int ac, char **av)
 	return (0);
 }
 
-int	is_there_map(char *cub)
-{
-	int		fd;
-	char	*line;
-
-	fd = open(cub, O_RDONLY);
-	if (fd < 0)
-		return (perror("Error"), 1);
-	line = get_next_line(fd);
-	while (line)
-	{
-		if (is_map_line(line))
-			return (free(line), close(fd), 1);
-		free(line);
-		line = get_next_line(fd);
-	}
-	print_error("Error\nThere is no map\n");
-	close(fd);
-	return (0);
-}
