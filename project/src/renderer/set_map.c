@@ -13,6 +13,7 @@
 #include "cub3d.h"
 
 static void	get_sidedist(t_render *args, t_game *game);
+static void get_stepx(t_render *args);
 
 void	set_map(t_render *args, t_game *game)
 {
