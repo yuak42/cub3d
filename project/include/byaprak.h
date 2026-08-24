@@ -17,6 +17,14 @@ typedef struct s_renderArgs
 	double	plane_y;
 	double	ray_dirx;
 	double	ray_diry;
+	int		mapx;
+	int		mapy;
+	double	deltadistx;
+	double	deltadisty;
+	int		stepx;
+	int		stepy;
+	double	sidedistx;
+	double	sidedisty;
 } t_render;
 
 typedef struct s_window
@@ -33,3 +41,4 @@ char	get_spawn_dir(t_game *game);
 void	set_plane(t_game *game, t_render *args);
 void	set_raydir(t_game *game, t_render *args, int width);
 int		init_window(t_win *s_window);
+void	set_map(t_render *args, t_game *game);
