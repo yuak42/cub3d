@@ -6,7 +6,7 @@
 /*   By: yuak <yuak@student.42istanbul.com.tr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/15 20:37:38 by yuak              #+#    #+#             */
-/*   Updated: 2026/08/21 15:12:50 by yuak             ###   ########.fr       */
+/*   Updated: 2026/08/24 08:14:30 by yuak             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,5 +37,4 @@ static void print_result(t_game *game)
 	print_map(game->map);
 	print_texture_paths(game);
 	print_player_info(game);
-	ft_printf("******************************\n******************************\nA change has been made in print function\n");
 }
