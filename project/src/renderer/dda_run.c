@@ -12,28 +12,43 @@
 
 #include "cub3d.h"
 
+static int is_out_of_bounds(t_render *args, t_map *map);
+
 void	run_dda(t_render *args, t_map *map)
 {
 	int	hit;
 	int	side;
 
-	hit = 1;
+	hit = 0;
 	while (hit == 0)
 	{
 		if (args->sidedistx < args->sidedisty)
 		{
-			args->sidedistx += args->deltadisty;
+			args->sidedistx += args->deltadistx;
 			args->mapx +=args->stepx;
 			side = 0;
 		}
 		else
 		{
-			args->sidedisty += args->deltadistx;
+			args->sidedisty += args->deltadisty;
 			args->mapy +=args->stepy;
 			side = 1;
 		}
-		if (map->grid[args->mapx][args->mapy] == '1')
+		if (!is_out_of_bounds(args, map))
+			break;
+		if (map->grid[args->mapy][args->mapx] == '1')
 			hit = 1;
 	}
-	printf("map_x:%d\nmap_y:%dside:%d\n", args->mapx, args->mapy, side);
+	if (hit == 1)
+		printf("map_x:%d map_y:%d side:%d\n", args->mapx, args->mapy, side);
+}
+
+static int is_out_of_bounds(t_render *args, t_map *map)
+{
+	if (args->mapx >= 0 && args->mapx < (int) map->width)
+	{
+		if (args->mapy >= 0 && args->mapy < (int) map->height)
+			return (1);
+	}
+	return (0);
 }
