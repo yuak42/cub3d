@@ -14,7 +14,7 @@
 
 int	render(t_game *game)
 {
-	(void) game;
+	//(void) game;
 	t_render *args;
 	t_win	*window;
 
@@ -24,11 +24,14 @@ int	render(t_game *game)
 	// set_dir(game);
 	if (!init_window(window))
 		return (0);
-	set_position(game);
-	set_plane(game, args);
-	set_raydir(game, args, window->w);
+	get_raycast_arg(game, args, window);
 	printf("dir_x:%f\ndir_y:%f\n", game->player.dir_x, game->player.dir_y);
 	printf("x:%f\ny:%f\n", game->player.x, game->player.y);
 	printf("plane_x:%f\nplane_y:%f\n", args->plane_x, args->plane_y);
+	printf("ray_dirx:%f\nray_diry:%f\n", args->ray_dirx, args->ray_diry);
+	printf("mapx:%d\nmapy:%d\n", args->mapx, args->mapy);
+	printf("deltadistx%f\ndeltadisty:%f\n", args->deltadistx, args->deltadisty);
+	printf("stepx:%d\nstepy:%d\n", args->stepx, args->stepy);
+	printf("sidedistx:%f\nsidedisty:%f\n", args->sidedistx, args->sidedisty);
 	return (0);
 }
