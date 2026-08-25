@@ -12,11 +12,11 @@
 
 #include "cub3d.h"
 
-void	set_raydir(t_game *game, t_render *args, int width)
+void	set_raydir(t_game *game, t_render *args, int width, int x)
 {
 	int	camerax;
 
-	camerax = ((2 * width) / game->map->width) - 1; // width ekran boyutu olacak. 
+	camerax = ((2 * x) / width) - 1; // width ekran boyutu olacak. 
 	args->ray_dirx = game->player.dir_x + args->plane_x * camerax;
 	args->ray_diry = game->player.dir_y + args->plane_y * camerax;
 }
