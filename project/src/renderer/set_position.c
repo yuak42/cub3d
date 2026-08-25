@@ -3,7 +3,7 @@
 /*                                                        :::      ::::::::   */
 /*   get_position.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: byaprak <byaprak@student.42istanbul.com.tr>  #+#  +:+       +#+        */
+/*   By: byaprak <byaprak@student.42istanbul.com.tr>  #+#  +:+       +#+      */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026-08-16 11:22:39 by byaprak           #+#    #+#             */
 /*   Updated: 2026-08-16 11:22:39 by byaprak          ###   ########.fr       */
