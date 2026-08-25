@@ -44,11 +44,11 @@ static void	get_sidedist(t_render *args, t_game *game)
 	if (args->stepx == -1)
 		args->sidedistx = (game->player.x - args->mapx) * args->deltadistx;
 	else if (args->stepx == 1)
-		args->sidedistx = (game->player.x - args->mapx) * args->deltadistx;
+		args->sidedistx = (args->mapx + 1 - game->player.x) * args->deltadistx;
 	if (args->stepy == -1)
 		args->sidedisty = (game->player.y - args->mapy) * args->deltadisty;
 	else if (args->stepy == 1)
-		args->sidedisty = (game->player.y - args->mapy) * args->deltadisty;
+		args->sidedisty = (args->mapy + 1 - game->player.y) * args->deltadisty;
 }
 
 static void get_stepx(t_render *args)
