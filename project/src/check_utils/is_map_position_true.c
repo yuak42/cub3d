@@ -6,7 +6,7 @@
 /*   By: yuak <yuak@student.42istanbul.com.tr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/08/18 10:23:03 by yuak              #+#    #+#             */
-/*   Updated: 2026/08/24 10:08:55 by yuak             ###   ########.fr       */
+/*   Updated: 2026/08/26 13:17:35 by yuak             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,14 +29,14 @@ int	is_map_position_true(char *cub)
 		if (is_map_line(line))
 		{
 			go_end_of_map(fd);
-			if (!is_end_of_file(fd))
-				return (close(fd), free(line), 0);
+			if (is_end_of_file(fd))
+				return (close(fd), free(line), 1);
 		}
 		free(line);
 		line = get_next_line(fd);
 	}
 	print_error("Error\nMap position is wrong!");
-	return (close(fd), 1);
+	return (close(fd), 0);
 }
 
 static void	go_end_of_map(int fd)
@@ -46,7 +46,7 @@ static void	go_end_of_map(int fd)
 	line = get_next_line(fd);
 	while (line)
 	{
-		if (!ft_strncmp("\n", line, 2))
+		if (!is_map_line(line))
 			break ;	
 		free(line);
 		line = get_next_line(fd);
