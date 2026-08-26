@@ -6,7 +6,7 @@
 /*   By: yuak <yuak@student.42istanbul.com.tr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/15 20:37:38 by yuak              #+#    #+#             */
-/*   Updated: 2026/08/21 15:12:50 by yuak             ###   ########.fr       */
+/*   Updated: 2026/08/26 21:04:13 by yuak             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@ static void print_result(t_game *game);
 int	main(int ac, char **av)
 {
 	t_game	*game;
-	(void) ac;
+
 	if (check_input(ac, av))
 		return (1); 
 	game = init_game(av[1]);
@@ -33,9 +33,8 @@ int	main(int ac, char **av)
 
 static void print_result(t_game *game)
 {
-	ft_printf("Game was parsed successfully\n");
+	printf("Game was parsed successfully\n");
 	print_map(game->map);
 	print_texture_paths(game);
 	print_player_info(game);
-	ft_printf("******************************\n******************************\nA change has been made in print function\n");
 }

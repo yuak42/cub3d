@@ -1,21 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   free_game.c                                        :+:      :+:    :+:   */
+/*   is_map_line.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: yuak <yuak@student.42istanbul.com.tr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/08/13 08:24:00 by yuak              #+#    #+#             */
-/*   Updated: 2026/08/26 17:45:43 by yuak             ###   ########.fr       */
+/*   Created: 2026/08/26 13:18:37 by yuak              #+#    #+#             */
+/*   Updated: 2026/08/26 17:36:26 by yuak             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "cub3d.h"
 
-void	free_game(t_game *game)
+int is_map_line(char *line)
 {
-	free_texture(game->texture);
-	free_map(game->map);
-	free(game);
-	get_next_line(-1);
+	if (!ft_strncmp(line, "NO ", 3))
+		return (0);
+	if (!ft_strncmp(line, "SO ", 3))
+		return (0);
+	if (!ft_strncmp(line, "WE ", 3))
+		return (0);
+	if (!ft_strncmp(line, "EA ", 3))
+		return (0);
+	if (!ft_strncmp(line, "F ", 2))
+		return (0);
+	if (!ft_strncmp(line, "C ", 2))
+		return (0);
+	if (line[0] == '\n')
+		return (0);
+	return (1);
 }
