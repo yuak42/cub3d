@@ -11,7 +11,7 @@
 /* ************************************************************************** */
 
 
-typedef struct s_renderArgs
+typedef struct s_renderargs
 {
 	double	plane_x;
 	double	plane_y;
@@ -25,6 +25,7 @@ typedef struct s_renderArgs
 	int		stepy;
 	double	sidedistx;
 	double	sidedisty;
+	t_size	size;
 } t_render;
 
 typedef struct s_window
@@ -33,6 +34,17 @@ typedef struct s_window
 	int		w;
 	int		h;
 } t_win;
+
+typedef struct s_put_size
+{
+	double	perpwalldist;
+	int		lineheight;
+	int		drawend;
+	int		drawstart;
+	double	wall_x;
+	int		tex_x;
+	int		side;
+} t_size;
 
 
 void	set_dir(t_game *game);
@@ -43,4 +55,4 @@ void	set_raydir(t_game *game, t_render *args, double width, double x);
 int		init_window(t_win *s_window);
 void	set_map(t_render *args, t_game *game);
 void	get_raycast_arg(t_game *game, t_render *args, t_win *window, int x);
-void	run_dda(t_render *args, t_map *map);
+int		run_dda(t_render *args, t_map *map);
