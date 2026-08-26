@@ -6,7 +6,7 @@
 /*   By: yuak <yuak@student.42istanbul.com.tr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/08/06 11:56:45 by yuak              #+#    #+#             */
-/*   Updated: 2026/08/26 18:00:46 by yuak             ###   ########.fr       */
+/*   Updated: 2026/08/26 18:09:39 by yuak             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -103,19 +103,27 @@ int	assign_grid(t_map *map, char *cub)
 static int	deal_line(char *line, t_map *map, char ***grid)
 {
 	char	*row;
+	int		i;
 
+	i = 0;
 	if (is_map_line(line))
 	{
-		row = ft_strtrim(line, "\n");
-		free(line);
+		row = (char *) ft_calloc((map->width + 1), sizeof(char));
 		if (!row)
 			return (1);
-		if (map->width < ft_strlen(row))
-			map->width = ft_strlen(row);
+		while (line[i] && line[i] != '\n')
+		{
+			row[i] = line[i];
+			i++;
+		}
+		while (i < (int) map->width)
+		{
+			row[i] = ' ';
+			i++;
+		}
 		**grid = row;
 		(*grid)++;
 	}
-	else
-		free(line);
+	free(line);
 	return (0);
 }
