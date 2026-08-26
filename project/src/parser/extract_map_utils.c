@@ -6,13 +6,13 @@
 /*   By: yuak <yuak@student.42istanbul.com.tr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/08/06 11:56:45 by yuak              #+#    #+#             */
-/*   Updated: 2026/08/26 17:44:46 by yuak             ###   ########.fr       */
+/*   Updated: 2026/08/26 18:00:46 by yuak             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "cub3d.h"
 
-size_t	get_map_size(char *cub)
+size_t	get_map_height(char *cub)
 {
 	int		fd;
 	size_t	size;
@@ -35,19 +35,43 @@ size_t	get_map_size(char *cub)
 	return (size);
 }
 
+size_t	get_map_width(char *cub)
+{
+	int		fd;
+	char	*line;
+	size_t	size;
+	
+	size = 0;
+	get_next_line(-1);
+	fd = open(cub, O_RDONLY);
+	if (fd < 0)
+		return (0);
+	line = get_next_line(fd); // get_next_line da çalışmayabilir buna bak strerror ile mi ne
+	while (line)
+	{
+		if (is_map_line(line))
+		{
+			if (size < ft_strlen(line))
+				size = ft_strlen(line);
+		}
+		free(line);
+		line = get_next_line(fd);
+	}
+	return (size - 1);
+}
+
 t_map	*init_map(char *cub)
 {
 	t_map	*map;
-	size_t	size;
 
 	map = (t_map *) ft_calloc(1, sizeof(t_map));
 	if (!map)
 		return (perror("Error"), NULL);
-	size = get_map_size(cub);
-	if (size == 0)
+	map->height = get_map_height(cub);
+	map->width = get_map_width(cub);
+	if (!map->height || !map->width)
 		return (NULL);
-	map->height = size;
-	map->grid = (char **) ft_calloc(size + 1, sizeof(char *));
+	map->grid = (char **) ft_calloc(map->height + 1, sizeof(char *));
 	if (!map->grid)
 		return (perror("Error"), NULL);
 	return (map);
