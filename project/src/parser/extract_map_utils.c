@@ -6,7 +6,7 @@
 /*   By: yuak <yuak@student.42istanbul.com.tr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/08/06 11:56:45 by yuak              #+#    #+#             */
-/*   Updated: 2026/08/26 13:18:36 by yuak             ###   ########.fr       */
+/*   Updated: 2026/08/26 17:44:46 by yuak             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,6 +22,7 @@ size_t	get_map_size(char *cub)
 	if (fd < 0)
 		return (perror("Error\n"), 0);
 	size = 0;
+	get_next_line(-1); // reset static value
 	line = get_next_line(fd);
 	while (line)
 	{
@@ -33,8 +34,6 @@ size_t	get_map_size(char *cub)
 	close(fd);
 	return (size);
 }
-
-
 
 t_map	*init_map(char *cub)
 {
