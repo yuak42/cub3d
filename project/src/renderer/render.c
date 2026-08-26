@@ -14,10 +14,9 @@
 
 int	render(t_game *game)
 {
-	//(void) game;
 	t_render *args;
 	t_win	*window;
-	int	x;
+	int		x;
 
 	x = 0;
 	args = ft_calloc(sizeof(t_render), 1);
@@ -35,6 +34,7 @@ int	render(t_game *game)
 	// printf("stepx:%d\nstepy:%d\n", args->stepx, args->stepy);
 	// printf("sidedistx:%f\nsidedisty:%f\n", args->sidedistx, args->sidedisty);
 	//printf("----------------width:%ld ********* height%ld--------\n", game->map->width, game->map->height);
+	set_position(game);
 	while (x < window->w)
 	{
 		get_raycast_arg(game, args, window, x);
