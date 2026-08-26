@@ -14,7 +14,6 @@
 
 void	get_raycast_arg(t_game *game, t_render *args, t_win *window, int x)
 {
-	set_position(game);
 	set_plane(game, args);
 	set_raydir(game, args, window->w, x);
 	set_map(args, game);
