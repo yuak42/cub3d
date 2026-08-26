@@ -6,7 +6,7 @@
 /*   By: yuak <yuak@student.42istanbul.com.tr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/27 22:17:12 by yuak              #+#    #+#             */
-/*   Updated: 2026/08/20 13:59:29 by yuak             ###   ########.fr       */
+/*   Updated: 2026/08/26 20:14:55 by yuak             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,5 +51,11 @@ typedef struct s_game
 	t_player	player;
 	t_texture	texture;
 } t_game;
+
+typedef struct s_xpm
+{
+	int	width;
+	int	height;
+} t_xpm;
 
 #endif
