@@ -6,7 +6,7 @@
 /*   By: yuak <yuak@student.42istanbul.com.tr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/08/06 11:56:45 by yuak              #+#    #+#             */
-/*   Updated: 2026/08/14 12:45:37 by yuak             ###   ########.fr       */
+/*   Updated: 2026/08/26 13:18:36 by yuak             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,24 +34,7 @@ size_t	get_map_size(char *cub)
 	return (size);
 }
 
-int is_map_line(char *line)
-{
-	if (ft_strnstr(line, "NO ", 3))
-		return (0);
-	if (ft_strnstr(line, "SO ", 3))
-		return (0);
-	if (ft_strnstr(line, "WE ", 3))
-		return (0);
-	if (ft_strnstr(line, "EA ", 3))
-		return (0);
-	if (ft_strnstr(line, "F ", 2))
-		return (0);
-	if (ft_strnstr(line, "C ", 2))
-		return (0);
-	if (line[0] == '\n')
-		return (0);
-	return (1);
-}
+
 
 t_map	*init_map(char *cub)
 {

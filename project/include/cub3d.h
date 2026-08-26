@@ -6,7 +6,7 @@
 /*   By: yuak <yuak@student.42istanbul.com.tr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/26 20:00:21 by yuak              #+#    #+#             */
-/*   Updated: 2026/08/24 10:05:27 by yuak             ###   ########.fr       */
+/*   Updated: 2026/08/26 13:20:54 by yuak             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,6 +46,7 @@ int		check_map(t_game *game);
 char	**get_grid_copy(char **grid);
 int		flood_fill(char **grid, t_player player);
 int		is_start_position_correct(char *cub);
+int		is_map_line(char *line);
 
 
 // free utils
