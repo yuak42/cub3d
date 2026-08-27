@@ -15,15 +15,15 @@
 int	render(t_game *game)
 {
 	t_render *args;
-	t_win	*window;
+	//t_win	*window;
 	int		x;
 
 	x = 0;
 	args = ft_calloc(sizeof(t_render), 1);
-	window = ft_calloc(sizeof(t_win), 1);
+	//window = ft_calloc(sizeof(t_win), 1);
 	ft_printf("Game is being rendered\n");
 	// set_dir(game);
-	if (!init_window(window))
+	if (!init_window(args->window))
 		return (0);
 	// printf("dir_x:%f\ndir_y:%f\n", game->player.dir_x, game->player.dir_y);
 	// printf("x:%f\ny:%f\n", game->player.x, game->player.y);
@@ -35,9 +35,9 @@ int	render(t_game *game)
 	// printf("sidedistx:%f\nsidedisty:%f\n", args->sidedistx, args->sidedisty);
 	//printf("----------------width:%ld ********* height%ld--------\n", game->map->width, game->map->height);
 	set_position(game);
-	while (x < window->w)
+	while (x < args->window.w)
 	{
-		get_raycast_arg(game, args, window, x);
+		get_raycast_arg(game, args, x);
 		run_dda(args, game->map);
 		x++;
 	}
