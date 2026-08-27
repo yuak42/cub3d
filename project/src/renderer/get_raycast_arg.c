@@ -12,9 +12,9 @@
 
 #include "cub3d.h"
 
-void	get_raycast_arg(t_game *game, t_render *args, t_win *window, int x)
+void	get_raycast_arg(t_game *game, t_render *args, int x)
 {
 	set_plane(game, args);
-	set_raydir(game, args, window->w, x);
+	set_raydir(game, args, x);
 	set_map(args, game);
 }

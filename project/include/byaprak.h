@@ -28,6 +28,7 @@ typedef struct s_renderargs
 	double	sidedistx;
 	double	sidedisty;
 	t_size	size;
+	t_win	window;
 } t_render;
 
 typedef struct s_window
@@ -53,8 +54,8 @@ void	set_dir(t_game *game);
 void	set_position(t_game *game);
 char	get_spawn_dir(t_game *game);
 void	set_plane(t_game *game, t_render *args);
-void	set_raydir(t_game *game, t_render *args, double width, double x);
-int		init_window(t_win *s_window);
+void	set_raydir(t_game *game, t_render *args, double x);
+int		init_window(t_win window);
 void	set_map(t_render *args, t_game *game);
-void	get_raycast_arg(t_game *game, t_render *args, t_win *window, int x);
+void	get_raycast_arg(t_game *game, t_render *args, int x);
 int		run_dda(t_render *args, t_map *map);
