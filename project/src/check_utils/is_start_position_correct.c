@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   is_there_unique_start_position.c                   :+:      :+:    :+:   */
+/*   is_start_position_correct.c                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: yuak <yuak@student.42istanbul.com.tr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/08/20 14:22:29 by yuak              #+#    #+#             */
-/*   Updated: 2026/08/24 09:58:45 by yuak             ###   ########.fr       */
+/*   Updated: 2026/08/28 20:23:57 by yuak             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,6 +22,7 @@ int	is_start_position_correct(char *cub)
 	fd = open(cub, O_RDONLY);
 	if (fd < 0)
 		return (perror("Error"), 1000);
+	get_next_line(-1);
 	line = get_next_line(fd);
 	while (line)
 	{
