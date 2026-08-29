@@ -6,7 +6,7 @@
 /*   By: yuak <yuak@student.42istanbul.com.tr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/08/14 16:36:03 by yuak              #+#    #+#             */
-/*   Updated: 2026/08/14 21:46:34 by yuak             ###   ########.fr       */
+/*   Updated: 2026/08/29 19:26:31 by yuak             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -54,7 +54,7 @@ static int	check_line(char *line)
 	{
 		free_split(splitted);
 		free(trimmed);
-		return (print_error("Error\nColor pattern wrong!\n"), 1);
+		return (print_error_arg("Error\nColor pattern wrong: ?\n", line), 1);
 	}
 	if (check_color(splitted[1]))
 		return (free_split(splitted), free(trimmed), 1);
@@ -71,7 +71,10 @@ static int	check_color(char *color)
 	if (!splitted)
 		return (1001);
 	if (get_splitted_size(splitted) != 3)
-		return (free_split(splitted), print_error("Error\nColor wrong\n"), 1);
+	{
+ 		print_error_arg("Error\nColor format wrong: ?\n", color);
+		return (free_split(splitted), 1);
+	}
 	if (check_color_num(splitted))
 		return (free_split(splitted), 1);
 	free_split(splitted);
@@ -89,16 +92,16 @@ static int	check_color_num(char **splitted)
 		i = 0;
 		color = *splitted;
 		if (color[i] == '0' && color[i + 1] != '\0')
-			return (print_error("Error\nWhy do you put zero in start?\n"), 1);
+			return (print_error("Error\nNumber should be decimal\n"), 1);
 		while (color[i])
 		{
-			if (!ft_isdigit(color[i]) || i > 3)
-				return (print_error("Error\nColor is not an integer\n"), 1);
+			if (!ft_isdigit(color[i]))
+				return (print_error("Error\nNumber is not natural\n"), 1);
 			i++;
 		}
 		temp = ft_atoi(color);
 		if (temp > 255)
-			return (print_error("Error\nColor number wrong\n"), 1);
+			return (print_error("Error\nNumber is outside of range\n"), 1);
 		splitted++;
 	}
 	return (0);
