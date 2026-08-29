@@ -6,7 +6,7 @@
 /*   By: yuak <yuak@student.42istanbul.com.tr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/08/12 14:31:20 by yuak              #+#    #+#             */
-/*   Updated: 2026/08/18 10:38:21 by yuak             ###   ########.fr       */
+/*   Updated: 2026/08/29 18:43:16 by yuak             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 static int	check_existence_and_uniqueness(char *id, char *cub);
 static int	check_line(char *id, char *line, int *exits);
 
-int	check_texture_paths(char *cub)
+int	check_identifiers(char *cub)
 {
 	if (check_existence_and_uniqueness("NO", cub))
 		return (1);

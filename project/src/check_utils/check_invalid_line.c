@@ -6,14 +6,13 @@
 /*   By: yuak <yuak@student.42istanbul.com.tr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/08/17 08:14:50 by yuak              #+#    #+#             */
-/*   Updated: 2026/08/29 18:25:07 by yuak             ###   ########.fr       */
+/*   Updated: 2026/08/29 18:38:48 by yuak             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "cub3d.h"
 
 static int	is_invalid(char *line);
-static int	check_map_line(char *line);
 
 int	check_invalid_line(char *cub)
 {
@@ -27,12 +26,11 @@ int	check_invalid_line(char *cub)
 	while (line)
 	{
 		if (is_invalid(line))
-			return (close(fd), free(line), 1);
+			return (free(line), close(fd), 1);
 		free(line);
 		line = get_next_line(fd);
 	}
-	close(fd);
-	return (0);
+	return (close(fd), 0);
 }
 
 static int	is_invalid(char *line)
@@ -45,34 +43,9 @@ static int	is_invalid(char *line)
 		return (0);
 	else if (!ft_strncmp("F ", line, 2) || !ft_strncmp("C ", line, 2))
 		return (0);
-	else if (check_map_line(line))
+	else if (is_map_line(line))
 		return (0);
 	return (print_error("Error\nUnidentified line\n"), 1);
 }
 
-static int	check_map_line(char *line)
-{
-	int	i;
 
-	i = 0;
-	while (line[i])
-	{
-		if (line[i] == ' ' || line[i] == '\n')
-		{
-			i++;
-			continue;
-		}
-		if (line[i] == '1' || line[i] == '0' || line[i] == 'N')
-		{
-			i++;
-			continue;
-		}
-		if (line[i] == 'S' || line[i] == 'W' || line[i] == 'E')
-		{
-			i++;
-			continue;
-		}
-		return (0);
-	}
-	return (1);
-}
