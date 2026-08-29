@@ -9,12 +9,12 @@ Error
 
 1. General Check
 
-[ ] Check is there invalid identifiers.
+[ ] Check is there invalid lines.
 [ ] Check is there more than one identifiers.
 
 2. Identifiers
 
-[ ] Check every identifier exists (NO, SO, WE, EA, F, C).
+[ ] Check every identifier exists and unique (NO, SO, WE, EA, F, C).
 
 3. .xpm files
 
@@ -34,3 +34,5 @@ Error
 [ ] Check only one start position exists.
 [ ] Check no invalid characters (characters other than 0,1,N,S,E,W and space).
 [ ] Check is there any space inside of the map.
+
+\*\*\*\* Check is it trimmind char '\n' for every identifier
