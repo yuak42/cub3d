@@ -6,7 +6,7 @@
 /*   By: yuak <yuak@student.42istanbul.com.tr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/08/26 13:18:37 by yuak              #+#    #+#             */
-/*   Updated: 2026/08/26 17:36:26 by yuak             ###   ########.fr       */
+/*   Updated: 2026/08/29 18:27:35 by yuak             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,19 +14,7 @@
 
 int is_map_line(char *line)
 {
-	if (!ft_strncmp(line, "NO ", 3))
-		return (0);
-	if (!ft_strncmp(line, "SO ", 3))
-		return (0);
-	if (!ft_strncmp(line, "WE ", 3))
-		return (0);
-	if (!ft_strncmp(line, "EA ", 3))
-		return (0);
-	if (!ft_strncmp(line, "F ", 2))
-		return (0);
-	if (!ft_strncmp(line, "C ", 2))
-		return (0);
-	if (line[0] == '\n')
-		return (0);
-	return (1);
+	if (line[0] == ' ' || line[0] == '1')
+		return (1);
+	return (0);
 }
