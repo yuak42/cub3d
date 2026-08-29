@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   check_texture_paths.c                              :+:      :+:    :+:   */
+/*   check_identifiers.c                                :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: yuak <yuak@student.42istanbul.com.tr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/08/12 14:31:20 by yuak              #+#    #+#             */
-/*   Updated: 2026/08/29 18:43:16 by yuak             ###   ########.fr       */
+/*   Updated: 2026/08/29 19:02:31 by yuak             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,7 +53,7 @@ static int check_existence_and_uniqueness(char *id, char *cub)
 	close(fd);
 	if (exist == 0)
 	{
-		print_error("Error\nThere is no identifier\n");
+		print_error_arg("Error\n? identifier is missing\n", id);
 		return (701);
 	}
 	return (0);

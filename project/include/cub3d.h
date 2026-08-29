@@ -6,7 +6,7 @@
 /*   By: yuak <yuak@student.42istanbul.com.tr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/26 20:00:21 by yuak              #+#    #+#             */
-/*   Updated: 2026/08/29 18:43:37 by yuak             ###   ########.fr       */
+/*   Updated: 2026/08/29 19:01:11 by yuak             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,7 +33,8 @@ int 	assign_texture(t_game *game, char *line);
 int 	get_texture_paths(char *cub, t_game *game);
 
 // Check Utils
-int		print_error(char *str);
+void	print_error(char *str);
+void	print_error_arg(char *str, char *arg);
 size_t	get_splitted_size(char **splitted);
 int		check_input(int ac, char **av);
 int		check_identifiers(char *cub);
