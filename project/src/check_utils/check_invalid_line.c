@@ -6,7 +6,7 @@
 /*   By: yuak <yuak@student.42istanbul.com.tr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/08/17 08:14:50 by yuak              #+#    #+#             */
-/*   Updated: 2026/08/18 10:17:29 by yuak             ###   ########.fr       */
+/*   Updated: 2026/08/29 18:25:07 by yuak             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,6 @@
 
 static int	is_invalid(char *line);
 static int	check_map_line(char *line);
-
 
 int	check_invalid_line(char *cub)
 {
@@ -38,9 +37,6 @@ int	check_invalid_line(char *cub)
 
 static int	is_invalid(char *line)
 {
-	static int	l;
-
-	l++;
 	if (!ft_strncmp("\n", line, 2))
 		return (0);
 	else if (!ft_strncmp("NO ", line, 3) || !ft_strncmp("SO ", line, 3))
@@ -51,7 +47,7 @@ static int	is_invalid(char *line)
 		return (0);
 	else if (check_map_line(line))
 		return (0);
-	return (ft_printf("Error\nUnidentified line %d: %send", l - 1, line), 1);
+	return (print_error("Error\nUnidentified line\n"), 1);
 }
 
 static int	check_map_line(char *line)
