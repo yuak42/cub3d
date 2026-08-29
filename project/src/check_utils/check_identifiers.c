@@ -6,7 +6,7 @@
 /*   By: yuak <yuak@student.42istanbul.com.tr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/08/12 14:31:20 by yuak              #+#    #+#             */
-/*   Updated: 2026/08/29 19:02:31 by yuak             ###   ########.fr       */
+/*   Updated: 2026/08/29 19:13:58 by yuak             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -70,12 +70,16 @@ static int check_line(char *id, char *line, int *exist)
 	{
 		(*exist)++;
 		if (get_splitted_size(splitted) != 2)
-			return (ft_printf("line wrong %s", line), free_split(splitted), 1);
+		{
+			print_error_arg("Error\nWrong path format: ?", line);
+			return (free_split(splitted), 1);
+		}
 	}
 	if (*exist > 1)
 	{
-		print_error("Error\nThere are more than 1 path identifier\n");
-		return (free_split(splitted), 702);	
+		print_error("Error\nThere are more than 1");
+		print_error_arg("? path identifier\n", id);
+		return (free_split(splitted), 702);
 	}
 	free_split(splitted);
 	return (0);
