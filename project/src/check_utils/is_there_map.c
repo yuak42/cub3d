@@ -6,7 +6,7 @@
 /*   By: yuak <yuak@student.42istanbul.com.tr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/08/24 10:05:08 by yuak              #+#    #+#             */
-/*   Updated: 2026/08/30 15:24:49 by yuak             ###   ########.fr       */
+/*   Updated: 2026/08/30 15:42:08 by yuak             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,7 @@ int	is_there_map(char *cub)
 	while (line)
 	{
 		if (is_map_line(line))
-			return (free(line), close(fd), 1);
+			return (get_next_line(-1), free(line), close(fd), 1);
 		free(line);
 		line = get_next_line(fd);
 	}
