@@ -12,12 +12,12 @@
 
 #include "cub3d.h"
 
-int	init_window(t_win window)
+int	init_window(t_render *args)
 {
-	window.mlx_ptr = mlx_init();
-	window.h = 720;
-	window.w = 1280;
-	if (!(window.mlx_ptr))
+	args->window.mlx_ptr = mlx_init();
+	args->window.h = 720;
+	args->window.w = 1280;
+	if (!(args->window.mlx_ptr))
 	{
 		printf("mlx_init error\n");
 		return (0);
