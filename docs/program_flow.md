@@ -6,7 +6,7 @@ Note: Şimdilik get_next_line hatalarını es geçiyorum.
 
 1. Input-Map Errors -> "Error\n`message`"
 
-2. `open()` Errors -> `perror("Error")`
+2. `open()`, `malloc()` Errors -> `perror("Error")`
 
 ## Check Input
 
