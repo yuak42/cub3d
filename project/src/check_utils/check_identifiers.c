@@ -6,7 +6,7 @@
 /*   By: yuak <yuak@student.42istanbul.com.tr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/08/12 14:31:20 by yuak              #+#    #+#             */
-/*   Updated: 2026/08/29 19:13:58 by yuak             ###   ########.fr       */
+/*   Updated: 2026/08/30 15:27:42 by yuak             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -78,7 +78,7 @@ static int check_line(char *id, char *line, int *exist)
 	if (*exist > 1)
 	{
 		print_error("Error\nThere are more than 1");
-		print_error_arg("? path identifier\n", id);
+		print_error_arg(" ? path identifier\n", id);
 		return (free_split(splitted), 702);
 	}
 	free_split(splitted);
