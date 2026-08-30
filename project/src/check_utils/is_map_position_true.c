@@ -6,7 +6,7 @@
 /*   By: yuak <yuak@student.42istanbul.com.tr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/08/18 10:23:03 by yuak              #+#    #+#             */
-/*   Updated: 2026/08/30 15:57:56 by yuak             ###   ########.fr       */
+/*   Updated: 2026/08/30 16:02:11 by yuak             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,9 +29,7 @@ int	is_map_position_true(char *cub)
 		if (is_map_line(line))
 		{
 			if (check_map_position(fd))
-			{
 				return (get_next_line(-1), free(line), close(fd),  0);
-			}
 		}
 		free(line);
 		line = get_next_line(fd);
