@@ -12,6 +12,26 @@
 
 #include<math.h>
 
+typedef struct s_window
+{
+	void	*mlx_ptr;
+	int		w;
+	int		h;
+	void	*wall;
+	int		tex_w;
+	int		tex_h;
+} t_win;
+
+typedef struct s_put_size
+{
+	double	perpwalldist;
+	int		lineheight;
+	int		drawend;
+	int		drawstart;
+	double	wall_x;
+	int		tex_x;
+	int		side;
+} t_size;
 
 typedef struct s_renderargs
 {
@@ -31,31 +51,13 @@ typedef struct s_renderargs
 	t_win	window;
 } t_render;
 
-typedef struct s_window
-{
-	void	*mlx_ptr;
-	int		w;
-	int		h;
-} t_win;
-
-typedef struct s_put_size
-{
-	double	perpwalldist;
-	int		lineheight;
-	int		drawend;
-	int		drawstart;
-	double	wall_x;
-	int		tex_x;
-	int		side;
-} t_size;
-
-
 void	set_dir(t_game *game);
 void	set_position(t_game *game);
 char	get_spawn_dir(t_game *game);
 void	set_plane(t_game *game, t_render *args);
 void	set_raydir(t_game *game, t_render *args, double x);
-int		init_window(t_win window);
+int		init_window(t_render *args);
 void	set_map(t_render *args, t_game *game);
 void	get_raycast_arg(t_game *game, t_render *args, int x);
-int		run_dda(t_render *args, t_map *map);
+void	run_dda(t_render *args, t_game *game);
+void	set_wall_size(t_render *args, t_game *game);
