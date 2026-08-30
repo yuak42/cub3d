@@ -6,13 +6,11 @@
 /*   By: yuak <yuak@student.42istanbul.com.tr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/08/06 20:23:55 by yuak              #+#    #+#             */
-/*   Updated: 2026/08/30 15:29:41 by yuak             ###   ########.fr       */
+/*   Updated: 2026/08/30 15:40:08 by yuak             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "cub3d.h"
-
-int	is_there_map(char *cub);
 
 int check_input(int ac, char **av)
 {
@@ -32,4 +30,3 @@ int check_input(int ac, char **av)
 		return (1);
 	return (0);
 }
-
