@@ -14,10 +14,9 @@
 
 static int is_out_of_bounds(t_render *args, t_map *map);
 
-void	run_dda(t_render *args, t_map *map)
+void	run_dda(t_render *args, t_game *game)
 {
 	int	hit;
-	int	side;
 
 	hit = 0;
 	//printf("DDA Başlıyor - Işın yönü Y: %f, Başlangıç mapY: %d, stepY: %d\n", args->ray_diry, args->mapy, args->stepy);
@@ -36,12 +35,13 @@ void	run_dda(t_render *args, t_map *map)
 			args->size.side = 1;
 		}
 		//printf("  DDA Adımı - mapX: %d, mapY: %d\n", args->mapx, args->mapy);
-		if (!is_out_of_bounds(args, map))
+		if (!is_out_of_bounds(args, game->map))
 			break;
-		if (map->grid[args->mapy][args->mapx] == '1')
+		if (game->map->grid[args->mapy][args->mapx] == '1')
 			hit = 1;
 	}
-	// if (hit == 1)
+	if (hit == 1)
+		set_wall_size(args, game);
 	// 	printf("map_x:%d map_y:%d side:%d\n", args->mapx, args->mapy, side);
 }
 
