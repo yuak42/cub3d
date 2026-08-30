@@ -1,40 +1,55 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   is_starting_position_true.c                        :+:      :+:    :+:   */
+/*   check_starting_position.c                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: yuak <yuak@student.42istanbul.com.tr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/08/20 14:22:29 by yuak              #+#    #+#             */
-/*   Updated: 2026/08/30 16:15:37 by yuak             ###   ########.fr       */
+/*   Updated: 2026/08/30 16:46:02 by yuak             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "cub3d.h"
 
+static int	get_starting_position_number(char *line);
 static int	is_starting_position_char(char c);
 static int	get_return(int num);
 
-int	is_starting_position_true(char **grid)
+int	check_starting_position(char *cub)
 {
-	int	x;
-	int	y;
-	int	num;
+	char	*line;
+	int		num;
+	int		fd;
 
-	y = 0;
-	num = 0;
-	while (grid[y])
+	fd = open(cub, O_RDONLY);
+	if (fd < 0)
+		return (perror("Error"), 1000);
+	line = get_next_line(fd);
+	while (line)
 	{
-		x = 0;
-		while (grid[y][x])
-		{
-			if (is_starting_position_char(grid[y][x]))
-				num++;
-			x++;
-		}
-		y++;
+		if (is_map_line(line))
+			num += get_starting_position_number(line);
+		free(line);
+		line = get_next_line(fd);
 	}
-	return (get_return(num));
+	return (close(fd), get_return(num));
+}
+
+static int	get_starting_position_number(char *line)
+{
+	int	i;
+	int num;
+
+	i = 0;
+	num = 0;
+	while (line[i])
+	{
+		if (is_starting_position_char(line[i]))
+			num++;
+		i++;
+	}
+	return (num);
 }
 
 static int	is_starting_position_char(char c)
@@ -47,10 +62,10 @@ static int	is_starting_position_char(char c)
 static int	get_return(int num)
 {
 	if (num == 1)
-		return (1);
+		return (0);
 	if (num == 0)
 		print_error("Error\nThere is no starting position on map\n");
 	else if (num > 1)
 		print_error("Error\nThere are more than 1 starting position on map\n");
-	return (0);
+	return (1);
 }
