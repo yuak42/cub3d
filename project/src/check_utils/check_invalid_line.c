@@ -6,7 +6,7 @@
 /*   By: yuak <yuak@student.42istanbul.com.tr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/08/17 08:14:50 by yuak              #+#    #+#             */
-/*   Updated: 2026/08/29 18:38:48 by yuak             ###   ########.fr       */
+/*   Updated: 2026/08/30 15:30:32 by yuak             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,7 +45,5 @@ static int	is_invalid(char *line)
 		return (0);
 	else if (is_map_line(line))
 		return (0);
-	return (print_error("Error\nUnidentified line\n"), 1);
+	return (print_error_arg("Error\nUnidentified line: ?\n", line), 1);
 }
-
-
