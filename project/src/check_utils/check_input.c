@@ -6,7 +6,7 @@
 /*   By: yuak <yuak@student.42istanbul.com.tr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/08/06 20:23:55 by yuak              #+#    #+#             */
-/*   Updated: 2026/08/30 15:50:26 by yuak             ###   ########.fr       */
+/*   Updated: 2026/08/30 16:10:40 by yuak             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,8 +25,6 @@ int check_input(int ac, char **av)
 	if (!is_there_map(av[1]))
 		return (1);
 	if (!is_map_position_true(av[1]))
-		return (1);
-	if (!is_start_position_correct(av[1]))
 		return (1);
 	return (0);
 }
