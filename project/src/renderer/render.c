@@ -12,6 +12,8 @@
 
 #include "cub3d.h"
 
+static int	get_img(t_render *args);
+
 int	render(t_game *game)
 {
 	t_render *args;
@@ -35,11 +37,25 @@ int	render(t_game *game)
 	// printf("sidedistx:%f\nsidedisty:%f\n", args->sidedistx, args->sidedisty);
 	//printf("----------------width:%ld ********* height%ld--------\n", game->map->width, game->map->height);
 	set_position(game);
-	while (x < args->window.w && x < 1)
+	get_img(args);
+	while (x < args->window.w)
 	{
 		get_raycast_arg(game, args, x);
-		run_dda(args, game);
+		run_dda(args, game, x);
 		x++;
 	}
+	printf("**********************************************************************************\n");
+	mlx_put_image_to_window(args->window.mlx_ptr, args->window.win_ptr, args->img.img_p, 0, 0);
+	printf("**********************************************************************************\n");
+	mlx_loop(args->window.mlx_ptr);
 	return (0);
+}
+
+static int	get_img(t_render *args)
+{
+	args->img.img_p = mlx_new_image(args->window.mlx_ptr, args->window.w, args->window.h);
+	if (!(args->img.img_p))
+		return (0);
+	args->img.img_pixel = mlx_get_data_addr(args->img.img_p, &args->img.bpp, &args->img.len, &args->img.end);
+	return (1);
 }
