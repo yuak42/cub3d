@@ -12,14 +12,32 @@
 
 #include<math.h>
 
+typedef struct s_walltexture
+{
+	char	*w_pixel;
+	void	*w_p;
+	int		tex_w;
+	int		tex_h;
+	int		bpp;
+	int		len;
+	int		end;
+} t_wall;
+
+typedef struct s_image
+{
+	void	*img_p;
+	char	*img_pixel;
+	int		bpp;
+	int		len;
+	int		end;
+} t_img;
+
 typedef struct s_window
 {
 	void	*mlx_ptr;
+	void	*win_ptr;
 	int		w;
 	int		h;
-	void	*wall;
-	int		tex_w;
-	int		tex_h;
 } t_win;
 
 typedef struct s_put_size
@@ -49,6 +67,8 @@ typedef struct s_renderargs
 	double	sidedisty;
 	t_size	size;
 	t_win	window;
+	t_img	img;
+	t_wall  wall;
 } t_render;
 
 void	set_dir(t_game *game);
@@ -59,5 +79,6 @@ void	set_raydir(t_game *game, t_render *args, double x);
 int		init_window(t_render *args);
 void	set_map(t_render *args, t_game *game);
 void	get_raycast_arg(t_game *game, t_render *args, int x);
-void	run_dda(t_render *args, t_game *game);
+void	run_dda(t_render *args, t_game *game, int x);
 void	set_wall_size(t_render *args, t_game *game);
+int		put_window(t_render *args, t_game *game, int x);

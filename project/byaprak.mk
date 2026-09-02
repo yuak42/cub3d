@@ -7,4 +7,5 @@ BYAPRAK_SRC = renderer/set_dir.c \
 				renderer/set_map.c \
 				renderer/get_raycast_arg.c \
 				renderer/dda_run.c \
-				renderer/set_size.c
+				renderer/set_size.c \
+				renderer/put_image.c
