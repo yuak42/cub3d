@@ -14,7 +14,7 @@
 
 static int is_out_of_bounds(t_render *args, t_map *map);
 
-void	run_dda(t_render *args, t_game *game)
+void	run_dda(t_render *args, t_game *game, int x)
 {
 	int	hit;
 
@@ -41,7 +41,12 @@ void	run_dda(t_render *args, t_game *game)
 			hit = 1;
 	}
 	if (hit == 1)
+	{
 		set_wall_size(args, game);
+		put_window(args, game, x);
+		//printf("***********************************************")
+	}
+
 	// 	printf("map_x:%d map_y:%d side:%d\n", args->mapx, args->mapy, side);
 }
 
