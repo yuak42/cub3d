@@ -36,7 +36,7 @@ static void set_draw(t_render *args)
 	if (args->size.drawstart < 0)
 		args->size.drawstart = 0;
 	args->size.drawend = args->size.lineheight / 2 + args->window.h  / 2;
-	if (args->size.drawend > args->window.w - 1)
+	if (args->size.drawend > args->window.h - 1)
 		args->size.drawend = args->window.h - 1;
 	printf("draw_end:%d\ndraw_start:%d\n", args->size.drawend, args->size.drawstart);
 }
@@ -68,9 +68,12 @@ static void	set_tex_x(t_render *args, t_game *game)
 		else if (args->ray_dirx < 0)
 			wall = game->texture.no;
 	}
-	args->window.wall = mlx_xpm_file_to_image(args->window.mlx_ptr, wall, &args->window.tex_w, &args->window.tex_h);
-	args->size.tex_x = (int)(args->size.wall_x * args->window.tex_w);
-	tex_x_mirror(args, args->window.tex_w);
+	args->wall.w_p = mlx_xpm_file_to_image(args->window.mlx_ptr, wall, &args->wall.tex_w, &args->wall.tex_h);
+	if (!args->wall.w_p)
+		return ;
+	args->wall.w_pixel = mlx_get_data_addr(args->wall.w_p, &args->wall.bpp, &args->wall.len, &args->wall.end);
+	args->size.tex_x = (int)(args->size.wall_x * args->wall.tex_w);
+	tex_x_mirror(args, args->wall.tex_w);
 	printf("tex_x:%d\n", args->size.tex_x);
 }
 
