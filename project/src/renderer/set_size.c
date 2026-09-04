@@ -81,12 +81,12 @@ static void tex_x_mirror(t_render *args, int texwidth)
 {
 	if (args->size.side == 0)
 	{
-		if (args->ray_diry > 0)
+		if (args->ray_dirx > 0)
 			args->size.tex_x = texwidth - args->size.tex_x - 1;
 	}
-	// if (args->size.side == 1)
-	// {
-	// 	if (args->ray_diry < 0)
-	// 		args->size.tex_x = texwidth - args->size.tex_x - 1;
-	// }
+	if (args->size.side == 1)
+	{
+		if (args->ray_diry < 0)
+			args->size.tex_x = texwidth - args->size.tex_x - 1;
+	}
 }
