@@ -13,18 +13,18 @@
 #include "cub3d.h"
 
 static int	get_img(t_render *args);
+static int	win_invisible(void *args);
+static int	cub3d_render(t_render *args, t_game *game);
+static int	x_win(t_render *args);
 
 int	render(t_game *game)
 {
 	t_render *args;
 	//t_win	*window;
-	int		x;
-
-	x = 0;
 	args = ft_calloc(sizeof(t_render), 1);
-	//window = ft_calloc(sizeof(t_win), 1);
+	if (!args)
+		return(0);
 	ft_printf("Game is being rendered\n");
-	// set_dir(game);
 	if (!init_window(args))
 		return (0);
 	// printf("dir_x:%f\ndir_y:%f\n", game->player.dir_x, game->player.dir_y);
@@ -38,19 +38,28 @@ int	render(t_game *game)
 	//printf("----------------width:%ld ********* height%ld--------\n", game->map->width, game->map->height);
 	set_position(game);
 	get_img(args);
+	cub3d_render(args, game);
+	mlx_hook(args->window.win_ptr, 12, 1L << 15, win_invisible, args);
+	mlx_hook(args->window.win_ptr, 17, 0, x_win, args);
+	mlx_loop(args->window.mlx_ptr);
+	return (0);
+}
+
+static int	cub3d_render(t_render *args, t_game *game)
+{
+	int	x;
+	int	result;
+
+	x = 0;
 	while (x < args->window.w)
 	{
 		get_raycast_arg(game, args, x);
 		run_dda(args, game, x);
 		x++;
 	}
-	printf("**********************************************************************************\n");
-	mlx_put_image_to_window(args->window.mlx_ptr, args->window.win_ptr, args->img.img_p, 0, 0);
-	printf("**********************************************************************************\n");
-	mlx_loop(args->window.mlx_ptr);
-	return (0);
+	result = mlx_put_image_to_window(args->window.mlx_ptr, args->window.win_ptr, args->img.img_p, 0, 0);
+	return (result);
 }
-
 static int	get_img(t_render *args)
 {
 	args->img.img_p = mlx_new_image(args->window.mlx_ptr, args->window.w, args->window.h);
@@ -58,4 +67,23 @@ static int	get_img(t_render *args)
 		return (0);
 	args->img.img_pixel = mlx_get_data_addr(args->img.img_p, &args->img.bpp, &args->img.len, &args->img.end);
 	return (1);
+}
+
+static int	win_invisible(void *args)
+{
+	t_render	*w;
+
+	w = (t_render *)args;
+	mlx_put_image_to_window(w->window.mlx_ptr, w->window.win_ptr, w->img.img_p, 0, 0);
+	return (0);
+}
+
+static int	x_win(t_render *args)
+{
+	mlx_destroy_window(args->window.mlx_ptr, args->window.win_ptr);
+	mlx_destroy_image(args->window.mlx_ptr, args->img.img_p);
+	mlx_destroy_display(args->window.mlx_ptr);
+	free(args);
+	exit(0);
+	return (0);
 }
