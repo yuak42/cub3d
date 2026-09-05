@@ -15,6 +15,6 @@
 void	get_raycast_arg(t_game *game, t_render *args, int x)
 {
 	set_plane(game, args);
-	set_raydir(game, args, x);
+	set_raydir(args, x);
 	set_map(args, game);
 }
