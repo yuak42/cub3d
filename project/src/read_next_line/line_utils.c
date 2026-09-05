@@ -1,37 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   read_next_line_utils.c                             :+:      :+:    :+:   */
+/*   line_utils.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: yuak <yuak@student.42istanbul.com.tr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/09/04 20:11:01 by yuak              #+#    #+#             */
-/*   Updated: 2026/09/05 13:50:37 by yuak             ###   ########.fr       */
+/*   Created: 2026/09/05 13:58:17 by yuak              #+#    #+#             */
+/*   Updated: 2026/09/05 14:01:12 by yuak             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "cub3d.h"
 
-void	shift_buffer(char *buffer);
-char	*extract_line(char *line);
-int		mplement_buffer(char **buffer);
-
-int	implement_buffer(char **buffer)
+int	is_new_line(char *line)
 {
-	if ((*buffer))
+	int	i;
+
+	if (line == NULL)
 		return (0);
-	*buffer = (char *) malloc((BUFFER_SIZE + 1) * sizeof(char));
-	if (!(*buffer))
+	i = 0;
+	while (line[i] && line[i] != '\n')
+		i++;
+	if (line[i] == '\n')
 		return (1);
-	(*buffer)[BUFFER_SIZE] = '\0';
-	return (0); 
-}
-
-int	return_fail(char *buffer)
-{
-	free(buffer);
-	buffer = NULL;
-	return (1);
+	return (0);
 }
 
 static size_t	get_line_length(char *line);
@@ -53,7 +45,6 @@ char	*extract_line(char *line)
 		i++;
 	}
 	new_line[i] = '\0';
-	shift_buffer(buffer);
 	return (new_line);
 }
 
@@ -69,32 +60,4 @@ static size_t	get_line_length(char *line)
 		i++;
 	}
 	return (i);
-}
-
-void	shift_buffer(char *buffer)
-{
-	int	i;
-	int	j;
-
-	i = 0;
-	j = 0;
-	while (buffer[i])
-	{
-		if (buffer[i] == '\n')
-		{
-			while (buffer[i])
-			{
-				buffer[j] = buffer[i + 1];
-				i++;
-				j++;
-			}
-			break ;
-		}
-		i++;
-	}
-	while (buffer[j])
-	{
-		buffer[j] = '\0';
-		j++;
-	}
 }
