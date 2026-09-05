@@ -8,4 +8,9 @@ BYAPRAK_SRC = renderer/set_dir.c \
 				renderer/get_raycast_arg.c \
 				renderer/dda_run.c \
 				renderer/set_size.c \
-				renderer/put_image.c
+				renderer/put_image.c \
+				renderer/put_window.c \
+				render_utils/close_win.c \
+				render_utils/key_event.c \
+				render_utils/ray_move.c \
+				render_utils/key_utils.c
