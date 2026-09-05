@@ -22,19 +22,11 @@ void	set_map(t_render *args, t_game *game)
 	if (args->ray_dirx == 0)
 		args->deltadistx = 1e30;
 	else
-	{
-		args->deltadistx = 1 / args->ray_dirx;
-		if (args->deltadistx < 0)
-			args->deltadistx *= -1;
-	}
+		args->deltadistx = fabs(1 / args->ray_dirx);
 	if (args->ray_diry == 0)
 		args->deltadisty = 1e30;
 	else
-	{
-		args->deltadisty = 1 / args->ray_diry;
-		if (args->deltadisty < 0)
-			args->deltadisty *= -1;
-	}
+		args->deltadisty = fabs(1 / args->ray_diry);
 	get_stepx(args);
 	get_sidedist(args, game);
 }
