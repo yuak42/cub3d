@@ -6,7 +6,7 @@
 /*   By: yuak <yuak@student.42istanbul.com.tr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/26 20:00:21 by yuak              #+#    #+#             */
-/*   Updated: 2026/08/30 16:44:32 by yuak             ###   ########.fr       */
+/*   Updated: 2026/09/04 20:08:55 by yuak             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,10 @@
 
 #ifndef CUB3D_H
 # define CUB3D_H
+
+# ifndef BUFFER_SIZE
+#  define BUFFER_SIZE 3
+# endif
 
 #include <stdio.h>
 #include <fcntl.h>
@@ -31,6 +35,9 @@ t_map	*init_map(char *cub);
 int 	is_texture_line(char *line);
 int 	assign_texture(t_game *game, char *line);
 int 	get_texture_paths(char *cub, t_game *game);
+
+// read_next_line
+int	read_next_line(int fd, char **line);
 
 // Check Utils
 void	print_error(char *str);
