@@ -19,6 +19,6 @@ void	set_plane(t_game *game, t_render *args)
 	dir = get_spawn_dir(game);
 	if (dir == '0')
 		return ;
-	args->plane_x = -1 * (game->player.dir_y) * 0.66;
-	args->plane_y = game->player.dir_x * 0.66;
+	args->plane_x = -1 * (args->dir_y) * 0.66;
+	args->plane_y = args->dir_x * 0.66;
 }
