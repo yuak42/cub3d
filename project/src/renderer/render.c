@@ -14,30 +14,17 @@
 
 static int	get_img(t_render *args);
 static int	win_invisible(void *args);
-//static int	x_win(t_render *args);
+static int	get_wall(t_render *args, t_game *game);
+static void	init_mlx(t_render *args);
 
 int	render(t_game *game)
 {
 	t_render *args;
-	//t_win	*window;
 	args = ft_calloc(sizeof(t_render), 1);
 	if (!args)
 		return(0);
-	ft_printf("Game is being rendered\n");
 	args->game = game;
-	if (!init_window(args))
-		return (0);
-	// printf("dir_x:%f\ndir_y:%f\n", game->player.dir_x, game->player.dir_y);
-	// printf("x:%f\ny:%f\n", game->player.x, game->player.y);
-	// printf("plane_x:%f\nplane_y:%f\n", args->plane_x, args->plane_y);
-	// printf("ray_dirx:%f\nray_diry:%f\n", args->ray_dirx, args->ray_diry);
-	// printf("mapx:%d\nmapy:%d\n", args->mapx, args->mapy);
-	// printf("deltadistx%f\ndeltadisty:%f\n", args->deltadistx, args->deltadisty);
-	// printf("stepx:%d\nstepy:%d\n", args->stepx, args->stepy);
-	// printf("sidedistx:%f\nsidedisty:%f\n", args->sidedistx, args->sidedisty);
-	//printf("----------------width:%ld ********* height%ld--------\n", game->map->width, game->map->height);
-	set_position(game, args);
-	get_img(args);
+	init_mlx(args);
 	put_game(args);
 	mlx_hook(args->window.win_ptr, 12, 1L << 15, win_invisible, args);
 	mlx_hook(args->window.win_ptr, 17, 0, close_win, args);
@@ -45,7 +32,7 @@ int	render(t_game *game)
 	mlx_hook(args->window.win_ptr,  3, 1L << 1 , key_release, args);
 	mlx_loop_hook(args->window.mlx_ptr, key_event, args);
 	mlx_loop(args->window.mlx_ptr);
-	return (0);
+	return (1);
 }
 
 static int	get_img(t_render *args)
@@ -64,4 +51,49 @@ static int	win_invisible(void *args)
 	w = (t_render *)args;
 	mlx_put_image_to_window(w->window.mlx_ptr, w->window.win_ptr, w->img.img_p, 0, 0);
 	return (0);
+}
+
+static int	get_wall(t_render *args, t_game *game)
+{
+	args->no.w_p = mlx_xpm_file_to_image(args->window.mlx_ptr, game->texture.no, \
+		&args->no.tex_w, &args->no.tex_h);
+	args->no.w_pixel = mlx_get_data_addr(args->no.w_p,\
+		&args->no.bpp, &args->no.len, &args->no.end);
+	args->so.w_p = mlx_xpm_file_to_image(args->window.mlx_ptr, game->texture.so, \
+		&args->so.tex_w, &args->so.tex_h);
+	args->so.w_pixel = mlx_get_data_addr(args->so.w_p,\
+		&args->so.bpp, &args->so.len, &args->so.end);
+	args->ea.w_p = mlx_xpm_file_to_image(args->window.mlx_ptr, game->texture.ea, \
+		&args->ea.tex_w, &args->ea.tex_h);
+	args->ea.w_pixel = mlx_get_data_addr(args->ea.w_p,\
+		&args->ea.bpp, &args->ea.len, &args->ea.end);
+	args->we.w_p = mlx_xpm_file_to_image(args->window.mlx_ptr, game->texture.we, \
+		&args->we.tex_w, &args->we.tex_h);
+	args->we.w_pixel = mlx_get_data_addr(args->we.w_p,\
+		&args->we.bpp, &args->we.len, &args->we.end);
+	if (!args->no.w_p || !args->so.w_p || !args->ea.w_p || !args->we.w_p)
+		return (0);
+	return (1);
+
+}
+
+static void	init_mlx(t_render *args)
+{
+	int status;
+
+	status = 1;
+	if (!init_window(args))
+		status = 0;
+	if (!get_img(args))
+		status = 0;
+	if (!get_wall(args, args->game))
+		status = 0;
+	set_position(args->game, args);
+	if (!status)
+	{
+		ft_putstr_fd("mlx_init eror\n", 2);
+		free(args);
+		// add free game 
+		exit(1);
+	}
 }
