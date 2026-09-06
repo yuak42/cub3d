@@ -6,13 +6,13 @@
 /*   By: yuak <yuak@student.42istanbul.com.tr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/09/05 13:58:17 by yuak              #+#    #+#             */
-/*   Updated: 2026/09/05 14:01:12 by yuak             ###   ########.fr       */
+/*   Updated: 2026/09/06 19:55:45 by yuak             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "cub3d.h"
+#include "read_next_line.h"
 
-int	is_new_line(char *line)
+int	rnl_is_new_line(char *line)
 {
 	int	i;
 
@@ -35,7 +35,7 @@ char	*extract_line(char *line)
 	char	*new_line;
 
 	size = get_line_length(line);
-	new_line = (char *) malloc((size + 1) * sizeof(char));
+	new_line = (char *) ft_calloc(size + 1, sizeof(char));
 	if (!new_line)
 		return (NULL);
 	i = 0;
@@ -44,7 +44,6 @@ char	*extract_line(char *line)
 		new_line[i] = line[i];
 		i++;
 	}
-	new_line[i] = '\0';
 	return (new_line);
 }
 
@@ -60,4 +59,14 @@ static size_t	get_line_length(char *line)
 		i++;
 	}
 	return (i);
+}
+
+int	handle_new_line(char **line)
+{
+	char	*new_line;
+
+	new_line = extract_line(*line);
+	if (!new_line)
+		return (free(*line), *line = NULL, 1);
+	return (free(*line), *line = new_line, 0);
 }

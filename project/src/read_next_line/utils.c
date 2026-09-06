@@ -1,20 +1,43 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   return_fail.c                                      :+:      :+:    :+:   */
+/*   utils.c                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: yuak <yuak@student.42istanbul.com.tr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/09/05 13:56:19 by yuak              #+#    #+#             */
-/*   Updated: 2026/09/05 13:56:28 by yuak             ###   ########.fr       */
+/*   Updated: 2026/09/06 19:51:21 by yuak             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "cub3d.h"
+#include "read_next_line.h"
 
-int	return_fail(char *buffer)
+int	return_fail(char **buffer)
 {
-	free(buffer);
-	buffer = NULL;
+	if (buffer && *buffer)
+	{
+		free(*buffer);
+		*buffer = NULL;
+	}
 	return (1);
+}
+
+void rnl_copy_str(char *dest, char *src)
+{
+	while (*src)
+	{
+		*dest = *src;
+		src++;
+		dest++;
+	}
+}
+
+int	handle_eof(char **line)
+{
+	if ((*line)[0] == '\0')
+	{
+		free(*line);
+		*line = NULL;
+	}
+	return (0);
 }
