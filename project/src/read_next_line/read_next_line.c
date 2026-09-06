@@ -6,7 +6,7 @@
 /*   By: yuak <yuak@student.42istanbul.com.tr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/09/04 20:08:44 by yuak              #+#    #+#             */
-/*   Updated: 2026/09/05 14:22:22 by yuak             ###   ########.fr       */
+/*   Updated: 2026/09/06 18:33:26 by yuak             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,7 +32,7 @@ int	read_next_line(int fd, char **line)
 	}
 	*line = ft_strdup("");
 	if (!(*line))
-		return (return_fail(buffer));
+		return (*line = NULL, return_fail(buffer));
 	if (connect_buffer(line, buffer))
 		return (return_fail(buffer));
 	shift_buffer(buffer);

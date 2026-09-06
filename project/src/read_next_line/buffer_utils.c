@@ -6,7 +6,7 @@
 /*   By: yuak <yuak@student.42istanbul.com.tr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/09/04 20:11:01 by yuak              #+#    #+#             */
-/*   Updated: 2026/09/05 14:09:47 by yuak             ###   ########.fr       */
+/*   Updated: 2026/09/06 18:32:22 by yuak             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,10 +16,9 @@ int	implement_buffer(char **buffer)
 {
 	if ((*buffer))
 		return (0);
-	*buffer = (char *) malloc((BUFFER_SIZE + 1) * sizeof(char));
+	*buffer = (char *) ft_calloc((BUFFER_SIZE + 1), sizeof(char));
 	if (!(*buffer))
 		return (1);
-	(*buffer)[BUFFER_SIZE] = '\0';
 	return (0); 
 }
 
