@@ -6,7 +6,7 @@
 /*   By: yuak <yuak@student.42istanbul.com.tr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/09/04 20:08:44 by yuak              #+#    #+#             */
-/*   Updated: 2026/09/06 19:58:01 by yuak             ###   ########.fr       */
+/*   Updated: 2026/09/06 20:13:21 by yuak             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ int	read_next_line(int fd, char **line)
 	static char	*buffer;
 
 	if (fd < 0 || BUFFER_SIZE <= 0)
-		return (*line = NULL, return_fail(&buffer));
+		return (handle_wrong_arg(line, &buffer));
 	if (implement_buffer(&buffer))
 		return (*line = NULL, buffer = NULL, 1);
 	if (rnl_is_new_line(buffer))
