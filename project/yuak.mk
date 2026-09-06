@@ -6,4 +6,5 @@ YUAK_SRC = parser/extract_map.c parser/extract_map_utils.c parser/get_texture_pa
 			check_utils/is_there_map.c check_utils/is_map_line.c check_utils/print_error_arg.c \
 			free_utils/free_split.c free_utils/free_game.c free_utils/free_map.c free_utils/free_texture.c free_utils/free_grid.c \
 			print_functions/print_map.c print_functions/print_texture_paths.c check_utils/check_invalid_line.c \
-			print_functions/print_player_info.c
+			print_functions/print_player_info.c \
+			read_next_line/buffer_utils.c read_next_line/line_utils.c read_next_line/read_next_line.c read_next_line/utils.c

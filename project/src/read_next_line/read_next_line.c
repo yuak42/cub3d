@@ -6,65 +6,60 @@
 /*   By: yuak <yuak@student.42istanbul.com.tr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/09/04 20:08:44 by yuak              #+#    #+#             */
-/*   Updated: 2026/09/06 18:33:26 by yuak             ###   ########.fr       */
+/*   Updated: 2026/09/06 19:58:01 by yuak             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "cub3d.h"
+#include "read_next_line.h"
 
-static int	read_file(int fd, char *line, char *buffer);
+static int	read_file(int fd, char **line, char *buffer);
 
 int	read_next_line(int fd, char **line)
 {
 	static char	*buffer;
 
 	if (fd < 0 || BUFFER_SIZE <= 0)
-		return (*line = NULL, return_fail(buffer));
+		return (*line = NULL, return_fail(&buffer));
 	if (implement_buffer(&buffer))
-		return (*line = NULL, 1);
-	if (is_new_line(buffer))
-	{
-		*line = extract_line(buffer);
-		if (!(*line))
-			return (*line = NULL, return_fail(buffer));
-		shift_buffer(buffer);
-		return (0);
-	}
+		return (*line = NULL, buffer = NULL, 1);
+	if (rnl_is_new_line(buffer))
+		return (handle_buffer_new_line(line, buffer));
 	*line = ft_strdup("");
 	if (!(*line))
-		return (*line = NULL, return_fail(buffer));
-	if (connect_buffer(line, buffer))
-		return (return_fail(buffer));
-	shift_buffer(buffer);
+		return (*line = NULL, return_fail(&buffer));
+	if (rnl_connect_buffer(buffer, line))
+		return (free(*line), *line = NULL, return_fail(&buffer));
+	rnl_shift_buffer(buffer);
 	if (read_file(fd, line, buffer))
-		return (return_fail(buffer));
-	shift_buffer(buffer);
+		return (return_fail(&buffer));
+	if (buffer[0] == '\0')
+	{
+		free(buffer);
+		buffer = NULL;
+	}
+	else
+		rnl_shift_buffer(buffer);
 	return (0);
 }
 
 static int	read_file(int fd, char **line, char *buffer)
 {
 	ssize_t	i;
-	char	*new_line;
 	
 	i = 1;
 	while (i)
 	{
 		i = read(fd, buffer, BUFFER_SIZE);
-		if (i < 0)
+		if (i == -1)
 			return (free(*line), *line = NULL, 1);
-		buffer[BUFFER_SIZE] = '\0';
-		if (connect_buffer(buffer, line))
+		buffer[i] = '\0';
+		if (i == 0)
+			return (handle_eof(line));
+		if (rnl_connect_buffer(buffer, line))
 			return (free(*line), *line = NULL, 1);
-		if (is_new_line(*line))
-		{
-			new_line = extract_line(*line);
-			if (!new_line)
-				return (free(*line), *line = NULL, 1);
-			free(*line);
-			*line = new_line;
-			return (0);
-		}
+		if (rnl_is_new_line(*line))
+			return (handle_new_line(line));
 	}
 	return (0);	
 }
+

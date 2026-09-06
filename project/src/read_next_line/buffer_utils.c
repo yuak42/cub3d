@@ -6,11 +6,11 @@
 /*   By: yuak <yuak@student.42istanbul.com.tr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/09/04 20:11:01 by yuak              #+#    #+#             */
-/*   Updated: 2026/09/06 18:36:40 by yuak             ###   ########.fr       */
+/*   Updated: 2026/09/06 19:57:27 by yuak             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "cub3d.h"
+#include "read_next_line.h"
 
 int	implement_buffer(char **buffer)
 {
@@ -22,7 +22,7 @@ int	implement_buffer(char **buffer)
 	return (0); 
 }
 
-void	shift_buffer(char *buffer)
+void	rnl_shift_buffer(char *buffer)
 {
 	int	i;
 	int	j;
@@ -50,18 +50,29 @@ void	shift_buffer(char *buffer)
 	}
 }
 
-int	connect_buffer(char *buffer, char **line)
+int	rnl_connect_buffer(char *buffer, char **line)
 {
 	char	*new_line;
 	size_t	old_size;
+	size_t	buffer_size;
 
 	old_size = ft_strlen(*line);
-	new_line = (char *) ft_calloc(old_size + BUFFER_SIZE + 1, sizeof(char));
+	buffer_size = ft_strlen(buffer);
+	new_line = (char *) ft_calloc(old_size + buffer_size + 1, sizeof(char));
 	if (!new_line)
 		return (1);
-	ft_strcpy(new_line, *line);
-	ft_strcpy(new_line + old_size, buffer);
+	rnl_copy_str(new_line, *line);
+	rnl_copy_str(new_line + old_size, buffer);
 	free(*line);
 	*line = new_line;
+	return (0);
+}
+
+int	handle_buffer_new_line(char **line, char *buffer)
+{
+	*line = extract_line(buffer);
+	if (!(*line))
+		return (*line = NULL, return_fail(&buffer));
+	shift_buffer(buffer);
 	return (0);
 }
