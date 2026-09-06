@@ -6,7 +6,7 @@
 /*   By: yuak <yuak@student.42istanbul.com.tr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/09/04 20:11:01 by yuak              #+#    #+#             */
-/*   Updated: 2026/09/06 18:32:22 by yuak             ###   ########.fr       */
+/*   Updated: 2026/09/06 18:36:40 by yuak             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -56,7 +56,7 @@ int	connect_buffer(char *buffer, char **line)
 	size_t	old_size;
 
 	old_size = ft_strlen(*line);
-	new_line = (char *) malloc((old_size + BUFFER_SIZE + 1) * sizeof(char));
+	new_line = (char *) ft_calloc(old_size + BUFFER_SIZE + 1, sizeof(char));
 	if (!new_line)
 		return (1);
 	ft_strcpy(new_line, *line);
