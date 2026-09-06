@@ -14,7 +14,7 @@
 
 static void set_draw(t_render *args);
 static void set_wallx(t_render *args, t_game *game);
-static void	set_tex_x(t_render *args, t_game *game);
+static void	set_tex_x(t_render *args);
 static void tex_x_mirror(t_render *args, int texwidth);
 
 void set_wall_size(t_render *args, t_game *game)
@@ -27,7 +27,7 @@ void set_wall_size(t_render *args, t_game *game)
 	//printf("perpwalldist:%f\nlineheight:%d\n", args->size.perpwalldist, args->size.lineheight);
 	set_draw(args);
 	set_wallx(args, game);
-	set_tex_x(args, game);
+	set_tex_x(args);
 }
 
 static void set_draw(t_render *args)
@@ -50,28 +50,23 @@ static void set_wallx(t_render *args, t_game *game)
 	args->size.wall_x -= floor(args->size.wall_x);
 	//printf("wall_x:%f\n", args->size.wall_x);
 }
-static void	set_tex_x(t_render *args, t_game *game)
-{
-	char	*wall;
 
+static void	set_tex_x(t_render *args)
+{
 	if (args->size.side == 0)
 	{
 		if (args->ray_dirx > 0)
-			wall = game->texture.ea;
+			args->wall = args->ea;
 		else if (args->ray_dirx < 0)
-			wall = game->texture.we;
+			args->wall = args->we;
 	}
 	else if (args->size.side == 1)
 	{
 		if (args->ray_diry > 0)
-			wall = game->texture.so;
+			args->wall = args->so;
 		else if (args->ray_diry < 0)
-			wall = game->texture.no;
+			args->wall = args->no;
 	}
-	args->wall.w_p = mlx_xpm_file_to_image(args->window.mlx_ptr, wall, &args->wall.tex_w, &args->wall.tex_h);
-	if (!args->wall.w_p)
-		return ;
-	args->wall.w_pixel = mlx_get_data_addr(args->wall.w_p, &args->wall.bpp, &args->wall.len, &args->wall.end);
 	args->size.tex_x = (int)(args->size.wall_x * args->wall.tex_w);
 	tex_x_mirror(args, args->wall.tex_w);
 	//printf("tex_x:%d\n", args->size.tex_x);

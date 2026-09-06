@@ -72,7 +72,11 @@ typedef struct s_renderargs
 	t_size	size;
 	t_win	window;
 	t_img	img;
-	t_wall  wall;
+	t_wall  no;
+	t_wall  so;
+	t_wall  ea;
+	t_wall  we;
+	t_wall	wall;
 	t_game	*game;
 } t_render;
 
