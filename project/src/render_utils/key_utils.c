@@ -31,3 +31,18 @@ int key_release(int key_code, void *args)
 	ag->flag = 0;
 	return (0);
 }
+int	is_walkable(t_game *game, double x, double y)
+{
+	int	map_x;
+	int	map_y;
+
+	map_x = (int)x;
+	map_y = (int)y;
+	if (map_x < 0 || map_x >= (int)game->map->width)
+		return (0);
+	if (map_y < 0 || map_y >= (int)game->map->height)
+		return (0);
+	if (game->map->grid[map_y][map_x] == '1')
+		return (0);
+	return (1);
+}
