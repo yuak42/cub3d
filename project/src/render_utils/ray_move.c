@@ -14,7 +14,8 @@
 
 static void	rot_dir(t_render *args, double rot);
 static void	rot_plane(t_render *args, double rot);
-void	ft_ray_move(t_render *args, int keycode)
+
+void	ray_move(t_render *args, int keycode)
 {
 	double	rot;
 
