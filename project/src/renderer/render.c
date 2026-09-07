@@ -79,8 +79,10 @@ static int	get_wall(t_render *args, t_game *game)
 
 static void	init_mlx(t_render *args)
 {
-	int status;
+	int		status;
+    void	*mlx_ptr;
 
+    mlx_ptr = args->window.mlx_ptr;
 	status = 1;
 	if (!init_window(args))
 		status = 0;
@@ -92,8 +94,8 @@ static void	init_mlx(t_render *args)
 	if (!status)
 	{
 		ft_putstr_fd("mlx_init eror\n", 2);
-		free(args);
-		// add free game 
+		free_render(args); 
+		free(mlx_ptr);
 		exit(1);
 	}
 }
