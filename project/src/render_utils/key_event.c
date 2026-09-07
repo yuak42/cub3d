@@ -12,32 +12,22 @@
 
 #include "cub3d.h"
 
-//static void	ft_move(t_render *args, int keycode, t_game *game);
-
 int	key_event(void *args)
 {
 	t_render	*ag;
+	int	keycode;
 
 	ag = args;
+	keycode = ag->key_code;
 	if (ag->flag == 1)
 	{
-		if (ag->key_code == 65307)
+		if (keycode == 65307)
 			close_win(args);
-		else if(ag->key_code == 65361 || ag->key_code == 65363)
-			ft_ray_move(args, ag->key_code);
+		else if(keycode == 65361 || keycode == 65363)
+			ray_move(args, ag->key_code);
+		else if(keycode == 119 || keycode == 97 || keycode == 115 || keycode == 100)
+			move_pose(args);
 	}
 	return (0);
 }
 
-//static void	ft_move(t_render *args, int keycode, t_game *game)
-// {
-// 	if (keycode == 65361)
-// 		join->args.move_x -= join->win.size * 0.05;
-// 	else if (keycode == 65363)
-// 		join->args.move_x += join->win.size * 0.05;
-// 	else if (keycode == 65362)
-// 		join->args.move_y -= join->win.size * 0.05;
-// 	else if (keycode == 65364)
-// 		join->args.move_y += join->win.size * 0.05;
-// 	fractol_render(join);
-// }
