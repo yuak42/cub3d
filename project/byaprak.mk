@@ -13,4 +13,6 @@ BYAPRAK_SRC = renderer/set_dir.c \
 				render_utils/close_win.c \
 				render_utils/key_event.c \
 				render_utils/ray_move.c \
-				render_utils/key_utils.c
+				render_utils/key_utils.c \
+				render_utils/move_position.c \
+				render_utils/free_render.c
