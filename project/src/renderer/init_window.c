@@ -19,14 +19,15 @@ int	init_window(t_render *args)
 	{
 		printf("mlx_init error\n");
 		return (0);
-	} 
+	}
 	args->window.h = 720;
 	args->window.w = 1280;
-	args->window.win_ptr = mlx_new_window(args->window.mlx_ptr, args->window.w, args->window.h, "CUB3D");
- 	if (!(args->window.win_ptr))
-    {
-        printf("mlx_new_window error\n");
-        return (0);
-    }
+	args->window.win_ptr = mlx_new_window(args->window.mlx_ptr,
+			args->window.w, args->window.h, "CUB3D");
+	if (!(args->window.win_ptr))
+	{
+		printf("mlx_new_window error\n");
+		return (0);
+	}
 	return (1);
 }
