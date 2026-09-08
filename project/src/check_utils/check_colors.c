@@ -6,7 +6,7 @@
 /*   By: yuak <yuak@student.42istanbul.com.tr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/08/14 16:36:03 by yuak              #+#    #+#             */
-/*   Updated: 2026/08/29 19:26:31 by yuak             ###   ########.fr       */
+/*   Updated: 2026/09/08 16:11:23 by yuak             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,16 +24,18 @@ int	check_colors(char *cub)
 	fd = open(cub, O_RDONLY);
 	if (fd < 0)
 		return (perror("Error"), 1000);
-	line = get_next_line(fd);
+	if (read_next_line(fd, &line))
+		return (perror("Error"), close(fd), read_next_line(-1, NULL));
 	while (line)
 	{
 		if (!ft_strncmp("F ", line, 2) || !ft_strncmp("C ", line, 2))
 		{
 			if (check_line(line))
-				return (free(line), close(fd), 1);
+				return (free(line), close(fd), read_next_line(-1,NULL));
 		}
 		free(line);
-		line = get_next_line(fd);
+		if (read_next_line(fd, &line))
+			return (perror("Error"), close(fd), read_next_line(-1, NULL));
 	}
 	close(fd);
 	return (0);
