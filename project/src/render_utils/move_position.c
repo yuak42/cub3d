@@ -19,13 +19,13 @@ static void	right_move(t_render *args);
 
 void	move_pose(t_render *args)
 {
-	if (args->key_code == 119)
+	if (args->key.w)
 		up_move(args);
-	else if (args->key_code == 115)
+	if (args->key.s)
 		down_move(args);
-	else if (args->key_code == 97)
+	if (args->key.a)
 		left_move(args);
-	else if (args->key_code == 100)
+	if (args->key.d)
 		right_move(args);
 	put_game(args);
 }
