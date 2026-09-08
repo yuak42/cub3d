@@ -15,19 +15,23 @@
 int	key_event(void *args)
 {
 	t_render	*ag;
-	int			keycode;
+	int			moved;
 
 	ag = args;
-	keycode = ag->key_code;
-	if (ag->flag == 1)
+	moved = 0;
+	if (ag->key_code == 65307)
+		close_win(args);
+	if (ag->key.w || ag->key.s || ag->key.a || ag->key.d)
 	{
-		if (keycode == 65307)
-			close_win(args);
-		else if (keycode == 65361 || keycode == 65363)
-			ray_move(args, ag->key_code);
-		else if (keycode == 119 || keycode == 97
-			|| keycode == 115 || keycode == 100)
-			move_pose(args);
+		move_pose(args);
+		moved = 1;
 	}
+	if (ag->key.left || ag->key.right)
+	{
+		ray_move(args, ag->key_code);
+		moved = 1;
+	}
+	if (moved)
+		put_game(ag);
 	return (0);
 }
