@@ -12,6 +12,15 @@
 
 #include<math.h>
 
+typedef struct s_eventkey
+{
+	int w;
+	int s;
+	int a;
+	int d;
+	int left;
+	int right;
+} t_key;
 typedef struct s_walltexture
 {
 	char	*w_pixel;
@@ -78,6 +87,7 @@ typedef struct s_renderargs
 	t_wall  we;
 	t_wall	wall;
 	t_game	*game;
+	t_key	key;
 } t_render;
 
 void	set_dir(t_game *game);
