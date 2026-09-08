@@ -30,7 +30,6 @@ int	key_press(int key_code, void *args)
 		ag->key.left = 1;
 	else if (key_code == 65363)
 		ag->key.right = 1;
-
 	return (0);
 }
 
@@ -51,7 +50,6 @@ int	key_release(int key_code, void *args)
 		ag->key.left = 0;
 	else if (key_code == 65363)
 		ag->key.right = 0;
-
 	return (0);
 }
 
