@@ -12,7 +12,7 @@
 
 #include "cub3d.h"
 
-int key_press(int key_code, void *args)
+int	key_press(int key_code, void *args)
 {
 	t_render	*ag;
 
@@ -22,7 +22,7 @@ int key_press(int key_code, void *args)
 	return (0);
 }
 
-int key_release(int key_code, void *args)
+int	key_release(int key_code, void *args)
 {
 	t_render	*ag;
 
@@ -31,6 +31,7 @@ int key_release(int key_code, void *args)
 	ag->flag = 0;
 	return (0);
 }
+
 int	is_walkable(t_game *game, double x, double y)
 {
 	int	map_x;
