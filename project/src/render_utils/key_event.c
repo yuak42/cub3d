@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   key_event.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: byaprak <byaprak@student.42istanbul.com.tr>  #+#  +:+       +#+      */
+/*   By: byaprak <byaprak@student.42istanbul.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026-09-04 21:24:39 by byaprak           #+#    #+#             */
-/*   Updated: 2026-09-04 21:24:39 by byaprak          ###   ########.fr       */
+/*   Created: 2026/09/04 21:24:39 by byaprak           #+#    #+#             */
+/*   Updated: 2026/09/09 21:00:14 by byaprak          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 

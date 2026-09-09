@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ray_move.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: byaprak <byaprak@student.42istanbul.com.tr>  #+#  +:+       +#+      */
+/*   By: byaprak <byaprak@student.42istanbul.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026-09-04 21:53:08 by byaprak           #+#    #+#             */
-/*   Updated: 2026-09-04 21:53:08 by byaprak          ###   ########.fr       */
+/*   Created: 2026/09/04 21:53:08 by byaprak           #+#    #+#             */
+/*   Updated: 2026/09/09 21:00:53 by byaprak          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   close_win.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: byaprak <byaprak@student.42istanbul.com.tr>  #+#  +:+       +#+      */
+/*   By: byaprak <byaprak@student.42istanbul.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026-09-04 21:29:34 by byaprak           #+#    #+#             */
-/*   Updated: 2026-09-04 21:29:34 by byaprak          ###   ########.fr       */
+/*   Created: 2026/09/04 21:29:34 by byaprak           #+#    #+#             */
+/*   Updated: 2026/09/09 21:01:06 by byaprak          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
