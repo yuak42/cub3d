@@ -6,7 +6,7 @@
 /*   By: yuak <yuak@student.42istanbul.com.tr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/08/17 08:14:50 by yuak              #+#    #+#             */
-/*   Updated: 2026/09/06 20:12:49 by yuak             ###   ########.fr       */
+/*   Updated: 2026/09/09 12:39:20 by yuak             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,7 +32,7 @@ int	check_invalid_line(char *cub)
 		if (read_next_line(fd, &line))
 			return (close(fd), perror("Error"), 1);
 	}
-	return (close(fd), 0);
+	return (close(fd), read_next_line(-1, NULL), 0);
 }
 
 static int	is_invalid(char *line)

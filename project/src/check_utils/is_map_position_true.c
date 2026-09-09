@@ -6,7 +6,7 @@
 /*   By: yuak <yuak@student.42istanbul.com.tr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/08/18 10:23:03 by yuak              #+#    #+#             */
-/*   Updated: 2026/09/09 12:23:19 by yuak             ###   ########.fr       */
+/*   Updated: 2026/09/09 12:44:15 by yuak             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,7 +36,7 @@ int	is_map_position_true(char *cub)
 		if (read_next_line(fd, &line))
 			return (close(fd), perror("Error"), read_next_line(-1, NULL), 0);
 	}
-	return (close(fd), 1);
+	return (close(fd), read_next_line(-1, NULL), 1);
 }
 
 static int check_map_position(int fd)

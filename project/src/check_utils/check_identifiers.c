@@ -6,7 +6,7 @@
 /*   By: yuak <yuak@student.42istanbul.com.tr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/08/12 14:31:20 by yuak              #+#    #+#             */
-/*   Updated: 2026/09/06 20:18:22 by yuak             ###   ########.fr       */
+/*   Updated: 2026/09/09 12:41:12 by yuak             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,6 +53,7 @@ static int check_existence_and_uniqueness(char *id, char *cub)
 			return (close(fd), perror("Error"), 1);
 	}
 	close(fd);
+	read_next_line(-1, NULL);
 	if (exist == 0)
 		return (print_error_arg("Error\n? identifier is missing\n", id), 701);
 	return (0);

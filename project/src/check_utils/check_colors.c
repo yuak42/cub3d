@@ -6,7 +6,7 @@
 /*   By: yuak <yuak@student.42istanbul.com.tr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/08/14 16:36:03 by yuak              #+#    #+#             */
-/*   Updated: 2026/09/08 16:39:17 by yuak             ###   ########.fr       */
+/*   Updated: 2026/09/09 12:43:28 by yuak             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,6 +37,7 @@ int	check_colors(char *cub)
 		if (read_next_line(fd, &line))
 			return (close(fd), perror("Error"), read_next_line(-1, NULL));
 	}
+	read_next_line(-1, NULL);
 	close(fd);
 	return (0);
 }
