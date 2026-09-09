@@ -28,7 +28,7 @@ int	key_event(void *args)
 	}
 	if (ag->key.left || ag->key.right)
 	{
-		ray_move(args, ag->key_code);
+		ray_move(args);
 		moved = 1;
 	}
 	if (moved)
