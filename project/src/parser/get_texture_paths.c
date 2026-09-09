@@ -6,7 +6,7 @@
 /*   By: yuak <yuak@student.42istanbul.com.tr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/08/06 12:40:35 by yuak              #+#    #+#             */
-/*   Updated: 2026/08/14 15:55:05 by yuak             ###   ########.fr       */
+/*   Updated: 2026/09/09 12:47:22 by yuak             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,8 @@ int get_texture_paths(char *cub, t_game *game)
 	fd = open(cub, O_RDONLY);
 	if (fd < 0)
 		return (1000);
-	line = get_next_line(fd);
+	if (read_next_line(fd, &line))
+		return (perror("Error"), close(fd), 1);
 	while (line)
 	{
 		if (is_texture_line(line))
@@ -29,8 +30,10 @@ int get_texture_paths(char *cub, t_game *game)
 				return (free_texture(game->texture), free(line), close(fd), 1);
 		}
 		free(line);
-		line = get_next_line(fd);
+		if (read_next_line(fd, &line))
+			return (perror("Error"), close(fd), 1);
 	}
+	read_next_line(-1, NULL);
 	close(fd);
 	return (0);
 }

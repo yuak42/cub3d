@@ -6,27 +6,35 @@
 /*   By: yuak <yuak@student.42istanbul.com.tr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/08/26 13:18:37 by yuak              #+#    #+#             */
-/*   Updated: 2026/08/26 17:36:26 by yuak             ###   ########.fr       */
+/*   Updated: 2026/08/30 15:35:56 by yuak             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "cub3d.h"
 
-int is_map_line(char *line)
+static int	is_map_char(char c);
+
+int	is_map_line(char *line)
 {
-	if (!ft_strncmp(line, "NO ", 3))
+	if (*line == '\n')
 		return (0);
-	if (!ft_strncmp(line, "SO ", 3))
+	while (*line)
+	{
+		if (is_map_char(*line))
+		{
+			line++;
+			continue;
+		}
 		return (0);
-	if (!ft_strncmp(line, "WE ", 3))
-		return (0);
-	if (!ft_strncmp(line, "EA ", 3))
-		return (0);
-	if (!ft_strncmp(line, "F ", 2))
-		return (0);
-	if (!ft_strncmp(line, "C ", 2))
-		return (0);
-	if (line[0] == '\n')
-		return (0);
+	}
 	return (1);
+}
+
+static int	is_map_char(char c)
+{
+	if (c == ' ' || c == '1' || c == '0' || c == '\n')
+		return (1);
+	if (c == 'N' || c == 'S' || c == 'W' || c == 'E')
+		return (1);
+	return (0);
 }

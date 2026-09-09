@@ -6,13 +6,13 @@
 /*   By: yuak <yuak@student.42istanbul.com.tr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/08/12 14:28:01 by yuak              #+#    #+#             */
-/*   Updated: 2026/08/12 14:29:28 by yuak             ###   ########.fr       */
+/*   Updated: 2026/08/29 19:00:51 by yuak             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "cub3d.h"
 
-int	print_error(char *str)
+void	print_error(char *str)
 {
-	return (write(2, str, ft_strlen(str)));
+	write(2, str, ft_strlen(str));
 }
