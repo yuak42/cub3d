@@ -3,7 +3,7 @@
 /*                                                        :::      ::::::::   */
 /*   put.c                                              :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: byaprak <byaprak@student.42istanbul.com.tr>  #+#  +:+       +#+        */
+/*   By: byaprak <byaprak@student.42istanbul.com.tr>  #+#  +:+       +#+      */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026-09-04 23:52:25 by byaprak           #+#    #+#             */
 /*   Updated: 2026-09-04 23:52:25 by byaprak          ###   ########.fr       */
@@ -24,6 +24,7 @@ int	put_game(t_render *args)
 		run_dda(args, args->game, x);
 		x++;
 	}
-	result = mlx_put_image_to_window(args->window.mlx_ptr, args->window.win_ptr, args->img.img_p, 0, 0);
+	result = mlx_put_image_to_window(args->window.mlx_ptr,
+			args->window.win_ptr, args->img.img_p, 0, 0);
 	return (result);
 }

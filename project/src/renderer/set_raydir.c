@@ -16,7 +16,7 @@ void	set_raydir(t_render *args, double x)
 {
 	double	camerax;
 
-	camerax = ((2 * x) / args->window.w) - 1; // width ekran boyutu olacak. 
+	camerax = ((2 * x) / args->window.w) - 1;
 	args->ray_dirx = args->dir_x + args->plane_x * camerax;
 	args->ray_diry = args->dir_y + args->plane_y * camerax;
 }
