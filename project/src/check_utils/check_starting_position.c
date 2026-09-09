@@ -6,7 +6,7 @@
 /*   By: yuak <yuak@student.42istanbul.com.tr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/08/20 14:22:29 by yuak              #+#    #+#             */
-/*   Updated: 2026/09/09 12:44:35 by yuak             ###   ########.fr       */
+/*   Updated: 2026/09/09 12:54:42 by yuak             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,6 +27,7 @@ int	check_starting_position(char *cub)
 		return (perror("Error"), 1000);
 	if (read_next_line(fd, &line))
 		return (perror("Error"), close(fd), 1);
+	num = 0;
 	while (line)
 	{
 		if (is_map_line(line))
