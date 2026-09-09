@@ -25,7 +25,7 @@ CFLAGS = -Wall -Wextra -Werror -Iinclude
 DEBUG_FLAGS = -fsanitize=address -g3
 
 
-LIBS = $(LIBFT) -L$(MLX_DIR) -lmlx -lXext -lX11
+LIBS = $(LIBFT) -L$(MLX_DIR) -lmlx -lXext -lX11 -lm
 
 CC = cc
 
