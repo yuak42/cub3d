@@ -6,7 +6,7 @@
 /*   By: yuak <yuak@student.42istanbul.com.tr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/27 22:26:12 by yuak              #+#    #+#             */
-/*   Updated: 2026/08/06 12:13:18 by yuak             ###   ########.fr       */
+/*   Updated: 2026/09/09 13:16:04 by yuak             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,11 +27,11 @@ int	render(t_game *game)
 	args->game = game;
 	init_mlx(args);
 	put_game(args);
-	mlx_hook(args->window.win_ptr, 12, 1L << 15, win_invisible, args);
-	mlx_hook(args->window.win_ptr, 17, 0, close_win, args);
-	mlx_hook(args->window.win_ptr, 2, 1L << 0, key_press, args);
-	mlx_hook(args->window.win_ptr, 3, 1L << 1, key_release, args);
-	mlx_loop_hook(args->window.mlx_ptr, key_event, args);
+	mlx_hook(args->window.win_ptr, 12, 1L << 15, (int (*)())(void *)win_invisible, args);
+	mlx_hook(args->window.win_ptr, 17, 0, (int (*)())(void *)close_win, args);
+	mlx_hook(args->window.win_ptr, 2, 1L << 0, (int (*)())(void *)key_press, args);
+	mlx_hook(args->window.win_ptr, 3, 1L << 1, (int (*)())(void *)key_release, args);
+	mlx_loop_hook(args->window.mlx_ptr, (int (*)())(void *)key_event, args);
 	mlx_loop(args->window.mlx_ptr);
 	return (1);
 }
