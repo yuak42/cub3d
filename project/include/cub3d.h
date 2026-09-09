@@ -6,7 +6,7 @@
 /*   By: yuak <yuak@student.42istanbul.com.tr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/26 20:00:21 by yuak              #+#    #+#             */
-/*   Updated: 2026/08/26 13:20:54 by yuak             ###   ########.fr       */
+/*   Updated: 2026/09/04 20:08:55 by yuak             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,10 @@
 
 #ifndef CUB3D_H
 # define CUB3D_H
+
+# ifndef BUFFER_SIZE
+#  define BUFFER_SIZE 3
+# endif
 
 #include <stdio.h>
 #include <fcntl.h>
@@ -32,11 +36,15 @@ int 	is_texture_line(char *line);
 int 	assign_texture(t_game *game, char *line);
 int 	get_texture_paths(char *cub, t_game *game);
 
+// read_next_line
+int	read_next_line(int fd, char **line);
+
 // Check Utils
-int		print_error(char *str);
+void	print_error(char *str);
+void	print_error_arg(char *str, char *arg);
 size_t	get_splitted_size(char **splitted);
 int		check_input(int ac, char **av);
-int		check_texture_paths(char *cub);
+int		check_identifiers(char *cub);
 int		check_colors(char *cub);
 int		check_invalid_line(char *cub);
 int		is_there_map(char *cub);
@@ -44,8 +52,8 @@ int		is_map_position_true(char *cub);
 int		get_player_position(t_game *game);
 int		check_map(t_game *game);
 char	**get_grid_copy(char **grid);
-int		flood_fill(char **grid, t_player player);
-int		is_start_position_correct(char *cub);
+int		flood_fill(char **grid);
+int		check_starting_position(char *cub);
 int		is_map_line(char *line);
 
 

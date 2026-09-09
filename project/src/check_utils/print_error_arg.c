@@ -1,23 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strlen.c                                        :+:      :+:    :+:   */
+/*   print_error_arg.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: yuak <yuak@student.42istanbul.com.tr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/05/26 16:19:12 by yuak              #+#    #+#             */
-/*   Updated: 2026/09/05 14:04:04 by yuak             ###   ########.fr       */
+/*   Created: 2026/08/29 18:50:57 by yuak              #+#    #+#             */
+/*   Updated: 2026/08/29 19:02:37 by yuak             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "cub3d.h"
 
-size_t	ft_strlen(const char *s)
+void	print_error_arg(char *str, char *arg)
 {
 	size_t	i;
 
 	i = 0;
-	while (s[i] != '\0')
+	while (str[i] && str[i] != '?')
 		i++;
-	return (i);
+	if (!str[i])
+	{
+		print_error(str);
+		return ;
+	}
+	write(2, str, i);
+	write(2, arg, ft_strlen(arg));
+	i++;
+	write(2, &str[i], ft_strlen(&str[i]));
 }

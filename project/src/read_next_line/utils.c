@@ -1,40 +1,50 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   is_map_line.c                                      :+:      :+:    :+:   */
+/*   utils.c                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: yuak <yuak@student.42istanbul.com.tr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/08/26 13:18:37 by yuak              #+#    #+#             */
-/*   Updated: 2026/08/30 15:35:56 by yuak             ###   ########.fr       */
+/*   Created: 2026/09/05 13:56:19 by yuak              #+#    #+#             */
+/*   Updated: 2026/09/06 20:13:06 by yuak             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "cub3d.h"
+#include "read_next_line.h"
 
-static int	is_map_char(char c);
-
-int	is_map_line(char *line)
+int	return_fail(char **buffer)
 {
-	if (*line == '\n')
-		return (0);
-	while (*line)
+	if (buffer && *buffer)
 	{
-		if (is_map_char(*line))
-		{
-			line++;
-			continue;
-		}
-		return (0);
+		free(*buffer);
+		*buffer = NULL;
 	}
 	return (1);
 }
 
-static int	is_map_char(char c)
+void rnl_copy_str(char *dest, char *src)
 {
-	if (c == ' ' || c == '1' || c == '0' || c == '\n')
-		return (1);
-	if (c == 'N' || c == 'S' || c == 'W' || c == 'E')
-		return (1);
+	while (*src)
+	{
+		*dest = *src;
+		src++;
+		dest++;
+	}
+}
+
+int	handle_eof(char **line)
+{
+	if ((*line)[0] == '\0')
+	{
+		free(*line);
+		*line = NULL;
+	}
 	return (0);
+}
+
+int	handle_wrong_arg(char **line, char **buffer)
+{
+	if (line)
+		*line = NULL;
+	return (return_fail(buffer));
 }
