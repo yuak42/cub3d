@@ -3,7 +3,7 @@
 /*                                                        :::      ::::::::   */
 /*   set_map.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: byaprak <byaprak@student.42istanbul.com.tr>  #+#  +:+       +#+        */
+/*   By: byaprak <byaprak@student.42istanbul.com.tr>  #+#  +:+       +#+      */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026-08-24 16:33:52 by byaprak           #+#    #+#             */
 /*   Updated: 2026-08-24 16:33:52 by byaprak          ###   ########.fr       */
@@ -13,12 +13,12 @@
 #include "cub3d.h"
 
 static void	get_sidedist(t_render *args, t_game *game);
-static void get_stepx(t_render *args);
+static void	get_stepx(t_render *args);
 
 void	set_map(t_render *args, t_game *game)
 {
-	args->mapx = (int) (game->player.x);
-	args->mapy = (int) (game->player.y);
+	args->mapx = (int)(game->player.x);
+	args->mapy = (int)(game->player.y);
 	if (args->ray_dirx == 0)
 		args->deltadistx = 1e30;
 	else
@@ -43,7 +43,7 @@ static void	get_sidedist(t_render *args, t_game *game)
 		args->sidedisty = (args->mapy + 1 - game->player.y) * args->deltadisty;
 }
 
-static void get_stepx(t_render *args)
+static void	get_stepx(t_render *args)
 {
 	if (args->ray_dirx < 0)
 		args->stepx = -1;

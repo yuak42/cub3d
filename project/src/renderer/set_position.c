@@ -19,29 +19,3 @@ void	set_position(t_game *game, t_render *args)
 	args->dir_x = game->player.dir_x;
 	args->dir_y = game->player.dir_y;
 }
-
-// void	set_position(t_game *game)
-// {
-// 	char	**grid;
-// 	int		i;
-// 	int		j;
-
-// 	i = 0;
-// 	j = 0;
-// 	grid = game->map->grid;
-// 	while(grid[i])
-// 	{
-// 		j = 0;
-// 		while(grid[i][j])
-// 		{
-// 			if (grid[i][j]== 'N' || grid[i][j] == 'S' || grid[i][j]== 'E' || grid[i][j] == 'W')
-// 			{
-// 				game->player.x = j+ 0.5;
-// 				game->player.y = i + 0.5;
-// 				return ;
-// 			}
-// 			j++;
-// 		}
-// 		i++;
-// 	}
-// }

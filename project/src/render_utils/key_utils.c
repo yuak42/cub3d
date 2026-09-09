@@ -12,25 +12,47 @@
 
 #include "cub3d.h"
 
-int key_press(int key_code, void *args)
+int	key_press(int key_code, void *args)
 {
 	t_render	*ag;
 
 	ag = args;
 	ag->key_code = key_code;
-	ag->flag = 1;
+	if (key_code == 119)
+		ag->key.w = 1;
+	else if (key_code == 115)
+		ag->key.s = 1;
+	else if (key_code == 97)
+		ag->key.a = 1;
+	else if (key_code == 100)
+		ag->key.d = 1;
+	else if (key_code == 65361)
+		ag->key.left = 1;
+	else if (key_code == 65363)
+		ag->key.right = 1;
 	return (0);
 }
 
-int key_release(int key_code, void *args)
+int	key_release(int key_code, void *args)
 {
 	t_render	*ag;
 
 	ag = args;
-	ag->key_code = key_code;
-	ag->flag = 0;
+	if (key_code == 119)
+		ag->key.w = 0;
+	else if (key_code == 115)
+		ag->key.s = 0;
+	else if (key_code == 97)
+		ag->key.a = 0;
+	else if (key_code == 100)
+		ag->key.d = 0;
+	else if (key_code == 65361)
+		ag->key.left = 0;
+	else if (key_code == 65363)
+		ag->key.right = 0;
 	return (0);
 }
+
 int	is_walkable(t_game *game, double x, double y)
 {
 	int	map_x;

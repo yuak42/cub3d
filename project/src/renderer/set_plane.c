@@ -14,7 +14,7 @@
 
 void	set_plane(t_game *game, t_render *args)
 {
-	char dir;
+	char	dir;
 
 	dir = get_spawn_dir(game);
 	if (dir == '0')

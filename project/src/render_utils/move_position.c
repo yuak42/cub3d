@@ -12,26 +12,25 @@
 
 #include "cub3d.h"
 
-static void up_move(t_render *args);
-static void down_move(t_render *args);
-static void left_move(t_render *args);
-static void right_move(t_render *args);
+static void	up_move(t_render *args);
+static void	down_move(t_render *args);
+static void	left_move(t_render *args);
+static void	right_move(t_render *args);
 
 void	move_pose(t_render *args)
 {
-
-	if (args->key_code == 119)
+	if (args->key.w)
 		up_move(args);
-	else if (args->key_code == 115)
+	if (args->key.s)
 		down_move(args);
-	else if (args->key_code == 97)
+	if (args->key.a)
 		left_move(args);
-	else if (args->key_code == 100)
+	if (args->key.d)
 		right_move(args);
 	put_game(args);
 }
 
-static void up_move(t_render *args)
+static void	up_move(t_render *args)
 {
 	double	x;
 	double	y;
@@ -50,7 +49,7 @@ static void up_move(t_render *args)
 	args->game->player.y = new_y;
 }
 
-static void down_move(t_render *args)
+static void	down_move(t_render *args)
 {
 	double	x;
 	double	y;
@@ -69,7 +68,7 @@ static void down_move(t_render *args)
 	args->game->player.y = new_y;
 }
 
-static void left_move(t_render *args)
+static void	left_move(t_render *args)
 {
 	double	x;
 	double	y;
@@ -88,7 +87,7 @@ static void left_move(t_render *args)
 	args->game->player.y = new_y;
 }
 
-static void right_move(t_render *args)
+static void	right_move(t_render *args)
 {
 	double	x;
 	double	y;
@@ -106,4 +105,3 @@ static void right_move(t_render *args)
 	args->game->player.x = new_x;
 	args->game->player.y = new_y;
 }
-
