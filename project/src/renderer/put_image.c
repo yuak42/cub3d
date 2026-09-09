@@ -57,8 +57,16 @@ static void	set_rgb(t_render *args, t_game *game, int x, int y)
 {
 	int	color;
 
-	color = game->texture.c.r << 16
+	if (y < args->size.drawstart)
+	{
+		color = game->texture.c.r << 16
 		| game->texture.c.g << 8 | game->texture.c.b;
+	}
+	if (y > args->size.drawstart)
+	{
+		color = game->texture.f.r << 16
+		| game->texture.f.g << 8 | game->texture.f.b;
+	}
 	image_piksel_put(args, color, x, y);
 }
 
