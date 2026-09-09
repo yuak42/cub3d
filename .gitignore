@@ -7,4 +7,5 @@ libmlx.a
 libmlx_Linux.a
 libft.a
 project/minilibx-linux/test/mlx-test
+minilibx-linux/test/mlx-test
 
