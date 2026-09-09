@@ -6,7 +6,7 @@
 /*   By: yuak <yuak@student.42istanbul.com.tr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/08/20 14:22:29 by yuak              #+#    #+#             */
-/*   Updated: 2026/08/30 16:46:02 by yuak             ###   ########.fr       */
+/*   Updated: 2026/09/09 12:25:10 by yuak             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,13 +25,15 @@ int	check_starting_position(char *cub)
 	fd = open(cub, O_RDONLY);
 	if (fd < 0)
 		return (perror("Error"), 1000);
-	line = get_next_line(fd);
+	if (read_next_line(fd, &line))
+		return (perror("Error"), 1);
 	while (line)
 	{
 		if (is_map_line(line))
 			num += get_starting_position_number(line);
 		free(line);
-		line = get_next_line(fd);
+		if (read_next_line(fd, &line))
+			return (perror("Error"), 1);
 	}
 	return (close(fd), get_return(num));
 }
