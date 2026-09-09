@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   set_map.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: byaprak <byaprak@student.42istanbul.com.tr>  #+#  +:+       +#+      */
+/*   By: byaprak <byaprak@student.42istanbul.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026-08-24 16:33:52 by byaprak           #+#    #+#             */
-/*   Updated: 2026-08-24 16:33:52 by byaprak          ###   ########.fr       */
+/*   Created: 2026/08/24 16:33:52 by byaprak           #+#    #+#             */
+/*   Updated: 2026/09/09 21:03:09 by byaprak          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 

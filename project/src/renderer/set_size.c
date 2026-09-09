@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   set_size.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: byaprak <byaprak@student.42istanbul.com.tr>  #+#  +:+       +#+      */
+/*   By: byaprak <byaprak@student.42istanbul.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026-08-26 12:45:33 by byaprak           #+#    #+#             */
-/*   Updated: 2026-08-26 12:45:33 by byaprak          ###   ########.fr       */
+/*   Created: 2026/08/26 12:45:33 by byaprak           #+#    #+#             */
+/*   Updated: 2026/09/09 21:03:36 by byaprak          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
