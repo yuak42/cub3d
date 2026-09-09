@@ -6,7 +6,7 @@
 /*   By: yuak <yuak@student.42istanbul.com.tr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/08/24 10:05:08 by yuak              #+#    #+#             */
-/*   Updated: 2026/09/08 16:43:28 by yuak             ###   ########.fr       */
+/*   Updated: 2026/09/09 12:44:02 by yuak             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,6 +31,7 @@ int	is_there_map(char *cub)
 			return (perror("Error"), close(fd), read_next_line(-1, NULL), 0);
 	}
 	print_error("Error\nThere is no map\n");
+	read_next_line(-1, NULL);
 	close(fd);
 	return (0);
 }

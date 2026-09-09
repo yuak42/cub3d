@@ -6,7 +6,7 @@
 /*   By: yuak <yuak@student.42istanbul.com.tr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/08/06 11:56:45 by yuak              #+#    #+#             */
-/*   Updated: 2026/08/26 18:09:39 by yuak             ###   ########.fr       */
+/*   Updated: 2026/09/09 12:46:50 by yuak             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,17 +22,18 @@ size_t	get_map_height(char *cub)
 	if (fd < 0)
 		return (perror("Error\n"), 0);
 	size = 0;
-	get_next_line(-1); // reset static value
-	line = get_next_line(fd);
+	if (read_next_line(fd, &line))
+		return (perror("Error"), close(fd), 1);
 	while (line)
 	{
 		if (is_map_line(line))
 			size++;
 		free(line);
-		line = get_next_line(fd); // should we check get_next_line malloc errors with strerror?
+		if (read_next_line(fd, &line))
+			return (perror("Error"), close(fd), 1);
 	}
 	close(fd);
-	return (size);
+	return (read_next_line(-1, NULL), size);
 }
 
 size_t	get_map_width(char *cub)
@@ -46,7 +47,8 @@ size_t	get_map_width(char *cub)
 	fd = open(cub, O_RDONLY);
 	if (fd < 0)
 		return (0);
-	line = get_next_line(fd); // get_next_line da çalışmayabilir buna bak strerror ile mi ne
+	if (read_next_line(fd, &line))
+		return (perror("Error"), close(fd), 1);
 	while (line)
 	{
 		if (is_map_line(line))
@@ -55,9 +57,10 @@ size_t	get_map_width(char *cub)
 				size = ft_strlen(line);
 		}
 		free(line);
-		line = get_next_line(fd);
+		if (read_next_line(fd, &line))
+			return (perror("Error"), close(fd), 1);
 	}
-	return (size - 1);
+	return (read_next_line(-1, NULL), size - 1);
 }
 
 t_map	*init_map(char *cub)
@@ -89,13 +92,16 @@ int	assign_grid(t_map *map, char *cub)
 	fd = open(cub, O_RDONLY);
 	if (fd < 0)
 		return (1000);
-	line = get_next_line(fd);
+	if (read_next_line(fd, &line))
+		return (perror("Error"), close(fd), 1);
 	while (line)
 	{
 		if (deal_line(line, map, &grid))
 			return (close(fd), 1);
-		line = get_next_line(fd);
+		if (read_next_line(fd, &line))
+			return (perror("Error"), close(fd), 1);
 	}
+	read_next_line(-1, NULL);
 	close(fd);
 	return (0);
 }
