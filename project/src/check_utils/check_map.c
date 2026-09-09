@@ -6,7 +6,7 @@
 /*   By: yuak <yuak@student.42istanbul.com.tr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/08/18 10:31:52 by yuak              #+#    #+#             */
-/*   Updated: 2026/08/30 16:38:09 by yuak             ###   ########.fr       */
+/*   Updated: 2026/09/09 12:18:39 by yuak             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,6 @@
 int	check_map(t_game *game)
 {
 	char	**grid;
-
 
 	grid = get_grid_copy(game->map->grid);
 	if (!grid)
