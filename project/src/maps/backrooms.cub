@@ -1,7 +1,7 @@
-NO ./src/textures/backrooms/backrooms_north.xpm
-SO ./src/textures/backrooms/backrooms_south.xpm
-WE ./src/textures/backrooms/backrooms_west.xpm
-EA ./src/textures/backrooms/backrooms_east.xpm
+NO ./src/textures/backrooms/north_dark_wall.xpm
+SO ./src/textures/backrooms/south_light_wall.xpm
+WE ./src/textures/backrooms/west_wall.xpm
+EA ./src/textures/backrooms/east_wall.xpm
 
 F 97,81,37
 C 202,198,195
