@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   move_position.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: byaprak <byaprak@student.42istanbul.com.tr>  #+#  +:+       +#+      */
+/*   By: byaprak <byaprak@student.42istanbul.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026-09-06 13:16:54 by byaprak           #+#    #+#             */
-/*   Updated: 2026-09-06 13:16:54 by byaprak          ###   ########.fr       */
+/*   Created: 2026/09/06 13:16:54 by byaprak           #+#    #+#             */
+/*   Updated: 2026/09/09 21:00:47 by byaprak          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 

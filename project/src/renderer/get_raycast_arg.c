@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   get_raycast_arg.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: byaprak <byaprak@student.42istanbul.com.tr>  #+#  +:+       +#+      */
+/*   By: byaprak <byaprak@student.42istanbul.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026-08-24 19:28:45 by byaprak           #+#    #+#             */
-/*   Updated: 2026-08-24 19:28:45 by byaprak          ###   ########.fr       */
+/*   Created: 2026/08/24 19:28:45 by byaprak           #+#    #+#             */
+/*   Updated: 2026/09/09 21:01:24 by byaprak          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
