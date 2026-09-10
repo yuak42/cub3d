@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   free_render.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: byaprak <byaprak@student.42istanbul.com.tr>  #+#  +:+       +#+      */
+/*   By: byaprak <byaprak@student.42istanbul.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026-09-06 15:25:25 by byaprak           #+#    #+#             */
-/*   Updated: 2026-09-06 15:25:25 by byaprak          ###   ########.fr       */
+/*   Created: 2026/09/06 15:25:25 by byaprak           #+#    #+#             */
+/*   Updated: 2026/09/09 21:00:32 by byaprak          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 

@@ -102,7 +102,7 @@ void	run_dda(t_render *args, t_game *game, int x);
 void	set_wall_size(t_render *args, t_game *game);
 int		put_window(t_render *args, t_game *game, int x);
 int		key_event(void *args);
-void	ray_move(t_render *args, int keycode);
+void	ray_move(t_render *args);
 int		close_win(t_render *args);
 int		put_game(t_render *args);
 int		key_release(int key_press, void *args);

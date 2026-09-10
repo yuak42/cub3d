@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ray_move.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: byaprak <byaprak@student.42istanbul.com.tr>  #+#  +:+       +#+      */
+/*   By: byaprak <byaprak@student.42istanbul.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026-09-04 21:53:08 by byaprak           #+#    #+#             */
-/*   Updated: 2026-09-04 21:53:08 by byaprak          ###   ########.fr       */
+/*   Created: 2026/09/04 21:53:08 by byaprak           #+#    #+#             */
+/*   Updated: 2026/09/09 21:00:53 by byaprak          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,13 +15,13 @@
 static void	rot_dir(t_render *args, double rot);
 static void	rot_plane(t_render *args, double rot);
 
-void	ray_move(t_render *args, int keycode)
+void	ray_move(t_render *args)
 {
 	double	rot;
 
-	if (keycode == 65361)
+	if (args->key.left)
 		rot = -0.05;
-	else if (keycode == 65363)
+	else if (args->key.right)
 		rot = 0.05;
 	rot_dir(args, rot);
 	rot_plane(args, rot);

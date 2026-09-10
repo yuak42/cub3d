@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   set_plane.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: byaprak <byaprak@student.42istanbul.com.tr>  #+#  +:+       +#+      */
+/*   By: byaprak <byaprak@student.42istanbul.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026-08-17 21:36:03 by byaprak           #+#    #+#             */
-/*   Updated: 2026-08-17 21:36:03 by byaprak          ###   ########.fr       */
+/*   Created: 2026/08/17 21:36:03 by byaprak           #+#    #+#             */
+/*   Updated: 2026/09/09 21:03:16 by byaprak          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
