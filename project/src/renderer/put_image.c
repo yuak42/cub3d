@@ -6,7 +6,7 @@
 /*   By: byaprak <byaprak@student.42istanbul.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/08/30 21:54:53 by byaprak           #+#    #+#             */
-/*   Updated: 2026/09/09 21:01:38 by byaprak          ###   ########.fr       */
+/*   Updated: 2026/09/10 20:23:32 by byaprak          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -60,12 +60,12 @@ static void	set_rgb(t_render *args, t_game *game, int x, int y)
 	if (y < args->size.drawstart)
 	{
 		color = game->texture.c.r << 16
-		| game->texture.c.g << 8 | game->texture.c.b;
+			| game->texture.c.g << 8 | game->texture.c.b;
 	}
 	if (y > args->size.drawstart)
 	{
 		color = game->texture.f.r << 16
-		| game->texture.f.g << 8 | game->texture.f.b;
+			| game->texture.f.g << 8 | game->texture.f.b;
 	}
 	image_piksel_put(args, color, x, y);
 }
