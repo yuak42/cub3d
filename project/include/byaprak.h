@@ -3,24 +3,24 @@
 /*                                                        :::      ::::::::   */
 /*   byaprak.h                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: yuak <yuak@student.42istanbul.com.tr>      +#+  +:+       +#+        */
+/*   By: byaprak <byaprak@student.42istanbul.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/26 20:00:24 by yuak              #+#    #+#             */
-/*   Updated: 2026/08/06 11:57:46 by yuak             ###   ########.fr       */
+/*   Updated: 2026/09/11 16:43:01 by byaprak          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include<math.h>
+#include <math.h>
 
 typedef struct s_eventkey
 {
-	int w;
-	int s;
-	int a;
-	int d;
-	int left;
-	int right;
-} t_key;
+	int	w;
+	int	s;
+	int	a;
+	int	d;
+	int	left;
+	int	right;
+}	t_key;
 typedef struct s_walltexture
 {
 	char	*w_pixel;
@@ -30,7 +30,7 @@ typedef struct s_walltexture
 	int		bpp;
 	int		len;
 	int		end;
-} t_wall;
+}	t_wall;
 
 typedef struct s_image
 {
@@ -39,7 +39,7 @@ typedef struct s_image
 	int		bpp;
 	int		len;
 	int		end;
-} t_img;
+}	t_img;
 
 typedef struct s_window
 {
@@ -47,7 +47,7 @@ typedef struct s_window
 	void	*win_ptr;
 	int		w;
 	int		h;
-} t_win;
+}	t_win;
 
 typedef struct s_put_size
 {
@@ -58,7 +58,7 @@ typedef struct s_put_size
 	double	wall_x;
 	int		tex_x;
 	int		side;
-} t_size;
+}	t_size;
 
 typedef struct s_renderargs
 {
@@ -81,14 +81,14 @@ typedef struct s_renderargs
 	t_size	size;
 	t_win	window;
 	t_img	img;
-	t_wall  no;
-	t_wall  so;
-	t_wall  ea;
-	t_wall  we;
+	t_wall	no;
+	t_wall	so;
+	t_wall	ea;
+	t_wall	we;
 	t_wall	wall;
 	t_game	*game;
 	t_key	key;
-} t_render;
+}	t_render;
 
 void	set_dir(t_game *game);
 void	set_position(t_game *game, t_render *args);
