@@ -6,7 +6,7 @@
 /*   By: byaprak <byaprak@student.42istanbul.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/26 20:00:24 by yuak              #+#    #+#             */
-/*   Updated: 2026/09/11 16:43:01 by byaprak          ###   ########.fr       */
+/*   Updated: 2026/09/12 13:33:48 by byaprak          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -103,7 +103,7 @@ void	set_wall_size(t_render *args, t_game *game);
 int		put_window(t_render *args, t_game *game, int x);
 int		key_event(void *args);
 void	ray_move(t_render *args);
-int		close_win(t_render *args);
+int		close_win(t_render *args, int status);
 int		put_game(t_render *args);
 int		key_release(int key_press, void *args);
 int		key_press(int key_press, void *args);
