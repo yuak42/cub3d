@@ -27,6 +27,7 @@ OBJS = $(addprefix $(OBJ_DIR)/, $(OBJ))
 LIBFT = libft/libft.a
 MLX_DIR = minilibx-linux
 MLX = $(MLX_DIR)/libmlx.a
+MLX_REPO = https://github.com/42Paris/minilibx-linux.git
 
 CFLAGS = -Wall -Wextra -Werror -Iinclude
 DEBUG_FLAGS = -fsanitize=address -g3
@@ -46,13 +47,19 @@ $(LIBFT):
 	make -C libft
 	echo "make -C libft"
 
-$(MLX):
+$(MLX): $(MLX_DIR)
 	make -C $(MLX_DIR)
 	echo "make -C mlx"
 
 $(OBJ_DIR)/%.o: $(SRC_DIR)/%.c
 	mkdir -p $(dir $@)
 	$(CC) $(CFLAGS) -c  $< -o $@
+
+
+$(MLX_DIR):
+	@if [ ! -d "$(MLX_DIR)" ]; then \
+		git clone $(MLX_REPO); \
+	fi
 
 clean:
 	rm -rf $(MLX_DIR)/obj
