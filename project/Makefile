@@ -1,5 +1,5 @@
 MAKEFLAGS += --silent
-# VARIABLES
+
 NAME = cub3d
 
 SRC_DIR = src
@@ -31,16 +31,13 @@ MLX = $(MLX_DIR)/libmlx.a
 CFLAGS = -Wall -Wextra -Werror -Iinclude
 DEBUG_FLAGS = -fsanitize=address -g3
 
-
 LIBS = $(LIBFT) -L$(MLX_DIR) -lmlx -lXext -lX11 -lm
 
 CC = cc
 
 FCLEAN_FILES_FOR_MLX = $(MLX_DIR)/libmlx.a $(MLX_DIR)/libmlx_Linux.a
 
-# RULES
 all: $(NAME)
-
 
 $(NAME): $(LIBFT) $(MLX) $(OBJS)
 	$(CC) $(CFLAGS) $(OBJS) $(LIBS) -o $(NAME)
