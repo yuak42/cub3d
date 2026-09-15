@@ -6,7 +6,7 @@
 /*   By: yuak <yuak@student.42istanbul.com.tr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/08/26 13:18:37 by yuak              #+#    #+#             */
-/*   Updated: 2026/08/30 15:35:56 by yuak             ###   ########.fr       */
+/*   Updated: 2026/09/15 09:37:40 by yuak             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@ int	is_map_line(char *line)
 		if (is_map_char(*line))
 		{
 			line++;
-			continue;
+			continue ;
 		}
 		return (0);
 	}

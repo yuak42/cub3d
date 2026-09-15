@@ -6,7 +6,7 @@
 /*   By: yuak <yuak@student.42istanbul.com.tr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/08/14 16:36:03 by yuak              #+#    #+#             */
-/*   Updated: 2026/09/09 12:43:28 by yuak             ###   ########.fr       */
+/*   Updated: 2026/09/15 09:39:01 by yuak             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -75,7 +75,7 @@ static int	check_color(char *color)
 		return (1001);
 	if (get_splitted_size(splitted) != 3)
 	{
- 		print_error_arg("Error\nColor format wrong: ?\n", color);
+		print_error_arg("Error\nColor format wrong: ?\n", color);
 		return (free_split(splitted), 1);
 	}
 	if (check_color_num(splitted))
