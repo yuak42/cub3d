@@ -6,7 +6,7 @@
 /*   By: yuak <yuak@student.42istanbul.com.tr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/09/06 18:59:12 by yuak              #+#    #+#             */
-/*   Updated: 2026/09/15 09:41:58 by yuak             ###   ########.fr       */
+/*   Updated: 2026/09/15 10:03:47 by yuak             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 
 # include <stdlib.h>
 # include <unistd.h>
-# include "../libft/libft.h"
+# include "libft.h"
 
 int		read_next_line(int fd, char **line);
 

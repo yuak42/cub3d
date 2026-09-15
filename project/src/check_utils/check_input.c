@@ -6,11 +6,11 @@
 /*   By: yuak <yuak@student.42istanbul.com.tr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/08/06 20:23:55 by yuak              #+#    #+#             */
-/*   Updated: 2026/09/15 09:37:50 by yuak             ###   ########.fr       */
+/*   Updated: 2026/09/15 10:14:04 by yuak             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "cub3d.h"
+#include "check.h"
 
 int	check_input(int ac, char **av)
 {

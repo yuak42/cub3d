@@ -6,11 +6,11 @@
 /*   By: yuak <yuak@student.42istanbul.com.tr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/08/13 08:24:03 by yuak              #+#    #+#             */
-/*   Updated: 2026/09/15 09:44:40 by yuak             ###   ########.fr       */
+/*   Updated: 2026/09/15 10:29:04 by yuak             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "cub3d.h"
+#include <stdlib.h>
 
 void	free_split(char **splitted)
 {

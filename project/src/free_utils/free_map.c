@@ -6,11 +6,14 @@
 /*   By: yuak <yuak@student.42istanbul.com.tr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/08/14 15:40:24 by yuak              #+#    #+#             */
-/*   Updated: 2026/09/15 09:44:12 by yuak             ###   ########.fr       */
+/*   Updated: 2026/09/15 10:48:45 by yuak             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "cub3d.h"
+#include <stdlib.h>
+
+#include "data.h"
+#include "free.h"
 
 void	free_map(t_map *map)
 {

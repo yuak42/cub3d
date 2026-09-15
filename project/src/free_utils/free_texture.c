@@ -6,11 +6,13 @@
 /*   By: yuak <yuak@student.42istanbul.com.tr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/08/14 15:53:47 by yuak              #+#    #+#             */
-/*   Updated: 2026/09/15 09:44:18 by yuak             ###   ########.fr       */
+/*   Updated: 2026/09/15 10:49:47 by yuak             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "cub3d.h"
+#include <stdlib.h>
+
+#include "data.h"
 
 void	free_texture(t_texture texture)
 {

@@ -6,11 +6,15 @@
 /*   By: yuak <yuak@student.42istanbul.com.tr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/08/06 12:43:58 by yuak              #+#    #+#             */
-/*   Updated: 2026/09/15 09:44:05 by yuak             ###   ########.fr       */
+/*   Updated: 2026/09/15 10:33:02 by yuak             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "cub3d.h"
+#include <stdio.h>
+#include <stdlib.h>
+
+#include "free.h"
+#include "libft.h"
 
 static int	deal_texture(char **splitted, t_game *game);
 static int	assign_color(t_game *game, char c, char *str);

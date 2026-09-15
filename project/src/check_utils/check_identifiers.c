@@ -6,11 +6,19 @@
 /*   By: yuak <yuak@student.42istanbul.com.tr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/08/12 14:31:20 by yuak              #+#    #+#             */
-/*   Updated: 2026/09/15 09:38:17 by yuak             ###   ########.fr       */
+/*   Updated: 2026/09/15 10:11:35 by yuak             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "cub3d.h"
+#include <fcntl.h>
+#include <stdio.h>
+#include <stdlib.h>
+#include <unistd.h>
+
+#include "check.h"
+#include "free.h"
+#include "libft.h"
+#include "read_next_line.h"
 
 static int	check_existence_and_uniqueness(char *id, char *cub);
 static int	check_line(char *id, char *line, int *exits);

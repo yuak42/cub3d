@@ -6,11 +6,11 @@
 /*   By: yuak <yuak@student.42istanbul.com.tr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/08/14 15:40:24 by yuak              #+#    #+#             */
-/*   Updated: 2026/09/15 09:44:15 by yuak             ###   ########.fr       */
+/*   Updated: 2026/09/15 10:28:32 by yuak             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "cub3d.h"
+#include <stdlib.h>
 
 void	free_grid(char **grid)
 {

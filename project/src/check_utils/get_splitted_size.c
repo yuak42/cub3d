@@ -6,11 +6,11 @@
 /*   By: yuak <yuak@student.42istanbul.com.tr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/08/14 16:32:15 by yuak              #+#    #+#             */
-/*   Updated: 2026/09/15 09:39:21 by yuak             ###   ########.fr       */
+/*   Updated: 2026/09/15 10:19:44 by yuak             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "cub3d.h"
+#include "stddef.h"
 
 size_t	get_splitted_size(char **splitted)
 {

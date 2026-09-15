@@ -6,11 +6,11 @@
 /*   By: yuak <yuak@student.42istanbul.com.tr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/08/20 10:10:57 by yuak              #+#    #+#             */
-/*   Updated: 2026/09/15 09:39:57 by yuak             ###   ########.fr       */
+/*   Updated: 2026/09/15 10:15:42 by yuak             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "cub3d.h"
+#include "check.h"
 
 static int	fill(char **grid, int x, int y);
 static int	is_filling_char(char c);

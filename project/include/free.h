@@ -1,34 +1,24 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   print_error_arg.c                                  :+:      :+:    :+:   */
+/*   free.h                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: yuak <yuak@student.42istanbul.com.tr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/08/29 18:50:57 by yuak              #+#    #+#             */
-/*   Updated: 2026/09/15 10:26:52 by yuak             ###   ########.fr       */
+/*   Created: 2026/09/15 10:10:34 by yuak              #+#    #+#             */
+/*   Updated: 2026/09/15 10:45:43 by yuak             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <unistd.h>
+#ifndef FREE_H
+# define FREE_H
 
-#include "check.h"
-#include "libft.h"
+# include "data.h"
 
-void	print_error_arg(char *str, char *arg)
-{
-	size_t	i;
+void	free_split(char **splitted);
+void	free_map(t_map *map);
+void	free_grid(char **grid);
+void	free_texture(t_texture texture);
+void	free_game(t_game *game);
 
-	i = 0;
-	while (str[i] && str[i] != '?')
-		i++;
-	if (!str[i])
-	{
-		print_error(str);
-		return ;
-	}
-	write(2, str, i);
-	write(2, arg, ft_strlen(arg));
-	i++;
-	write(2, &str[i], ft_strlen(&str[i]));
-}
+#endif

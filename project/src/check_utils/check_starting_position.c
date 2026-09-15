@@ -6,11 +6,18 @@
 /*   By: yuak <yuak@student.42istanbul.com.tr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/08/20 14:22:29 by yuak              #+#    #+#             */
-/*   Updated: 2026/09/15 09:37:03 by yuak             ###   ########.fr       */
+/*   Updated: 2026/09/15 10:13:35 by yuak             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "cub3d.h"
+#include <fcntl.h>
+#include <stdio.h>
+#include <stdlib.h>
+#include <unistd.h>
+
+#include "check.h"
+#include "libft.h"
+#include "read_next_line.h"
 
 static int	get_starting_position_number(char *line);
 static int	is_starting_position_char(char c);

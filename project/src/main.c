@@ -6,11 +6,15 @@
 /*   By: yuak <yuak@student.42istanbul.com.tr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/15 20:37:38 by yuak              #+#    #+#             */
-/*   Updated: 2026/09/15 09:36:03 by yuak             ###   ########.fr       */
+/*   Updated: 2026/09/15 10:44:33 by yuak             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "cub3d.h"
+
+#include "check.h"
+#include "free.h"
+#include "parser.h"
 
 static void	print_result(t_game *game);
 

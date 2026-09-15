@@ -6,11 +6,17 @@
 /*   By: yuak <yuak@student.42istanbul.com.tr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/08/18 10:23:03 by yuak              #+#    #+#             */
-/*   Updated: 2026/09/15 09:39:48 by yuak             ###   ########.fr       */
+/*   Updated: 2026/09/15 10:22:30 by yuak             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "cub3d.h"
+#include <fcntl.h>
+#include <stdio.h>
+#include <stdlib.h>
+#include <unistd.h>
+
+#include "check.h"
+#include "read_next_line.h"
 
 static int	go_end_of_map(int fd);
 static int	check_map_position(int fd);

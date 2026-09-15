@@ -6,12 +6,14 @@
 /*   By: yuak <yuak@student.42istanbul.com.tr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/27 22:17:12 by yuak              #+#    #+#             */
-/*   Updated: 2026/09/14 17:56:12 by yuak             ###   ########.fr       */
+/*   Updated: 2026/09/15 10:45:31 by yuak             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef DATA_H
 # define DATA_H
+
+# include <stddef.h>
 
 typedef struct s_player
 {

@@ -1,3 +1,5 @@
+#include "data.h"
+#include <stdio.h>
 #include "cub3d.h"
 
 void	print_player_info(t_game *game)

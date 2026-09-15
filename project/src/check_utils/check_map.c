@@ -6,11 +6,12 @@
 /*   By: yuak <yuak@student.42istanbul.com.tr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/08/18 10:31:52 by yuak              #+#    #+#             */
-/*   Updated: 2026/09/15 09:40:05 by yuak             ###   ########.fr       */
+/*   Updated: 2026/09/15 10:12:55 by yuak             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "cub3d.h"
+#include "check.h"
+#include "free.h"
 
 int	check_map(t_game *game)
 {

@@ -6,11 +6,12 @@
 /*   By: yuak <yuak@student.42istanbul.com.tr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/08/19 10:15:05 by yuak              #+#    #+#             */
-/*   Updated: 2026/08/24 10:00:49 by yuak             ###   ########.fr       */
+/*   Updated: 2026/09/15 10:46:34 by yuak             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "cub3d.h"
+#include "data.h"
+#include "libft.h"
 
 static int	is_starting_position(char c);
 static void	assign_player_info(t_game *game, int x, int y);

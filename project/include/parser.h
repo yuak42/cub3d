@@ -1,34 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   print_error_arg.c                                  :+:      :+:    :+:   */
+/*   parser.h                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: yuak <yuak@student.42istanbul.com.tr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/08/29 18:50:57 by yuak              #+#    #+#             */
-/*   Updated: 2026/09/15 10:26:52 by yuak             ###   ########.fr       */
+/*   Created: 2026/09/15 10:30:53 by yuak              #+#    #+#             */
+/*   Updated: 2026/09/15 10:39:33 by yuak             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <unistd.h>
+#ifndef PARSER_H
+# define PARSER_H
 
-#include "check.h"
-#include "libft.h"
+# include "data.h"
 
-void	print_error_arg(char *str, char *arg)
-{
-	size_t	i;
+t_map	*init_map(char *cub);
+t_game	*init_game(char *cub);
+int		assign_grid(t_map *map, char *cub);
+t_map 	*extract_map(char *cub);
+t_map	*init_map(char *cub);
+int 	assign_texture(t_game *game, char *line);
+int 	get_texture_paths(char *cub, t_game *game);
+int		get_player_position(t_game *game);
 
-	i = 0;
-	while (str[i] && str[i] != '?')
-		i++;
-	if (!str[i])
-	{
-		print_error(str);
-		return ;
-	}
-	write(2, str, i);
-	write(2, arg, ft_strlen(arg));
-	i++;
-	write(2, &str[i], ft_strlen(&str[i]));
-}
+#endif

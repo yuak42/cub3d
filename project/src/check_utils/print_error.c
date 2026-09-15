@@ -6,11 +6,13 @@
 /*   By: yuak <yuak@student.42istanbul.com.tr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/08/12 14:28:01 by yuak              #+#    #+#             */
-/*   Updated: 2026/09/15 09:37:59 by yuak             ###   ########.fr       */
+/*   Updated: 2026/09/15 10:27:06 by yuak             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "cub3d.h"
+#include <unistd.h>
+
+#include "libft.h"
 
 void	print_error(char *str)
 {
