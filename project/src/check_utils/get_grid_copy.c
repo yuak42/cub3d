@@ -6,11 +6,15 @@
 /*   By: yuak <yuak@student.42istanbul.com.tr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/08/20 10:05:42 by yuak              #+#    #+#             */
-/*   Updated: 2026/08/20 10:07:50 by yuak             ###   ########.fr       */
+/*   Updated: 2026/09/15 10:48:32 by yuak             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "cub3d.h"
+#include <stdio.h>
+#include <stdlib.h>
+
+#include "check.h"
+#include "libft.h"
 
 static void	free_backwards(char **copy, int i);
 

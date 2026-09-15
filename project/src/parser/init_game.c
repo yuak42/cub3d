@@ -6,11 +6,17 @@
 /*   By: yuak <yuak@student.42istanbul.com.tr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/27 22:26:15 by yuak              #+#    #+#             */
-/*   Updated: 2026/08/19 10:17:38 by yuak             ###   ########.fr       */
+/*   Updated: 2026/09/15 10:42:50 by yuak             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "cub3d.h"
+
+#include <stdio.h>
+
+#include "data.h"
+#include "free.h"
+#include "libft.h"
+#include "parser.h"
 
 t_game	*init_game(char *cub)
 {

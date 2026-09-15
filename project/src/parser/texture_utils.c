@@ -6,11 +6,11 @@
 /*   By: yuak <yuak@student.42istanbul.com.tr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/08/14 13:23:46 by yuak              #+#    #+#             */
-/*   Updated: 2026/09/15 09:43:40 by yuak             ###   ########.fr       */
+/*   Updated: 2026/09/15 10:43:04 by yuak             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "cub3d.h"
+#include "libft.h"
 
 int	is_texture_line(char *line)
 {

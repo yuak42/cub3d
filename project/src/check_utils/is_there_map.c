@@ -6,11 +6,17 @@
 /*   By: yuak <yuak@student.42istanbul.com.tr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/08/24 10:05:08 by yuak              #+#    #+#             */
-/*   Updated: 2026/09/09 12:44:02 by yuak             ###   ########.fr       */
+/*   Updated: 2026/09/15 10:26:07 by yuak             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "cub3d.h"
+#include <fcntl.h>
+#include <stdio.h>
+#include <stdlib.h>
+#include <unistd.h>
+
+#include "check.h"
+#include "read_next_line.h"
 
 int	is_there_map(char *cub)
 {

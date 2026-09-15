@@ -6,11 +6,9 @@
 /*   By: yuak <yuak@student.42istanbul.com.tr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/08/26 13:18:37 by yuak              #+#    #+#             */
-/*   Updated: 2026/09/15 09:37:40 by yuak             ###   ########.fr       */
+/*   Updated: 2026/09/15 10:21:43 by yuak             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-
-#include "cub3d.h"
 
 static int	is_map_char(char c);
 

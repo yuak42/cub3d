@@ -9,8 +9,8 @@ SRC =	main.c \
 		renderer/put_window.c \
 		render_utils/close_win.c render_utils/key_event.c render_utils/ray_move.c render_utils/key_utils.c \
 		render_utils/move_position.c render_utils/free_render.c \
-		parser/init_game.c parser/extract_map.c parser/extract_map_utils.c parser/get_texture_paths.c parser/assign_texture.c \
-		parser/texture_utils.c parser/get_player_position.c	\
+		parser/init_game.c parser/extract_map.c parser/init_map.c parser/get_texture_paths.c parser/assign_texture.c \
+		parser/texture_utils.c parser/get_player_position.c	parser/assign_grid.c \
 		check_utils/check_input.c check_utils/print_error.c check_utils/check_identifiers.c check_utils/get_splitted_size.c \
 		check_utils/check_colors.c check_utils/is_map_position_true.c check_utils/check_map.c \
 		check_utils/get_grid_copy.c check_utils/flood_fill.c check_utils/check_starting_position.c \
@@ -29,7 +29,9 @@ MLX_DIR = minilibx-linux
 MLX = $(MLX_DIR)/libmlx.a
 MLX_REPO = https://github.com/42Paris/minilibx-linux.git
 
-CFLAGS = -Wall -Wextra -Werror -Iinclude
+CFLAGS = 	-Wall -Wextra -Werror \
+			-Iinclude -Ilibft -Isrc/read_next_line -I$(MLX_DIR)
+
 DEBUG_FLAGS = -fsanitize=address -g3
 
 LIBS = $(LIBFT) -L$(MLX_DIR) -lmlx -lXext -lX11 -lm

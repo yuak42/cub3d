@@ -6,11 +6,21 @@
 /*   By: yuak <yuak@student.42istanbul.com.tr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/08/06 12:40:35 by yuak              #+#    #+#             */
-/*   Updated: 2026/09/15 09:43:02 by yuak             ###   ########.fr       */
+/*   Updated: 2026/09/15 10:46:58 by yuak             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "cub3d.h"
+#include <fcntl.h>
+#include <stdio.h>
+#include <stdlib.h>
+#include <unistd.h>
+
+#include "check.h"
+#include "data.h"
+#include "free.h"
+#include "read_next_line.h"
+#include "parser.h"
+
 
 int	get_texture_paths(char *cub, t_game *game)
 {
