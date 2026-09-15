@@ -6,13 +6,13 @@
 /*   By: yuak <yuak@student.42istanbul.com.tr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/15 20:37:38 by yuak              #+#    #+#             */
-/*   Updated: 2026/09/10 13:18:56 by yuak             ###   ########.fr       */
+/*   Updated: 2026/09/15 09:36:03 by yuak             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "cub3d.h"
 
-static void print_result(t_game *game);
+static void	print_result(t_game *game);
 
 int	main(int ac, char **av)
 {
@@ -31,7 +31,7 @@ int	main(int ac, char **av)
 	return (0);
 }
 
-static void print_result(t_game *game)
+static void	print_result(t_game *game)
 {
 	printf("Game was parsed successfully\n");
 	print_map(game->map);

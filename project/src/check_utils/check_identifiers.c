@@ -6,7 +6,7 @@
 /*   By: yuak <yuak@student.42istanbul.com.tr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/08/12 14:31:20 by yuak              #+#    #+#             */
-/*   Updated: 2026/09/09 12:41:12 by yuak             ###   ########.fr       */
+/*   Updated: 2026/09/15 09:38:17 by yuak             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,7 +32,7 @@ int	check_identifiers(char *cub)
 	return (0);
 }
 
-static int check_existence_and_uniqueness(char *id, char *cub)
+static int	check_existence_and_uniqueness(char *id, char *cub)
 {
 	int		fd;
 	char	*line;
@@ -59,7 +59,7 @@ static int check_existence_and_uniqueness(char *id, char *cub)
 	return (0);
 }
 
-static int check_line(char *id, char *line, int *exist)
+static int	check_line(char *id, char *line, int *exist)
 {
 	char	**splitted;
 

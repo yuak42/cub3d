@@ -6,7 +6,7 @@
 /*   By: yuak <yuak@student.42istanbul.com.tr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/08/18 10:23:03 by yuak              #+#    #+#             */
-/*   Updated: 2026/09/09 12:44:15 by yuak             ###   ########.fr       */
+/*   Updated: 2026/09/15 09:39:48 by yuak             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,7 +30,7 @@ int	is_map_position_true(char *cub)
 		if (is_map_line(line))
 		{
 			if (check_map_position(fd))
-				return (free(line), close(fd),  0);
+				return (free(line), close(fd), 0);
 		}
 		free(line);
 		if (read_next_line(fd, &line))
@@ -39,7 +39,7 @@ int	is_map_position_true(char *cub)
 	return (close(fd), read_next_line(-1, NULL), 1);
 }
 
-static int check_map_position(int fd)
+static int	check_map_position(int fd)
 {
 	char	*line;
 
@@ -62,7 +62,7 @@ static int check_map_position(int fd)
 	return (free(line), 1);
 }
 
-static int go_end_of_map(int fd)
+static int	go_end_of_map(int fd)
 {
 	char	*line;
 

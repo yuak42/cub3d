@@ -6,7 +6,7 @@
 /*   By: yuak <yuak@student.42istanbul.com.tr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/08/20 14:22:29 by yuak              #+#    #+#             */
-/*   Updated: 2026/09/09 12:54:42 by yuak             ###   ########.fr       */
+/*   Updated: 2026/09/15 09:37:03 by yuak             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,7 +42,7 @@ int	check_starting_position(char *cub)
 static int	get_starting_position_number(char *line)
 {
 	int	i;
-	int num;
+	int	num;
 
 	i = 0;
 	num = 0;
