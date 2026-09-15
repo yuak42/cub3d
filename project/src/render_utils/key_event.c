@@ -6,7 +6,7 @@
 /*   By: byaprak <byaprak@student.42istanbul.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/09/04 21:24:39 by byaprak           #+#    #+#             */
-/*   Updated: 2026/09/09 21:00:14 by byaprak          ###   ########.fr       */
+/*   Updated: 2026/09/12 13:41:26 by byaprak          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@ int	key_event(void *args)
 	ag = args;
 	moved = 0;
 	if (ag->key_code == 65307)
-		close_win(args);
+		close_win(args, 1);
 	if (ag->key.w || ag->key.s || ag->key.a || ag->key.d)
 	{
 		move_pose(args);
