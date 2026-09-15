@@ -3,14 +3,18 @@
 /*                                                        :::      ::::::::   */
 /*   close_win.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: byaprak <byaprak@student.42istanbul.com    +#+  +:+       +#+        */
+/*   By: yuak <yuak@student.42istanbul.com.tr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/09/04 21:29:34 by byaprak           #+#    #+#             */
-/*   Updated: 2026/09/12 13:38:36 by byaprak          ###   ########.fr       */
+/*   Updated: 2026/09/15 16:55:22 by yuak             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "cub3d.h"
+#include <stdlib.h>
+
+#include "data.h"
+#include "mlx.h"
+#include "render.h"
 
 int	close_win(t_render *args, int status)
 {

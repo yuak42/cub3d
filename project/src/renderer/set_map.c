@@ -3,14 +3,15 @@
 /*                                                        :::      ::::::::   */
 /*   set_map.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: byaprak <byaprak@student.42istanbul.com    +#+  +:+       +#+        */
+/*   By: yuak <yuak@student.42istanbul.com.tr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/08/24 16:33:52 by byaprak           #+#    #+#             */
-/*   Updated: 2026/09/09 21:03:09 by byaprak          ###   ########.fr       */
+/*   Updated: 2026/09/15 16:42:59 by yuak             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "cub3d.h"
+#include "data.h"
+#include "math.h"
 
 static void	get_sidedist(t_render *args, t_game *game);
 static void	get_stepx(t_render *args);

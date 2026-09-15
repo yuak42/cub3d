@@ -3,14 +3,18 @@
 /*                                                        :::      ::::::::   */
 /*   free_render.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: byaprak <byaprak@student.42istanbul.com    +#+  +:+       +#+        */
+/*   By: yuak <yuak@student.42istanbul.com.tr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/09/06 15:25:25 by byaprak           #+#    #+#             */
-/*   Updated: 2026/09/12 12:50:01 by byaprak          ###   ########.fr       */
+/*   Updated: 2026/09/15 16:55:51 by yuak             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "cub3d.h"
+#include <stdlib.h>
+
+#include "free.h"
+#include "render.h"
+#include "mlx.h"
 
 void	free_render(t_render *args)
 {

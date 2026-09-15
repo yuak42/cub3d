@@ -3,14 +3,16 @@
 /*                                                        :::      ::::::::   */
 /*   ray_move.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: byaprak <byaprak@student.42istanbul.com    +#+  +:+       +#+        */
+/*   By: yuak <yuak@student.42istanbul.com.tr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/09/04 21:53:08 by byaprak           #+#    #+#             */
-/*   Updated: 2026/09/09 21:00:53 by byaprak          ###   ########.fr       */
+/*   Updated: 2026/09/15 16:57:32 by yuak             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "cub3d.h"
+#include "data.h"
+#include "math.h"
+#include "render.h"
 
 static void	rot_dir(t_render *args, double rot);
 static void	rot_plane(t_render *args, double rot);

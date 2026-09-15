@@ -3,14 +3,15 @@
 /*                                                        :::      ::::::::   */
 /*   set_size.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: byaprak <byaprak@student.42istanbul.com    +#+  +:+       +#+        */
+/*   By: yuak <yuak@student.42istanbul.com.tr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/08/26 12:45:33 by byaprak           #+#    #+#             */
-/*   Updated: 2026/09/09 21:03:36 by byaprak          ###   ########.fr       */
+/*   Updated: 2026/09/15 16:45:16 by yuak             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "cub3d.h"
+#include "data.h"
+#include "math.h"
 
 static void	set_draw(t_render *args);
 static void	set_wallx(t_render *args, t_game *game);

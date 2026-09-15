@@ -3,14 +3,14 @@
 /*                                                        :::      ::::::::   */
 /*   key_utils.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: byaprak <byaprak@student.42istanbul.com    +#+  +:+       +#+        */
+/*   By: yuak <yuak@student.42istanbul.com.tr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/09/05 15:45:12 by byaprak           #+#    #+#             */
-/*   Updated: 2026/09/09 21:00:41 by byaprak          ###   ########.fr       */
+/*   Updated: 2026/09/15 16:56:11 by yuak             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "cub3d.h"
+#include "data.h"
 
 int	key_press(int key_code, void *args)
 {
