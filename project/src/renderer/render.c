@@ -6,7 +6,7 @@
 /*   By: byaprak <byaprak@student.42istanbul.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/27 22:26:12 by yuak              #+#    #+#             */
-/*   Updated: 2026/09/10 20:22:24 by byaprak          ###   ########.fr       */
+/*   Updated: 2026/09/12 21:12:01 by byaprak          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,8 @@ int	render(t_game *game)
 		return (0);
 	args->game = game;
 	init_mlx(args);
-	put_game(args);
+	if (!put_game(args))
+		close_win(args, 1);
 	mlx_hook(args->window.win_ptr, 12, 1L << 15,
 		(int (*)())(void *)win_invisible, args);
 	mlx_hook(args->window.win_ptr, 17, 0,
@@ -51,6 +52,11 @@ static int	get_img(t_render *args)
 	}
 	args->img.img_pixel = mlx_get_data_addr(args->img.img_p,
 			&args->img.bpp, &args->img.len, &args->img.end);
+	if (!(args->img.img_pixel))
+	{
+		ft_putstr_fd("mlx_get_data_addr error\n", 2);
+		return (0);
+	}
 	return (1);
 }
 
@@ -92,26 +98,11 @@ static int	get_wall(t_render *args, t_game *game)
 
 static void	init_mlx(t_render *args)
 {
-	int		status;
-	void	*mlx_ptr;
-
-	mlx_ptr = args->window.mlx_ptr;
-	status = 1;
 	if (!init_window(args))
-		status = 0;
+		close_win(args, 1);
 	if (!get_img(args))
-		status = 0;
+		close_win(args, 1);
 	if (!get_wall(args, args->game))
-	{
-		free_game(args->game);
-		free(args);
-		exit(1);
-	}
+		close_win(args, 1);
 	set_position(args->game, args);
-	if (!status)
-	{
-		free_render(args);
-		free(mlx_ptr);
-		exit(1);
-	}
 }
