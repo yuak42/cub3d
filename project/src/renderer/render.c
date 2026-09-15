@@ -3,14 +3,17 @@
 /*                                                        :::      ::::::::   */
 /*   render.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: byaprak <byaprak@student.42istanbul.com    +#+  +:+       +#+        */
+/*   By: yuak <yuak@student.42istanbul.com.tr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/27 22:26:12 by yuak              #+#    #+#             */
-/*   Updated: 2026/09/12 21:12:01 by byaprak          ###   ########.fr       */
+/*   Updated: 2026/09/15 16:17:17 by yuak             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "cub3d.h"
+#include "data.h"
+#include "libft.h"
+#include "mlx.h"
+#include "render.h"
 
 static int	get_img(t_render *args);
 static int	win_invisible(void *args);

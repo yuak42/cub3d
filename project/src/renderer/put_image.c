@@ -3,14 +3,14 @@
 /*                                                        :::      ::::::::   */
 /*   put_image.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: byaprak <byaprak@student.42istanbul.com    +#+  +:+       +#+        */
+/*   By: yuak <yuak@student.42istanbul.com.tr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/08/30 21:54:53 by byaprak           #+#    #+#             */
-/*   Updated: 2026/09/12 20:19:33 by byaprak          ###   ########.fr       */
+/*   Updated: 2026/09/15 16:38:26 by yuak             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "cub3d.h"
+#include "data.h"
 
 static int	get_color(t_render *args, int tex_x, int tex_y);
 static void	image_piksel_put(t_render *args, int color, int tex_x, int tex_y);
