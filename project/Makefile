@@ -1,6 +1,6 @@
 MAKEFLAGS += --silent
 
-NAME = cub3d
+NAME = cub3D
 
 SRC_DIR = src
 SRC =	main.c \
