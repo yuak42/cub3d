@@ -6,7 +6,7 @@
 /*   By: yuak <yuak@student.42istanbul.com.tr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/26 20:00:21 by yuak              #+#    #+#             */
-/*   Updated: 2026/09/15 14:39:34 by yuak             ###   ########.fr       */
+/*   Updated: 2026/09/15 16:24:05 by yuak             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,8 +19,8 @@
 
 #include <stdio.h>
 #include <fcntl.h>
-#include "../libft/libft.h"
-#include "../minilibx-linux/mlx.h"
+#include "libft.h"
+#include "mlx.h"
 #include "data.h"
 #include <math.h>
 

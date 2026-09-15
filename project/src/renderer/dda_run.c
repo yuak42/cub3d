@@ -3,14 +3,15 @@
 /*                                                        :::      ::::::::   */
 /*   dda_run.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: byaprak <byaprak@student.42istanbul.com    +#+  +:+       +#+        */
+/*   By: yuak <yuak@student.42istanbul.com.tr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/08/25 01:04:17 by byaprak           #+#    #+#             */
-/*   Updated: 2026/09/09 21:01:19 by byaprak          ###   ########.fr       */
+/*   Updated: 2026/09/15 16:24:33 by yuak             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "cub3d.h"
+#include "data.h"
+#include "render.h"
 
 static int	is_out_of_bounds(t_render *args, t_map *map);
 static void	put_texture(t_render *args, t_game *game, int x);

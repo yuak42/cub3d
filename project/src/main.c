@@ -6,7 +6,7 @@
 /*   By: yuak <yuak@student.42istanbul.com.tr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/15 20:37:38 by yuak              #+#    #+#             */
-/*   Updated: 2026/09/15 10:44:33 by yuak             ###   ########.fr       */
+/*   Updated: 2026/09/15 16:19:22 by yuak             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,11 +26,12 @@ int	main(int ac, char **av)
 		return (1);
 	game = init_game(av[1]);
 	if (!game)
-		return (1);
+		return (2);
 	if (check_map(game))
-		return (free_game(game), 1);
+		return (free_game(game), 3);
 	print_result(game);
-	render(game);
+	if (render(game))
+		return (free_game(game), 4);
 	free_game(game);
 	return (0);
 }
