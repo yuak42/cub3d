@@ -6,7 +6,7 @@
 /*   By: yuak <yuak@student.42istanbul.com.tr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/09/04 20:11:01 by yuak              #+#    #+#             */
-/*   Updated: 2026/09/06 19:57:27 by yuak             ###   ########.fr       */
+/*   Updated: 2026/09/15 09:41:39 by yuak             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ int	implement_buffer(char **buffer)
 	*buffer = (char *) ft_calloc((BUFFER_SIZE + 1), sizeof(char));
 	if (!(*buffer))
 		return (1);
-	return (0); 
+	return (0);
 }
 
 void	rnl_shift_buffer(char *buffer)

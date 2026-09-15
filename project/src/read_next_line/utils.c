@@ -6,7 +6,7 @@
 /*   By: yuak <yuak@student.42istanbul.com.tr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/09/05 13:56:19 by yuak              #+#    #+#             */
-/*   Updated: 2026/09/06 20:13:06 by yuak             ###   ########.fr       */
+/*   Updated: 2026/09/15 09:42:13 by yuak             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@ int	return_fail(char **buffer)
 	return (1);
 }
 
-void rnl_copy_str(char *dest, char *src)
+void	rnl_copy_str(char *dest, char *src)
 {
 	while (*src)
 	{
