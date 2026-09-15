@@ -3,14 +3,15 @@
 /*                                                        :::      ::::::::   */
 /*   key_event.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: byaprak <byaprak@student.42istanbul.com    +#+  +:+       +#+        */
+/*   By: yuak <yuak@student.42istanbul.com.tr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/09/04 21:24:39 by byaprak           #+#    #+#             */
-/*   Updated: 2026/09/12 13:41:26 by byaprak          ###   ########.fr       */
+/*   Updated: 2026/09/15 16:54:06 by yuak             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "cub3d.h"
+#include "mlx.h"
+#include "render.h"
 
 int	key_event(void *args)
 {
@@ -19,7 +20,7 @@ int	key_event(void *args)
 
 	ag = args;
 	moved = 0;
-	if (ag->key_code == 65307)
+	if (ag->key_code == KEY_ESC)
 		close_win(args, 1);
 	if (ag->key.w || ag->key.s || ag->key.a || ag->key.d)
 	{

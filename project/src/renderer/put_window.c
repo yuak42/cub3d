@@ -3,14 +3,16 @@
 /*                                                        :::      ::::::::   */
 /*   put_window.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: byaprak <byaprak@student.42istanbul.com    +#+  +:+       +#+        */
+/*   By: yuak <yuak@student.42istanbul.com.tr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/09/04 23:52:25 by byaprak           #+#    #+#             */
-/*   Updated: 2026/09/09 21:01:58 by byaprak          ###   ########.fr       */
+/*   Updated: 2026/09/15 16:40:07 by yuak             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "cub3d.h"
+#include "data.h"
+#include "mlx.h"
+#include "render.h"
 
 int	put_game(t_render *args)
 {

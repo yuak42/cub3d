@@ -3,14 +3,15 @@
 /*                                                        :::      ::::::::   */
 /*   move_position.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: byaprak <byaprak@student.42istanbul.com    +#+  +:+       +#+        */
+/*   By: yuak <yuak@student.42istanbul.com.tr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/09/06 13:16:54 by byaprak           #+#    #+#             */
-/*   Updated: 2026/09/09 21:00:47 by byaprak          ###   ########.fr       */
+/*   Updated: 2026/09/15 16:56:52 by yuak             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "cub3d.h"
+#include "data.h"
+#include "render.h"
 
 static void	up_move(t_render *args);
 static void	down_move(t_render *args);

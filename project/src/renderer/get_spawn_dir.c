@@ -3,14 +3,14 @@
 /*                                                        :::      ::::::::   */
 /*   utils.c                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: byaprak <byaprak@student.42istanbul.com.tr>  #+#  +:+       +#+      */
+/*   By: yuak <yuak@student.42istanbul.com.tr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026-08-17 21:39:27 by byaprak           #+#    #+#             */
-/*   Updated: 2026-08-17 21:39:27 by byaprak          ###   ########.fr       */
+/*   Created: 2026/08/17 21:39:27 by byaprak           #+#    #+#             */
+/*   Updated: 2026/09/15 16:46:42 by yuak             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "cub3d.h"
+#include "data.h"
 
 char	get_spawn_dir(t_game *game)
 {

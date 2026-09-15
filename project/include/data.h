@@ -6,7 +6,7 @@
 /*   By: yuak <yuak@student.42istanbul.com.tr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/27 22:17:12 by yuak              #+#    #+#             */
-/*   Updated: 2026/09/15 10:45:31 by yuak             ###   ########.fr       */
+/*   Updated: 2026/09/15 16:53:58 by yuak             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,8 @@
 # define DATA_H
 
 # include <stddef.h>
+
+# define	KEY_ESC 65307
 
 typedef struct s_player
 {

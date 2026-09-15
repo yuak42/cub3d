@@ -3,14 +3,14 @@
 /*                                                        :::      ::::::::   */
 /*   set_position.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: byaprak <byaprak@student.42istanbul.com    +#+  +:+       +#+        */
+/*   By: yuak <yuak@student.42istanbul.com.tr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/08/16 11:22:39 by byaprak           #+#    #+#             */
-/*   Updated: 2026/09/09 21:03:23 by byaprak          ###   ########.fr       */
+/*   Updated: 2026/09/15 16:44:21 by yuak             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "cub3d.h"
+#include "data.h"
 
 void	set_position(t_game *game, t_render *args)
 {

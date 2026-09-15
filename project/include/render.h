@@ -6,12 +6,14 @@
 /*   By: yuak <yuak@student.42istanbul.com.tr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/09/15 14:37:15 by yuak              #+#    #+#             */
-/*   Updated: 2026/09/15 16:17:24 by yuak             ###   ########.fr       */
+/*   Updated: 2026/09/15 16:54:36 by yuak             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef RENDER_H
 # define RENDER_H
+
+# include "data.h"
 
 int		render(t_game *game);
 void	set_dir(t_game *game);
