@@ -6,7 +6,7 @@
 /*   By: byaprak <byaprak@student.42istanbul.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/08/30 21:54:53 by byaprak           #+#    #+#             */
-/*   Updated: 2026/09/10 20:23:32 by byaprak          ###   ########.fr       */
+/*   Updated: 2026/09/12 20:19:33 by byaprak          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,7 +48,7 @@ static void	set_texture(t_render *args, int x, int y, double tex_pos)
 	int	color;
 	int	texy;
 
-	texy = (int)tex_pos & (args->wall.tex_h -1);
+	texy = (int)tex_pos % (args->wall.tex_h -1);
 	color = get_color(args, args->size.tex_x, texy);
 	image_piksel_put(args, color, x, y);
 }

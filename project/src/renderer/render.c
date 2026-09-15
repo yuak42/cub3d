@@ -6,7 +6,7 @@
 /*   By: byaprak <byaprak@student.42istanbul.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/27 22:26:12 by yuak              #+#    #+#             */
-/*   Updated: 2026/09/12 15:19:02 by byaprak          ###   ########.fr       */
+/*   Updated: 2026/09/12 21:12:01 by byaprak          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -83,7 +83,6 @@ static int	get_wall(t_render *args, t_game *game)
 	if (!args->no.w_p || !args->so.w_p || !args->ea.w_p || !args->we.w_p)
 	{
 		ft_putstr_fd("mlx_xpm_file_to_image error\n", 2);
-		printf("%s. ****************** %p ***********\n", game->texture.no, args->window.mlx_ptr);
 		return (0);
 	}
 	args->no.w_pixel = mlx_get_data_addr(args->no.w_p,
