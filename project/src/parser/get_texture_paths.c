@@ -6,13 +6,13 @@
 /*   By: yuak <yuak@student.42istanbul.com.tr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/08/06 12:40:35 by yuak              #+#    #+#             */
-/*   Updated: 2026/09/09 12:47:22 by yuak             ###   ########.fr       */
+/*   Updated: 2026/09/15 09:43:02 by yuak             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "cub3d.h"
 
-int get_texture_paths(char *cub, t_game *game)
+int	get_texture_paths(char *cub, t_game *game)
 {
 	char	*line;
 	int		fd;

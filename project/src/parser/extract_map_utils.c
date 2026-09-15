@@ -6,7 +6,7 @@
 /*   By: yuak <yuak@student.42istanbul.com.tr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/08/06 11:56:45 by yuak              #+#    #+#             */
-/*   Updated: 2026/09/09 12:46:50 by yuak             ###   ########.fr       */
+/*   Updated: 2026/09/15 09:42:52 by yuak             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,7 +41,7 @@ size_t	get_map_width(char *cub)
 	int		fd;
 	char	*line;
 	size_t	size;
-	
+
 	size = 0;
 	get_next_line(-1);
 	fd = open(cub, O_RDONLY);

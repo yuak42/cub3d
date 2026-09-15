@@ -6,16 +6,16 @@
 /*   By: yuak <yuak@student.42istanbul.com.tr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/09/06 18:59:12 by yuak              #+#    #+#             */
-/*   Updated: 2026/09/06 20:13:40 by yuak             ###   ########.fr       */
+/*   Updated: 2026/09/15 09:41:58 by yuak             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef READ_NEXT_LINE_H
 # define READ_NEXT_LINE_H
 
-#include <stdlib.h>
-#include <unistd.h>
-#include "../libft/libft.h"
+# include <stdlib.h>
+# include <unistd.h>
+# include "../libft/libft.h"
 
 int		read_next_line(int fd, char **line);
 

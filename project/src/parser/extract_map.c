@@ -6,13 +6,13 @@
 /*   By: yuak <yuak@student.42istanbul.com.tr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/27 22:26:15 by yuak              #+#    #+#             */
-/*   Updated: 2026/08/14 12:50:07 by yuak             ###   ########.fr       */
+/*   Updated: 2026/09/15 09:42:23 by yuak             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "cub3d.h"
 
-t_map *extract_map(char *cub)
+t_map	*extract_map(char *cub)
 {
 	t_map	*map;
 

@@ -6,7 +6,7 @@
 /*   By: yuak <yuak@student.42istanbul.com.tr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/09/04 20:08:44 by yuak              #+#    #+#             */
-/*   Updated: 2026/09/06 20:13:21 by yuak             ###   ########.fr       */
+/*   Updated: 2026/09/15 09:41:27 by yuak             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,7 +45,7 @@ int	read_next_line(int fd, char **line)
 static int	read_file(int fd, char **line, char *buffer)
 {
 	ssize_t	i;
-	
+
 	i = 1;
 	while (i)
 	{
@@ -60,6 +60,5 @@ static int	read_file(int fd, char **line, char *buffer)
 		if (rnl_is_new_line(*line))
 			return (handle_new_line(line));
 	}
-	return (0);	
+	return (0);
 }
-

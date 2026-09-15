@@ -6,7 +6,7 @@
 /*   By: yuak <yuak@student.42istanbul.com.tr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/08/06 12:43:58 by yuak              #+#    #+#             */
-/*   Updated: 2026/08/14 16:03:48 by yuak             ###   ########.fr       */
+/*   Updated: 2026/09/15 09:44:05 by yuak             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 static int	deal_texture(char **splitted, t_game *game);
 static int	assign_color(t_game *game, char c, char *str);
 
-int assign_texture(t_game *game, char *line)
+int	assign_texture(t_game *game, char *line)
 {
 	char	**splitted;
 	char	*trimmed;
@@ -26,7 +26,7 @@ int assign_texture(t_game *game, char *line)
 	splitted = ft_split(trimmed, ' ');
 	if (!splitted)
 		return (perror("Error"), 1);
-	if (deal_texture(splitted, game))	
+	if (deal_texture(splitted, game))
 		return (1);
 	free(splitted[0]);
 	free(splitted);
@@ -62,12 +62,12 @@ static int	deal_texture(char **splitted, t_game *game)
 
 static int	assign_color(t_game *game, char c, char *str)
 {
-	char **splitted;
+	char	**splitted;
 
 	splitted = ft_split(str, ',');
 	free(str);
 	if (!splitted)
-		return (perror("Error"), 1001);	
+		return (perror("Error"), 1001);
 	if (c == 'f')
 	{
 		game->texture.f.r = ft_atoi(splitted[0]);
