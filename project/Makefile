@@ -42,26 +42,23 @@ FCLEAN_FILES_FOR_MLX = $(MLX_DIR)/libmlx.a $(MLX_DIR)/libmlx_Linux.a
 
 all: $(NAME)
 
-$(NAME): $(LIBFT) $(MLX) $(OBJS)
+$(NAME): $(LIBFT) $(OBJS)
 	$(CC) $(CFLAGS) $(OBJS) $(LIBS) -o $(NAME)
 
 $(LIBFT):
 	make -C libft
 	echo "make -C libft"
 
-$(MLX): $(MLX_DIR)
-	make -C $(MLX_DIR)
-	echo "make -C mlx"
-
-$(OBJ_DIR)/%.o: $(SRC_DIR)/%.c
-	mkdir -p $(dir $@)
-	$(CC) $(CFLAGS) -c  $< -o $@
-
-
-$(MLX_DIR):
+$(MLX):
 	@if [ ! -d "$(MLX_DIR)" ]; then \
 		git clone $(MLX_REPO); \
 	fi
+	make -C $(MLX_DIR)
+	echo "make -C mlx"
+
+$(OBJ_DIR)/%.o: $(SRC_DIR)/%.c $(MLX)
+	mkdir -p $(dir $@)
+	$(CC) $(CFLAGS) -c  $< -o $@
 
 clean:
 	rm -rf $(MLX_DIR)/obj
