@@ -6,7 +6,7 @@
 /*   By: yuak <yuak@student.42istanbul.com.tr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/08/06 12:40:35 by yuak              #+#    #+#             */
-/*   Updated: 2026/09/15 10:46:58 by yuak             ###   ########.fr       */
+/*   Updated: 2026/09/16 17:39:23 by yuak             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,6 @@
 #include "free.h"
 #include "read_next_line.h"
 #include "parser.h"
-
 
 int	get_texture_paths(char *cub, t_game *game)
 {
