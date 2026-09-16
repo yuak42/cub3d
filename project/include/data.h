@@ -6,7 +6,7 @@
 /*   By: yuak <yuak@student.42istanbul.com.tr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/27 22:17:12 by yuak              #+#    #+#             */
-/*   Updated: 2026/09/15 16:53:58 by yuak             ###   ########.fr       */
+/*   Updated: 2026/09/16 17:38:02 by yuak             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 
 # include <stddef.h>
 
-# define	KEY_ESC 65307
+# define KEY_ESC 65307
 
 typedef struct s_player
 {
@@ -23,21 +23,21 @@ typedef struct s_player
 	double	y;
 	double	dir_x;
 	double	dir_y;
-} t_player;
+}	t_player;
 
 typedef struct s_map
 {
 	char	**grid;
 	size_t	width;
 	size_t	height;
-} t_map;
+}	t_map;
 
 typedef struct s_color
 {
 	int	r;
 	int	g;
 	int	b;
-} t_color;
+}	t_color;
 
 typedef struct s_texture
 {
@@ -47,20 +47,20 @@ typedef struct s_texture
 	char	*ea;
 	t_color	f;
 	t_color	c;
-} t_texture;
+}	t_texture;
 
 typedef struct s_game
 {
 	t_map		*map;
 	t_player	player;
 	t_texture	texture;
-} t_game;
+}	t_game;
 
 typedef struct s_xpm
 {
 	int	width;
 	int	height;
-} t_xpm;
+}	t_xpm;
 
 typedef struct s_eventkey
 {

@@ -6,7 +6,7 @@
 /*   By: yuak <yuak@student.42istanbul.com.tr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/09/15 09:54:11 by yuak              #+#    #+#             */
-/*   Updated: 2026/09/15 10:45:57 by yuak             ###   ########.fr       */
+/*   Updated: 2026/09/16 17:33:05 by yuak             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,6 +29,6 @@ int		flood_fill(char **grid);
 int		check_starting_position(char *cub);
 int		is_map_line(char *line);
 char	**get_grid_copy(char **grid);
-int 	is_texture_line(char *line);
+int		is_texture_line(char *line);
 
 #endif
