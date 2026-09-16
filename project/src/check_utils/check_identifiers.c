@@ -6,7 +6,7 @@
 /*   By: yuak <yuak@student.42istanbul.com.tr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/08/12 14:31:20 by yuak              #+#    #+#             */
-/*   Updated: 2026/09/15 10:11:35 by yuak             ###   ########.fr       */
+/*   Updated: 2026/09/16 16:57:08 by yuak             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -55,10 +55,10 @@ static int	check_existence_and_uniqueness(char *id, char *cub)
 	while (line)
 	{
 		if (check_line(id, line, &exist))
-			return (free(line), close(fd), 1);
+			return (free(line), close(fd), read_next_line(-1, NULL));
 		free(line);
 		if (read_next_line(fd, &line))
-			return (close(fd), perror("Error"), 1);
+			return (close(fd), perror("Error"), read_next_line(-1, NULL));
 	}
 	close(fd);
 	read_next_line(-1, NULL);
