@@ -1,7 +1,7 @@
-shopt -s globstar
+#!/bin/bash
 
-for map in **/*.cub; do
+find . -name "*.cub" | while read -r map; do
     echo -e "\nTesting: $map"
-    ./cub3d "$map"
-	echo -e "\n"
+    valgrind ./cub3D "$map"
+    echo -e "\n"
 done

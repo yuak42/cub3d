@@ -6,7 +6,7 @@
 /*   By: yuak <yuak@student.42istanbul.com.tr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/09/04 21:53:08 by byaprak           #+#    #+#             */
-/*   Updated: 2026/09/15 16:57:32 by yuak             ###   ########.fr       */
+/*   Updated: 2026/09/16 13:48:09 by yuak             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,6 +25,8 @@ void	ray_move(t_render *args)
 		rot = -0.05;
 	else if (args->key.right)
 		rot = 0.05;
+	else
+		rot = 0.0;
 	rot_dir(args, rot);
 	rot_plane(args, rot);
 	put_game(args);
