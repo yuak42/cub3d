@@ -1,0 +1,16 @@
+NO ./textures/backrooms/north_dark_wall.xpm
+SO ./textures/backrooms/south_light_wall.xpm
+WE ./textures/backrooms/west_wall.xpm
+EA ./textures/backrooms/east_wall.xpm
+
+F 97,81,37
+C 202,198,195
+
+11111111111
+10000001001
+11110001001
+   10001001
+111100010N1
+10000001001
+10000000001
+11111111111
