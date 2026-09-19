@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   render.h                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: yuak <yuak@student.42istanbul.com.tr>      +#+  +:+       +#+        */
+/*   By: byaprak <byaprak@student.42istanbul.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/09/15 14:37:15 by yuak              #+#    #+#             */
-/*   Updated: 2026/09/15 16:54:36 by yuak             ###   ########.fr       */
+/*   Updated: 2026/09/19 16:14:16 by byaprak          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,5 +36,6 @@ int		key_press(int key_press, void *args);
 void	move_pose(t_render *args);
 void	free_render(t_render *args);
 int		is_walkable(t_game *game, double x, double y);
+int		mouse_event(t_render *args);
 
 #endif
