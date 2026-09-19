@@ -8,7 +8,7 @@ SRC =	main.c \
 		renderer/init_window.c renderer/set_map.c renderer/get_raycast_arg.c renderer/dda_run.c renderer/set_size.c renderer/put_image.c \
 		renderer/put_window.c \
 		render_utils/close_win.c render_utils/key_event.c render_utils/ray_move.c render_utils/key_utils.c \
-		render_utils/move_position.c render_utils/free_render.c \
+		render_utils/move_position.c render_utils/free_render.c render_utils/mouse_event.c \
 		parser/init_game.c parser/extract_map.c parser/init_map.c parser/get_texture_paths.c parser/assign_texture.c \
 		parser/texture_utils.c parser/get_player_position.c	parser/assign_grid.c \
 		check_utils/check_input.c check_utils/print_error.c check_utils/check_identifiers.c check_utils/get_splitted_size.c \
