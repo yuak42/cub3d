@@ -1,7 +1,7 @@
-NO ./src/textures/excub/west_wall.xpm
-SO ./src/textures/excub/wall.xpm
-WE ./src/textures/excub/wall.xpm
-EA ./src/textures/excub/wall.xpm
+NO ./textures/excub/west_wall.xpm
+SO ./textures/excub/wall.xpm
+WE ./textures/excub/wall.xpm
+EA ./textures/excub/wall.xpm
 
 F 0,0,0
 C 55,22,200
