@@ -14,7 +14,7 @@ SRC =	main.c \
 		check_utils/check_input.c check_utils/print_error.c check_utils/check_identifiers.c check_utils/get_splitted_size.c \
 		check_utils/check_colors.c check_utils/is_map_position_true.c check_utils/check_map.c \
 		check_utils/get_grid_copy.c check_utils/flood_fill.c check_utils/check_starting_position.c \
-		check_utils/is_there_map.c check_utils/is_map_line.c check_utils/print_error_arg.c \
+		check_utils/is_there_map.c check_utils/is_map_line.c check_utils/print_error_arg.c check_utils/check_file_format.c \
 		free_utils/free_split.c free_utils/free_game.c free_utils/free_map.c free_utils/free_texture.c free_utils/free_grid.c \
 		check_utils/check_invalid_line.c \
 		read_next_line/buffer_utils.c read_next_line/line_utils.c read_next_line/read_next_line.c read_next_line/utils.c
