@@ -6,7 +6,7 @@
 /*   By: yuak <yuak@student.42istanbul.com.tr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/08/06 20:23:55 by yuak              #+#    #+#             */
-/*   Updated: 2026/09/15 10:14:04 by yuak             ###   ########.fr       */
+/*   Updated: 2026/09/19 10:10:53 by yuak             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,8 @@ int	check_input(int ac, char **av)
 {
 	if (ac != 2)
 		return (print_error("Error\nInput number wrong!\n"), 700);
+	if (check_file_format(av[1]))
+		return (print_error("Error\nFile format is wrong!\n"), 700);
 	if (check_invalid_line(av[1]))
 		return (1);
 	if (check_identifiers(av[1]))
