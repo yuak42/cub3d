@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   render.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: yuak <yuak@student.42istanbul.com.tr>      +#+  +:+       +#+        */
+/*   By: byaprak <byaprak@student.42istanbul.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/27 22:26:12 by yuak              #+#    #+#             */
-/*   Updated: 2026/09/15 16:17:17 by yuak             ###   ########.fr       */
+/*   Updated: 2026/09/19 16:17:21 by byaprak          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,7 +34,7 @@ int	render(t_game *game)
 	mlx_hook(args->window.win_ptr, 12, 1L << 15,
 		(int (*)())(void *)win_invisible, args);
 	mlx_hook(args->window.win_ptr, 17, 0,
-		(int (*)())(void *)close_win, args);
+		(int (*)())(void *)mouse_event, args);
 	mlx_hook(args->window.win_ptr, 2, 1L << 0,
 		(int (*)())(void *)key_press, args);
 	mlx_hook(args->window.win_ptr, 3, 1L << 1,
