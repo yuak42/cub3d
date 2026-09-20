@@ -6,7 +6,7 @@
 /*   By: yuak <yuak@student.42istanbul.com.tr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/09/15 09:54:11 by yuak              #+#    #+#             */
-/*   Updated: 2026/09/19 10:11:09 by yuak             ###   ########.fr       */
+/*   Updated: 2026/09/20 10:07:54 by yuak             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,5 +31,6 @@ int		check_starting_position(char *cub);
 int		is_map_line(char *line);
 char	**get_grid_copy(char **grid);
 int		is_texture_line(char *line);
+int		check_texture_paths(t_game *game);
 
 #endif
