@@ -6,11 +6,9 @@
 /*   By: yuak <yuak@student.42istanbul.com.tr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/08/23 15:10:20 by byaprak           #+#    #+#             */
-/*   Updated: 2026/09/15 16:39:04 by yuak             ###   ########.fr       */
+/*   Updated: 2026/09/20 15:21:53 by yuak             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-
-#include <stdio.h>
 
 #include "check.h"
 #include "data.h"
